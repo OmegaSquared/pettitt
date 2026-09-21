@@ -1,0 +1,386 @@
+---
+title: "Pettitt Wealth"
+page-layout: full
+format:
+  html:
+    grid:
+      sidebar-width: 300px
+      body-width: 400px
+      margin-width: 300px
+      gutter-width: 1.5rem
+    anchor-sections: false
+lightbox: true
+execute:
+  freeze: auto  # re-render only when source changes
+---
+
+
+```{=html}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const footer = document.querySelector('footer'); // Or a more specific selector
+    if (footer) {
+      footer.style.display = 'none';
+    }
+  });
+</script>
+
+<style>
+  #title-block-header {
+    display: none;
+  }
+</style>  
+
+
+```
+
+
+
+```{=html}
+
+<div class="row justify-content-md-center">
+
+    <div class="col-md-auto mb-1">
+        <ul class="listview image-listview rounded shadow" style="width:350px;">
+            <li>
+                <div class="item">
+                    <div class="icon-box bg-primary">
+                        <ion-icon name="map-outline"></ion-icon>
+                    </div>
+                    <div class="in align-items-center">
+                        <div style="font-size: 0.6rem;">Primary Office
+                        <p class="mb-0"><a href="https://maps.app.goo.gl/wPQAgAWX3yoHbHv79" class="stretched-link">4824 E. Baseline Rd. Suite 108-A Mesa. AZ 85206</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="col-md-auto mb-1">
+        <ul class="listview image-listview rounded shadow" style="width:350px;">
+            <li>
+                <div class="item">
+                    <div class="icon-box bg-primary">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <div class="in align-items-center">
+                        <div style="font-size: 0.6rem;">Email
+                            <a href="mailto:eric@pettittwealth.com">eric@pettittwealth.com</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="col-md-auto mb-1">
+        <ul class="listview image-listview rounded shadow" style="width:350px;">
+            <li>
+                <div class="item">
+                    <div class="icon-box bg-primary">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+                    <div class="in align-items-center">
+                        <div style="font-size: 0.6rem;">Phone
+                            <a href="tel:+14809335277">(480) 933-5277</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+</div> <div> </div>
+
+
+```
+
+
+
+::: {.column-screen .mt-3}
+
+
+```{=html}
+
+<style> 
+.logo-container {
+  display: flex; /* Enable Flexbox for easy centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100px; /* Set fixed height */
+}
+
+.logo-container img {
+  max-height: 100%; /* Ensure the image scales down if it's too large */
+}
+</style>
+
+<div class="logo-container mb-2">
+  <img src="assets/img/pettitt_logo.png" alt="Logo">
+</div>
+
+```
+
+
+
+
+
+
+::: {.container}
+
+```{=html}
+
+<style>
+.card .card-img-overlay {
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.3) !important;
+    
+}
+
+.card .card-body {
+    padding: 5px 16px;
+    line-height: 1.4em;
+}
+
+audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+     background-color: white !important;
+}
+
+.audio::-webkit-media-controls-enclosure {
+    border-radius: 5px;
+    background-color: transparent !important;
+}
+
+.audio::-webkit-media-controls-panel { 
+    background-color: white !important;
+}
+
+audio {
+  margin: 0;
+  width: 110px;
+  animation: audioWidth 0.1s forwards;
+}
+
+auto::-webkit-media-controls-panel {
+  justify-content: center;
+}
+
+audio::-webkit-media-controls-volume-slider {
+  display: none !important;
+  min-width: 0;
+}
+
+audio::-webkit-media-controls-timeline-container {
+  display: none !important;
+  min-width: 0;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+  display: none !important;
+  min-width: 0;
+}
+
+audio::-webkit-media-controls-timeline {
+  display: none !important;
+  min-width: 0;
+}
+
+@keyframes audioWidth {
+  from {
+    width: 110px;
+  }
+  to {
+    width: 84px;
+  }
+}
+
+</style>
+
+<h3 >Independent Branch - Pettitt Wealth</h3>
+<hr class="m-1"></hr>
+
+<div class="row mt-2">
+  <div class="col-md-6 mb-2">
+    <div class="card shadow">
+      <img src="assets/img/ericand.jpg" class="card-img-top" alt="Pettit Wealth">
+      <div class="card-body pb-0">
+        <h5 class="card-title">At Pettitt Wealth,</h5>
+        
+        <p class="card-text">At PETTITT WEALTH, we grasp the intricacies of financial markets and are committed to guiding clients through their financial journey with assurance. We offer impartial, objective guidance alongside a variety of investment and insurance products customized to individual client needs and aspirations. Through our thorough financial planning services, we assist clients in defining their objectives, devising strategies, and making well-informed choices for their financial well-being.<p>
+ 
+<p class="card-text mb-0">Our investment strategy merges macroeconomic scrutiny with strategic asset allocation, leveraging data-driven insights to enhance portfolios and manage risks effectively. Emphasizing risk management, we safeguard your investments during market declines while positioning you for growth during market recoveries. Whether you're an individual or an institution, our seasoned professionals are dedicated to delivering tailored investment solutions that resonate with your specific aims and risk tolerance. We acknowledge the uniqueness of each client and advocate for a personalized approach.
+</p>
+
+
+    
+    <audio controls>
+        <source src="assets/audio/about.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+
+
+
+   
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-2">
+    <div class="card shadow text-white">
+      <img src="assets/img/sunset.jpg" class="card-img" alt="Pettit Wealth Sunset">
+      <div class="card-img-overlay lightbox" style="display: flex; flex-direction: column;">
+        <div style="margin-top: auto;">
+        <figure>
+          <blockquote class="blockquote text-white">
+            <p>Planning is brining the future into the present so that you can do something about it now.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer text-white">
+            Alan Lakein
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+```
+
+::: {.container}
+
+
+
+
+![Our collaborative wealth management process at PETTITT WEALTH empowers you to achieve your financial goals through personalized strategies, ongoing monitoring, and a commitment to your financial well-being.](assets/img/e_colaboration.png){#fig-missed-down group="post"}
+
+
+:::
+
+
+```{=html}
+
+<h3 >About Eric Pettitt</h3>
+<hr class="m-1"></hr>
+
+<div class="card shadow mt-2 mb-3 p-0" >
+  <div class="row g-0">
+    <div class="col-md-4 p-0">
+      <img src="assets/img/eric.jpg" class="img-fluid rounded-start" alt="Eric Pettitt">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">A little about Eric</h5>
+        <p class="card-text">Just as oak trees grow from acorns, it is possible to grow small things into something much larger.
+
+As a Financial Planner, it's my job to help you grow that tree. I have a deep passion for the intricacies of a financial situation, diving into the math and evaluating variables for a multitude of scenarios. By truly listening to my clients and understanding their needs. I can build a unique plan to set them on the path to success. I have the knowledge and background to be a true fiduciary, and I pride myself on looking out for my clients' best interests. There is no one-size-fits-all approach to investing. With a strategy based on now, then, and later, as well as plans for accumulation and distribution, I can serve clients from all walks of life. I approach my work in an organic way, with the knowledge that by doing right by others, success and blessings will materialize for all parties involved. Moreover, we'll have fun in the process, and you become part of the family. My passion for what I do runs deeper than what is typically expected of our industry - and it shows in the deep relationships we build with our clients.</p>
+
+
+<p>My clients know I have their backs and that I'm not here simply to sell a product. PETTITT WEALTH partners with clients looking for a true financial planner, well versed in developing plans as unique as they are. I have 10 years of experience advising high-net-worth individuals, as well as partnering with accountants and estate attorneys to cover all aspects of creating a financial legacy. I have created a company that provides a completely integrated approach to building your wealth, including utilizing today's most creative portfolio management strategies and asset protection structures enabling you to keep more of your money where it belongs - in your hands. After all, you've earned it!</p>
+
+<p>I believe that being involved in the community and giving back is important and is part of who I am. I am very involved in Gilbert's Chamber of Commerce and serve on their public policy committee. I serve on the government affairs committee for West and Southeast REALTORS® of the Valley and a part of their business affiliate group. I am a member of Above Par Networkingand serve on the membership committee for Elite Business Alliance.  </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+```
+
+
+```{=html}
+
+<div class="d-flex justify-content-center m-4 "> 
+  <a href="https://brokercheck.finra.org/" target="_blank" class="btn btn-link p-0">
+    <img src="assets/img/finra.png" alt="BrokerCheck" class="img-fluid" style="height: 50px;">
+  </a>
+</div>
+
+```
+
+:::
+
+:::
+
+
+
+```{=html}
+
+
+            
+            <div class="oColorSwitch" style="margin-bottom:-5px;">
+            <body style="margin:0%">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(211,107,44,0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(59,113,159,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(211,107,44,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(59,113,159)" />
+                    </g>
+                </svg>  
+
+                <div class="bg-oBlue">
+                    <div class="container bg-oBlue pt-4">
+                        <div class="row mt-5">
+                            <div class="col-md-5 font-small ">
+                                <img src="assets/img/pettitt_logo_white.png" alt=""  width="200" class="d-inline-block mb-2">
+                                <p class="text-left italic">Planning is brining the future into the present so that you can do something about it now.</p>
+                            </div>
+                            <div class="col-md-3 font-small ">
+                            </div>
+                            <div class="col-md">
+                                <p class="mt-lg-0 mb-1 mt-sm-4 bg-oBlue">Location</p>
+                                <p>4824 E. Baseline Rd. Suite 108-A Mesa. AZ 85206</p>
+                                <p class="mb-0"><i class="fa fa-phone mr-3"></i> (480) 933-5277</p>
+                                <p><i class="fa fa-envelope-o mr-3"></i> eric@pettittwealth.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container pt-4">
+                        <div class="row bg-oBlue">
+                            <div class="col font-small">
+                                <p>Disclosure for PETTITT WEALTH</p>
+                            
+                                <p style="font-size: small">The content is developed from sources believed to be providing accurate information. The information in this material is not intended as tax or legal advice. Please consult legal or tax professionals for specific information regarding your individual situation. The opinions expressed and material provided are for general information and should not be considered a solicitation for the purchase or sale of any security.</p>
+                                <p style="font-size: small">Fixed insurance services offered through PETTITT WEALTH. Registered Representative, securities offered through Cambridge Investment Research, Inc., a Broker/Dealer, member <a href="https://www.finra.org/#/" class="text-oOrange"> FINRA</a> & <a href="https://www.sipc.org/" class="text-oOrange"> SIPC</a>. Advisory Services offered through Cambridge Investment Research Advisers, Inc., a Registered Investment Adviser. Omega Squared Wealth Management and Cambridge are not affiliated.</p>
+                                
+                                <p style="font-size: small">This communication is strictly intended for individuals residing in the states of AZ, CA, CO, IN, MO, MT, NM, SC, TX, and UT. No offers may be made or accepted from any resident outside the specific state(s) referenced. Cambridge does not offer tax or legal advice. </p>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-oBlue">
+                    <div class="container pt-0">
+                        <div class="row bg-oBlue">
+                        <p>Disclosure for OMEGA SQUARED</p>
+                            <div class="col font-small">
+                                <p style="font-size: small">The content is developed from sources believed to be providing accurate information. The information in this material is not intended as tax or legal advice. Please consult legal or tax professionals for specific information regarding your individual situation. The opinions expressed and material provided are for general information, and should not be considered a solicitation for the purchase or sale of any security.</p>
+                                <p style="font-size: small">Registered Representative, securities offered through Cambridge Investment Research, Inc., a Broker/Dealer, member <a href="https://www.finra.org/#/" class="text-oOrange"> FINRA</a> & <a href="https://www.sipc.org/" class="text-oOrange"> SIPC</a>. Advisory Services offered through Cambridge Investment Research Advisers, Inc., a Registered Investment Adviser. Omega Squared Wealth Management and Cambridge are not affiliated.</p>
+                                <p style="font-size: small">This communication is strictly intended for individuals residing in the states of AR, AZ, CA, CO, FL, GA, IA, ID, IL, MA, MI, MT, NC, ND, NH, NM, NV, NY, OH, OK, OR, PA, TX, TN, UT, VA, WA, WI, WV, and WY. No offers may be made or accepted from any resident outside the specific state(s) referenced. Cambridge does not offer tax or legal advice.</p>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+        </div>
+
+
+
+```

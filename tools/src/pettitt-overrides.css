@@ -1,0 +1,61 @@
+/* Pettitt Wealth overrides for the ported Clock / Compass pages.
+   Loaded after bootstrap + the original stylesheet, before the site's style.css. */
+
+body.tool-page {
+    overflow-x: hidden;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Raleway', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+/* Brand palette mapped onto the old variable names so every component picks it up. */
+body.tool-page,
+body.tool-page.dark-mode {
+    --omega-orange: #F4C366;
+    --omega-light-orange: #F7D384;
+    --omega-blue: #7C8BB0;
+    --omega-light-blue: #C9D3EA;
+    --accent-gradient: linear-gradient(135deg, #F7D384 0%, #F4C366 45%, #C9962E 100%);
+    --primary-gradient: linear-gradient(135deg, #7C8BB0 0%, #515A79 100%);
+    --glow-primary: rgba(124, 139, 176, 0.18);
+    --glow-secondary: rgba(244, 195, 102, 0.12);
+    --bg-color: #0F1F35;
+    --cinematic-bg: #0B1730;
+}
+
+/* Gold buttons need dark text, not white. */
+body.tool-page .btn-premium,
+body.tool-page .btn-premium-cta,
+body.tool-page .btn-omega-orange,
+body.tool-page .btn-premium:hover,
+body.tool-page .btn-omega-orange:hover {
+    color: #1C1F2A !important;
+}
+
+/* The site header / footer sit outside the React root; keep them on the site's own type. */
+body.tool-page .site-header,
+body.tool-page .site-footer {
+    font-family: 'Raleway', 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+body.tool-page .site-header .nav-links a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600 !important;
+}
+body.tool-page .site-footer h4 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700 !important;
+    color: #fff;
+}
+body.tool-page .site-footer p { color: rgba(255, 255, 255, 0.72); }
+body.tool-page .site-footer a { color: #F4C366; }
+body.tool-page .brand img { height: 46px; }
+
+/* Bootstrap is injected after the site stylesheet on these pages; re-assert the header/footer look. */
+body.tool-page .site-header a, body.tool-page .site-footer a { text-decoration: none; }
+body.tool-page .site-header .nav-links a { color: rgba(255, 255, 255, 0.85); font-size: 0.8rem; letter-spacing: 0.1em; }
+body.tool-page .site-header .nav-links a:hover, body.tool-page .site-header .nav-links a.active { color: #F4C366; }
+body.tool-page .site-header .nav-links .btn { color: #1C1F2A; font-size: 13px; }
+body.tool-page .site-footer h4 { font-size: 0.8rem; letter-spacing: 0.22em; }
+
+body.tool-page .brand-name { font-family: 'Book Antiqua', 'Palatino Linotype', Palatino, 'Playfair Display', Georgia, serif; text-transform: uppercase; letter-spacing: 0.12em; white-space: nowrap; }

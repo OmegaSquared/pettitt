@@ -1,0 +1,6 @@
+tools/node_modules/
+tools/dist/
+.DS_Store
+
+# raw source video (site uses the re-encoded copies in docs/assets/video)
+can_we_convert_this_into_a_vid.mp4

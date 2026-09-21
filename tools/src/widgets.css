@@ -1,0 +1,22 @@
+/* Minimal utilities the widgets expect (subset of Bootstrap), scoped to the mount points. */
+.pw-widget { position: relative; }
+.pw-widget .mx-auto { margin-left: auto; margin-right: auto; }
+.pw-widget .position-relative { position: relative; }
+.pw-widget .w-100 { width: 100%; }
+.pw-widget .h-100 { height: 100%; }
+.pw-widget .row { display: flex; flex-wrap: wrap; }
+.pw-widget .col-12 { flex: 0 0 100%; max-width: 100%; }
+.pw-widget .d-flex { display: flex; }
+.pw-widget .justify-content-center { justify-content: center; }
+.pw-widget .py-5 { padding-top: 1rem; padding-bottom: 1rem; }
+.pw-widget .cursor-pointer { cursor: pointer; }
+.pw-widget .drop-shadow-2xl { filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)); }
+.pw-widget .text-center { text-align: center; }
+.pw-widget .small { font-size: 0.85em; }
+.pw-widget .opacity-50 { opacity: 0.5; }
+.pw-widget .font-monospace { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.pw-widget .overflow-hidden { overflow: hidden; }
+.pw-widget .mb-5 { margin-bottom: 2rem; }
+.pw-widget .mt-4 { margin-top: 1.5rem; }
+.pw-widget .px-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.pw-widget svg text { font-family: 'Raleway', sans-serif; }

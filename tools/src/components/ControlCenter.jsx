@@ -122,9 +122,9 @@ const ControlCenter = ({
                     />
 
                     {/* Inflation Adjustment Logic */}
-                    <div className="mt-4 p-4 rounded-4" style={{ background: 'rgba(255, 50, 50, 0.05)', border: '1px solid rgba(255, 50, 50, 0.2)' }}>
+                    <div className="mt-4 p-4 rounded-4" style={{ background: 'rgba(192, 80, 77, 0.05)', border: '1px solid rgba(192, 80, 77, 0.2)' }}>
                         <div className="mb-3 text-center">
-                            <div className="text-danger h3 fw-900 tracking-tighter uppercase mb-0" style={{ letterSpacing: '-1px' }}>The Ugly Truth</div>
+                            <div className="text-danger h3 fw-900 tracking-tighter uppercase mb-0" style={{ letterSpacing: '-1px' }}>The Hidden Cost of Inflation</div>
                         </div>
 
                         <div className="text-white-50 mb-4" style={{ lineHeight: '1.6', fontSize: '0.9rem' }}>
@@ -200,11 +200,11 @@ const ControlCenter = ({
     const renderAccumulation = () => (
         <div className="d-flex flex-column gap-5 mt-4">
             <div className="text-white-50 tiny uppercase tracking-widest mb-2" style={{ lineHeight: '1.6', fontSize: '0.65rem' }}>
-                THE BUILDING PHASE: GROWING YOUR WEALTH BY COMBINING REGULAR SAVINGS WITH THE RIGHT INVESTMENT STRATEGY TO REACH YOUR GOALS FASTER.
+                THE BUILDING PHASE: GROWING YOUR WEALTH THROUGH REGULAR SAVINGS AND AN INVESTMENT STRATEGY SUITED TO YOUR GOALS.
             </div>
             {/* Contribution Inputs */}
             <div>
-                <label className="font-monospace text-white-50 tiny uppercase tracking-widest mb-3 d-block text-center">CONTRIBUTION CALIBRATION</label>
+                <label className="font-monospace text-white-50 tiny uppercase tracking-widest mb-3 d-block text-center">CONTRIBUTIONS</label>
                 <div className="row g-3 mb-4">
                     <div className="col-6">
                         <label className="text-white-50 tiny uppercase tracking-widest mb-2 d-block">Monthly</label>
@@ -282,11 +282,11 @@ const ControlCenter = ({
     const renderDefense = () => ( // Renamed from renderProtection
         <div className="d-flex flex-column gap-5 mt-4">
             <div className="text-white-50 tiny uppercase tracking-widest mb-2" style={{ lineHeight: '1.6', fontSize: '0.65rem' }}>
-                PROTECTION PHASE: ENSURING YOUR WEALTH IS PRESERVED AND PROTECTED AGAINST MARKET VOLATILITY WHILE MAINTAINING GROWTH.
+                PROTECTION PHASE: SHIFTING TOWARD PRESERVING WHAT YOU HAVE BUILT, WHILE STILL ALLOWING FOR GROWTH.
             </div>
             {/* Contribution Inputs */}
             <div>
-                <label className="font-monospace text-white-50 tiny uppercase tracking-widest mb-3 d-block text-center">CONTRIBUTION CALIBRATION</label>
+                <label className="font-monospace text-white-50 tiny uppercase tracking-widest mb-3 d-block text-center">CONTRIBUTIONS</label>
                 <div className="row g-3 mb-4">
                     <div className="col-6">
                         <label className="text-white-50 tiny uppercase tracking-widest mb-2 d-block">Monthly</label>
@@ -365,7 +365,7 @@ const ControlCenter = ({
         return (
             <div className="d-flex flex-column gap-5 mt-4">
                 <div className="text-white-50 tiny uppercase tracking-widest mb-2" style={{ lineHeight: '1.6', fontSize: '0.65rem' }}>
-                    DISTRIBUTION PHASE: MANAGING YOUR CASH FLOW IN RETIREMENT TO ENSURE YOUR CAPITAL LASTS AS LONG AS YOU NEED IT.
+                    DISTRIBUTION PHASE: MANAGING YOUR CASH FLOW IN RETIREMENT TO HELP YOUR SAVINGS LAST AS LONG AS YOU NEED THEM.
                 </div>
 
                 {/* Planning Horizon */}
@@ -552,7 +552,7 @@ const ControlCenter = ({
                     pointerEvents: 'auto',
                     width: sidebarWidth,
                     maxWidth: sidebarWidth,
-                    background: '#050E1E'
+                    background: '#0B1730'
                 }}
             >
                 <motion.button
@@ -571,7 +571,7 @@ const ControlCenter = ({
                         zIndex: 2001,
                         cursor: 'grab',
                         touchAction: 'none',
-                        background: '#050E1E',
+                        background: '#0B1730',
                         borderRadius: isMobile ? '0 6px 6px 0' : '0 10px 10px 0',
                         padding: 0,
                         border: 'none',
@@ -735,7 +735,7 @@ const ControlCenter = ({
                     <div className="px-4 py-3 bg-black border-top border-white-5 text-start">
                         <div className="d-flex align-items-center gap-2 opacity-40">
                             <span className="fw-bold text-white small" style={{ letterSpacing: '1px' }}>PETTITT WEALTH</span>
-                            <span className="tiny text-white uppercase tracking-widest" style={{ fontSize: '0.6rem' }}>PLANNING SIMULATOR V2.4</span>
+                            <span className="tiny text-white uppercase tracking-widest" style={{ fontSize: '0.6rem' }}>PLANNING SIMULATOR</span>
                         </div>
                     </div>
                 </div>
@@ -848,7 +848,7 @@ const ControlCenter = ({
                     }
                 }
                 .control-center-tab {
-                    background: #050E1E;
+                    background: #0B1730;
                     border-radius: 0 10px 10px 0;
                     box-shadow: 10px 0 30px rgba(0,0,0,0.5);
                     user-select: none;
@@ -884,13 +884,13 @@ const ControlCenter = ({
                 }
                 .text-omega-orange { color: #F4C366 !important; }
                 .bg-omega-orange { background-color: #F4C366 !important; }
-                .text-blue-grey { color: #94A3B8 !important; }
+                .text-blue-grey { color: #AEB3C4 !important; }
                 .bg-black-40 { background-color: rgba(0,0,0,0.4) !important; }
                 .bg-black-60 { background-color: rgba(0,0,0,0.6) !important; }
                 .tiny { font-size: 0.7rem; }
                 .fw-900 { font-weight: 950 !important; }
                 .custom-accumulation-range {
-                    accent-color: #A855F7;
+                    accent-color: #AEB3C4;
                     height: 8px;
                 }
                 .custom-accumulation-range::-webkit-slider-runnable-track {
@@ -900,12 +900,12 @@ const ControlCenter = ({
                 .custom-accumulation-range::-webkit-slider-thumb {
                     width: 24px;
                     height: 24px;
-                    background: #A855F7;
+                    background: #AEB3C4;
                     border: 4px solid white;
                     border-radius: 50%;
                     -webkit-appearance: none;
                     margin-top: -8px;
-                    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+                    box-shadow: 0 0 15px rgba(174, 179, 196, 0.5);
                 }
                 .custom-scrollbar::-webkit-scrollbar { width: 4px; }
                 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }

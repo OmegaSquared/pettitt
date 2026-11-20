@@ -64,12 +64,12 @@ const DistributionMonteCarlo = ({
         mean: '#F4C366',
         path: isDark ? 'rgba(255, 255, 255, 0.04)' : 'rgba(0, 0, 0, 0.04)',
         band1: isDark ? 'rgba(244, 195, 102, 0.15)' : 'rgba(244, 195, 102, 0.08)',
-        band2: isDark ? 'rgba(124, 139, 176, 0.08)' : 'rgba(124, 139, 176, 0.04)',
+        band2: isDark ? 'rgba(142, 148, 168, 0.08)' : 'rgba(142, 148, 168, 0.04)',
         text: isDark ? '#f8f9fa' : '#0F1F35',
-        muted: isDark ? '#94a3b8' : '#64748b',
+        muted: isDark ? '#AEB3C4' : '#8E94A8',
         border: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)',
-        success: '#00ff64',
-        warning: '#ff4444'
+        success: '#6FA287',
+        warning: '#C0504D'
     };
 
 
@@ -289,7 +289,7 @@ const DistributionMonteCarlo = ({
 
         // 50% Mean Label (Added)
         const finalMeanLabel = `50% MEAN: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 2, notation: 'compact' }).format(simData.meanPath[numSteps])}`;
-        ctx.font = `bold ${labelFontSize}px "Outfit"`;
+        ctx.font = `bold ${labelFontSize}px "Raleway"`;
         const tWMean = ctx.measureText(finalMeanLabel).width;
         ctx.fillStyle = 'rgba(244, 195, 102, 0.4)';
         ctx.beginPath();
@@ -347,7 +347,7 @@ const DistributionMonteCarlo = ({
                 ctx.translate(x - 5, padding + 10);
                 ctx.rotate(-Math.PI / 2);
                 ctx.fillStyle = colors.muted;
-                ctx.font = 'bold 9px "Outfit"';
+                ctx.font = 'bold 9px "Raleway"';
                 ctx.textAlign = 'right';
                 ctx.fillText(marker.label, 0, 0);
                 ctx.restore();
@@ -361,7 +361,7 @@ const DistributionMonteCarlo = ({
             ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2);
             ctx.fillStyle = colors.mean; ctx.fill();
             ctx.fillStyle = colors.text;
-            ctx.font = 'bold 10px "Outfit"';
+            ctx.font = 'bold 10px "Raleway"';
             ctx.textAlign = align;
             ctx.fillText(label, x, y - 12);
         };
@@ -377,7 +377,7 @@ const DistributionMonteCarlo = ({
 
         // Label Box
         const label = `68% (-1SD) FLOOR: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 2, notation: 'compact' }).format(finalSd1)}`;
-        ctx.font = `bold ${labelFontSize}px "Outfit"`;
+        ctx.font = `bold ${labelFontSize}px "Raleway"`;
         const textWidth = ctx.measureText(label).width;
 
         ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
@@ -410,7 +410,7 @@ const DistributionMonteCarlo = ({
 
         // Distribution Label
         ctx.textAlign = 'center';
-        ctx.font = 'bold 12px "Outfit"';
+        ctx.font = 'bold 12px "Raleway"';
         ctx.fillStyle = colors.muted;
         ctx.fillText(`CASH FLOW SUSTAINABILITY: ${YEARS} YEAR HORIZON (TO AGE ${longevity})`, width / 2, height - padding / 2);
     };
@@ -459,8 +459,8 @@ const DistributionMonteCarlo = ({
             <div className="text-white-30 mb-3">
                 <span className="material-icons" style={{ fontSize: '3rem' }}>analytics</span>
             </div>
-            <h5 className="text-white mb-2">Awaiting Phase 3 Data</h5>
-            <p className="small text-white-50">Please complete the Stage 2 calibration to bridge the data into the Sustainability Phase.</p>
+            <h5 className="text-white mb-2">Step 3 Needs Your Earlier Inputs</h5>
+            <p className="small text-white-50">Please complete Step 2 so your results can carry into this step.</p>
         </div>
     );
 
@@ -515,7 +515,7 @@ const DistributionMonteCarlo = ({
             </div>
 
             <div className="glass-vibrant rounded-5 overflow-hidden border-white-10 shadow-2xl mc-chart-container position-relative"
-                style={{ background: '#050a18' }}>
+                style={{ background: '#0B1730' }}>
                 <canvas ref={canvasRef} style={{ display: 'block' }} />
 
                 <div className="position-absolute top-0 start-0 p-3 p-md-4">
@@ -532,7 +532,7 @@ const DistributionMonteCarlo = ({
 
                 <div className="position-absolute bottom-0 start-0 p-3 p-md-4">
                     <div className="glass-premium p-2 p-md-3 rounded-4 border-white-5 text-start">
-                        <div className="x-small text-muted font-monospace uppercase mb-1">STRATEGIC CASH FLOW</div>
+                        <div className="x-small text-muted font-monospace uppercase mb-1">ANNUAL CASH FLOW</div>
                         <div className="d-flex flex-column gap-1">
                             <div>
                                 <div className="tiny text-white-30 uppercase font-monospace" style={{ fontSize: '0.55rem' }}>

@@ -34,7 +34,7 @@ const LeadMagnet = ({ theme }) => {
             <div className="bg-glow-radial" style={{ opacity: 0.1, background: 'var(--accent-gradient)' }}></div>
 
             <div className="glass-vibrant p-5 rounded-5 border-orange-glow shadow-2xl position-relative mx-auto"
-                style={{ maxWidth: '1100px', background: 'rgba(13, 22, 41, 0.4)' }}>
+                style={{ maxWidth: '1100px', background: 'rgba(15, 31, 53, 0.4)' }}>
 
                 <div className="row align-items-center g-5 text-start">
                     <div className="col-lg-7">
@@ -67,7 +67,7 @@ const LeadMagnet = ({ theme }) => {
                                 <p className="tiny text-center text-muted mt-3 mb-0">No spam. Only institutional alerts.</p>
                             </form>
                         ) : (
-                            <div className="p-5 text-center rounded-4 border-blue-glow shadow-lg" style={{ background: 'rgba(124, 139, 176, 0.1)' }}>
+                            <div className="p-5 text-center rounded-4 border-blue-glow shadow-lg" style={{ background: 'rgba(142, 148, 168, 0.1)' }}>
                                 <span className="material-icons text-omega-light-blue mb-3" style={{ fontSize: '3rem' }}>verified</span>
                                 <h4 className="fw-bold text-white">Transmission Received</h4>
                                 <p className="text-muted small mb-0">The 2026 Guide is being dispatched to your inbox.</p>

@@ -315,7 +315,7 @@ def home():
     </div>
     <div class="wheel-wrap reveal" style="margin-top:1.5rem"><div data-widget="planning-wheel" data-theme="light"></div></div>
     <p class="small muted center">Hover or tap a segment to explore each step.</p>
-    <noscript><div class="steps" style="margin-top:2.5rem">{steps}</div></noscript>
+    <div class="steps steps-center" style="margin-top:2.5rem">{steps}</div>
   </div>
 </section>
 

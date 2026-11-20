@@ -5,11 +5,11 @@ const SequenceOfReturns = ({ theme }) => {
     const isDark = theme === 'dark-mode';
 
     const colors = {
-        badStart: '#ff4444',
-        goodStart: '#7C8BB0',
-        lowRisk: '#10b981', // Low Risk Green
+        badStart: '#C0504D',
+        goodStart: '#8E94A8',
+        lowRisk: '#6FA287', // Low Risk Green
         text: isDark ? '#f8f9fa' : '#0F1F35',
-        muted: isDark ? '#94a3b8' : '#64748b',
+        muted: isDark ? '#AEB3C4' : '#8E94A8',
         border: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
         grid: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)'
     };
@@ -107,11 +107,11 @@ const SequenceOfReturns = ({ theme }) => {
 
             // Label
             ctx.fillStyle = color;
-            ctx.font = `bold ${labelFontSize}px "Outfit"`;
+            ctx.font = `bold ${labelFontSize}px "Raleway"`;
             ctx.textAlign = 'left';
             const labelX = getX(YEARS) + (isMobileLocal ? 5 : 10);
             ctx.fillText(isMobileLocal ? label.split(' (')[0] : label, labelX, getY(finalVal));
-            ctx.font = `${amountFontSize}px "Outfit"`;
+            ctx.font = `${amountFontSize}px "Raleway"`;
             ctx.fillText(`Final: $${(finalVal / 1000000).toFixed(2)}M`, labelX, getY(finalVal) + (isMobileLocal ? 12 : 15));
         };
 
@@ -121,7 +121,7 @@ const SequenceOfReturns = ({ theme }) => {
 
         // Axis
         ctx.fillStyle = colors.text;
-        ctx.font = 'bold 14px "Outfit"';
+        ctx.font = 'bold 14px "Raleway"';
         ctx.textAlign = 'center';
         ctx.fillText("DISTRIBUTION HORIZON (YEARS 0-25)", width / 2, height - 30);
     };
@@ -150,7 +150,7 @@ const SequenceOfReturns = ({ theme }) => {
 
     return (
         <div className="mx-auto mb-5 ps-lg-4" style={{ width: '100%' }}>
-            <div className="container-glass p-3 p-md-4 rounded-5" style={{ height: window.innerWidth < 768 ? '500px' : '800px', background: isDark ? 'rgba(13, 22, 41, 0.4)' : 'rgba(255,255,255,0.02)', border: `1px solid ${colors.border}` }}>
+            <div className="container-glass p-3 p-md-4 rounded-5" style={{ height: window.innerWidth < 768 ? '500px' : '800px', background: isDark ? 'rgba(15, 31, 53, 0.4)' : 'rgba(255,255,255,0.02)', border: `1px solid ${colors.border}` }}>
                 <div className="d-flex justify-content-between mb-4 flex-wrap gap-2">
                     <div>
                         <h3 className="text-white h5 fw-bold mb-1" style={{ fontSize: window.innerWidth < 768 ? '1rem' : '1.25rem' }}>SEQUENCE OF RETURN RISK</h3>

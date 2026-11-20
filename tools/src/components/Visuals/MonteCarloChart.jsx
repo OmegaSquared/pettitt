@@ -37,12 +37,12 @@ const MonteCarloChart = ({ theme, diagnosticInputs, selectedGoals = {}, goalFund
     const mensalVol = (stdDev / 100) / Math.sqrt(12);
 
     const colors = {
-        mean: '#38BDF8',
+        mean: '#AEB3C4',
         path: isDark ? 'rgba(255, 255, 255, 0.04)' : 'rgba(0, 0, 0, 0.04)',
-        band1: isDark ? 'rgba(124, 139, 176, 0.15)' : 'rgba(124, 139, 176, 0.08)',
+        band1: isDark ? 'rgba(142, 148, 168, 0.15)' : 'rgba(142, 148, 168, 0.08)',
         band2: isDark ? 'rgba(244, 195, 102, 0.1)' : 'rgba(244, 195, 102, 0.05)',
         text: isDark ? '#f8f9fa' : '#0F1F35',
-        muted: isDark ? '#94a3b8' : '#64748b',
+        muted: isDark ? '#AEB3C4' : '#8E94A8',
         border: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)',
         goal: '#F4C366'
     };
@@ -277,7 +277,7 @@ const MonteCarloChart = ({ theme, diagnosticInputs, selectedGoals = {}, goalFund
             ctx.translate(x - 5, padding + 10);
             ctx.rotate(-Math.PI / 2);
             ctx.fillStyle = colors.muted;
-            ctx.font = '800 10px "Outfit"';
+            ctx.font = '800 10px "Raleway"';
             ctx.textAlign = 'right';
             ctx.fillText(label, 0, 0);
             ctx.restore();
@@ -323,13 +323,13 @@ const MonteCarloChart = ({ theme, diagnosticInputs, selectedGoals = {}, goalFund
 
                 // Probability Label
                 ctx.fillStyle = metricColor;
-                ctx.font = `800 ${labelFontSize}px "Outfit"`;
+                ctx.font = `800 ${labelFontSize}px "Raleway"`;
                 ctx.textAlign = align;
                 ctx.fillText(t.label.toUpperCase(), xPos + offset, t.y - 4);
 
                 // Amount/Value
                 ctx.fillStyle = metricColor;
-                ctx.font = `800 ${amountFontSize}px "Outfit"`;
+                ctx.font = `800 ${amountFontSize}px "Raleway"`;
                 ctx.textAlign = align;
                 const formattedValue = new Intl.NumberFormat('en-US', {
                     style: 'currency',
@@ -390,7 +390,7 @@ const MonteCarloChart = ({ theme, diagnosticInputs, selectedGoals = {}, goalFund
 
             // Label on the left side of the chart
             ctx.fillStyle = colors.goal;
-            ctx.font = '800 10px "Outfit"';
+            ctx.font = '800 10px "Raleway"';
             ctx.textAlign = 'left';
             const labelText = t.label.toUpperCase();
             const probText = t.probability !== undefined ? ` // ${t.probability}% PROBABILITY` : '';
@@ -402,14 +402,14 @@ const MonteCarloChart = ({ theme, diagnosticInputs, selectedGoals = {}, goalFund
                 maximumFractionDigits: 1,
                 notation: 'compact'
             }).format(t.value);
-            ctx.font = isMobileLocal ? '800 12px "Outfit"' : '800 14px "Outfit"';
+            ctx.font = isMobileLocal ? '800 12px "Raleway"' : '800 14px "Raleway"';
             ctx.fillText(formattedVal, padding + 15, y + 14);
         });
 
         // --- Time Horizon Label ---
         if (!isMobileLocal) {
             ctx.textAlign = 'center';
-            ctx.font = 'bold 12px "Outfit"';
+            ctx.font = 'bold 12px "Raleway"';
             ctx.fillStyle = colors.muted;
             const footerLabel = doesNotApply ? 'SAMPLE SIMULATION (REFERENCE ONLY)' : `ROADMAP TO RETIREMENT: ${YEARS} YEARS (TWO-REGIME PROBABILITY MODEL)`;
             ctx.fillText(footerLabel, width / 2, height - padding / 2);
@@ -457,7 +457,7 @@ const MonteCarloChart = ({ theme, diagnosticInputs, selectedGoals = {}, goalFund
         return (
             <div ref={visibilityRef} className="mx-auto" style={{ width: '100%', height: '700px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.1)', borderRadius: '30px', border: '1px solid var(--omega-border)' }}>
                 <div className="w-100 text-center text-muted font-monospace opacity-50 uppercase tracking-widest">
-                    Initializing Compass Simulation...
+                    Loading the Compass simulation...
                 </div>
             </div>
         );
@@ -468,7 +468,7 @@ const MonteCarloChart = ({ theme, diagnosticInputs, selectedGoals = {}, goalFund
         <div ref={visibilityRef} className="mx-auto" style={{ width: '100%' }}>
             <div className="mb-4 text-start font-monospace tracking-widest uppercase opacity-80">
                 <div className="h5 fw-900 text-white mb-1" style={{ letterSpacing: '2px' }}>
-                    THE COMPASS ACCUMULATION & DEFENSE SIMULATION
+                    THE COMPASS: GROWTH AND PROTECTION SIMULATION
                 </div>
                 {!doesNotApply && (
                     <div className="d-none d-md-block d-flex flex-column gap-2">
@@ -515,7 +515,7 @@ const MonteCarloChart = ({ theme, diagnosticInputs, selectedGoals = {}, goalFund
             </div>
 
             <div className="glass-vibrant rounded-5 overflow-hidden border-white-10 shadow-2xl mc-chart-container position-relative"
-                style={{ background: '#050a18' }}>
+                style={{ background: '#0B1730' }}>
                 <canvas ref={canvasRef} style={{ display: 'block' }} />
             </div>
             <div className="text-center mt-3 small text-white-30 font-monospace">
@@ -524,7 +524,7 @@ const MonteCarloChart = ({ theme, diagnosticInputs, selectedGoals = {}, goalFund
             <div className="text-center mt-2 mx-auto text-white-20 px-3" style={{ maxWidth: '800px', fontSize: '0.75rem', lineHeight: '1.6', letterSpacing: '0.5px' }}>
                 TECHNICAL DISCLOSURE: 1,000 iterations provide a probabilistic projection but carry inherent statistical risk and variance.
                 This simulation is for educational purposes only and should not be considered a guarantee of actual results.
-                Institutional-grade modeling typically requires 1,000+ iterations for precise calibration.
+                Results vary from run to run, and no simulation can predict actual outcomes.
             </div>
             <div className="text-center mt-2">
                 <MonteCarloDisclosure />

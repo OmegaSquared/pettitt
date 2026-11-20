@@ -2,68 +2,68 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const SixStagesCanvas = ({ theme }) => {
     const canvasRef = useRef(null);
-    const [hoveredStage, setHoveredStage] = useState(5); // Recession default focal point
+    const [hoveredStage, setHoveredStage] = useState(0); // start at stage 1; no stage is presented as the current one
     const isDark = theme === 'dark-mode';
 
     const stages = [
         {
             label: "Recovery",
-            desc: "Economy stabilizes after a recession. Corporate earnings and consumer confidence begin a slow climb.",
+            desc: "The economy stabilizes after a recession. Earnings and consumer confidence begin a slow climb.",
             static: { eq: 60, bd: 40, cs: 0 },
             dynamic: { eq: 80, bd: 20, cs: 0 },
-            color: '#F4C366', // Orange
-            colorLight: 'rgba(244, 195, 102, 0.6)'
+            color: '#F5F1EB', // Isabella Cream
+            colorLight: 'rgba(245, 241, 235, 0.6)'
         },
         {
             label: "Early Expansion",
-            desc: "Growth accelerates as credit expands and production increases. A strong environment for risk-on assets.",
+            desc: "Growth accelerates as credit expands and production increases. Historically a strong environment for risk assets.",
             static: { eq: 60, bd: 40, cs: 0 },
             dynamic: { eq: 70, bd: 30, cs: 0 },
-            color: '#C9D3EA', // Light Blue
-            colorLight: 'rgba(169, 197, 230, 0.6)'
+            color: '#D3D6DD', // Independence tint (light)
+            colorLight: 'rgba(211, 214, 221, 0.6)'
         },
         {
             label: "Mid Expansion",
-            desc: "The economy reaches full stride. Corporate profitability is high, and credit is widely available.",
+            desc: "The economy reaches full stride. Profitability is high and credit is widely available.",
             static: { eq: 60, bd: 40, cs: 0 },
             dynamic: { eq: 60, bd: 40, cs: 0 },
-            color: '#7C8BB0', // PETTITT WEALTH Blue
-            colorLight: 'rgba(124, 139, 176, 0.6)'
+            color: '#AEB3C4', // Independence tint
+            colorLight: 'rgba(174, 179, 196, 0.6)'
         },
         {
             label: "Late Expansion",
             desc: "Growth slows and inflation begins to rise. Risks shift as the cycle nears its historical peak.",
             static: { eq: 60, bd: 40, cs: 0 },
             dynamic: { eq: 50, bd: 50, cs: 0 },
-            color: '#64748b', // Slate
-            colorLight: 'rgba(100, 116, 139, 0.6)'
+            color: '#8E94A8', // Independence tint (deep)
+            colorLight: 'rgba(142, 148, 168, 0.6)'
         },
         {
             label: "Approaching Recession",
-            desc: "Indicators reach their zenith and begin to roll over. Transitioning to defensive layering is critical.",
+            desc: "Indicators peak and begin to roll over. Shifting toward defensive positioning becomes important.",
             static: { eq: 60, bd: 40, cs: 0 },
             dynamic: { eq: 40, bd: 40, cs: 20 },
-            color: '#F9A36C', // Light Orange
-            colorLight: 'rgba(249, 163, 108, 0.6)'
+            color: '#F4C366', // Medium Yellow
+            colorLight: 'rgba(244, 195, 102, 0.6)'
         },
         {
             label: "Recession",
-            desc: "A period of contraction and peak uncertainty. Focus shifts entirely to capital preservation and liquidity.",
+            desc: "A period of contraction and peak uncertainty. Focus shifts to capital preservation and liquidity.",
             static: { eq: 60, bd: 40, cs: 0 },
             dynamic: { eq: 0, bd: 50, cs: 50 },
-            color: '#D36B2C', // Deep Orange
-            colorLight: 'rgba(211, 107, 44, 0.6)'
+            color: '#C9962E', // Gold (deep)
+            colorLight: 'rgba(201, 150, 46, 0.6)'
         }
     ];
 
     const colors = {
         equities: '#F4C366',
-        bonds: isDark ? '#3B82F6' : '#7C8BB0',
-        cash: isDark ? '#94a3b8' : '#64748b',
-        text: isDark ? '#f8f9fa' : '#0F1F35',
-        muted: isDark ? '#94a3b8' : '#475569',
+        bonds: isDark ? '#8E94A8' : '#515A79',
+        cash: isDark ? '#D3D6DD' : '#8E94A8',
+        text: isDark ? '#F5F1EB' : '#0F1F35',
+        muted: isDark ? '#AEB3C4' : '#515A79',
         border: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
-        canvasBg: isDark ? '#030a16' : '#ffffff'
+        canvasBg: isDark ? '#0B1730' : '#ffffff'
     };
 
     const drawPie = (ctx, x, y, radius, data, title) => {
@@ -81,7 +81,7 @@ const SixStagesCanvas = ({ theme }) => {
 
         ctx.beginPath();
         ctx.arc(x, y, radius, 0, Math.PI * 2);
-        ctx.fillStyle = isDark ? '#1e293b' : '#ffffff';
+        ctx.fillStyle = isDark ? '#162C49' : '#ffffff';
         ctx.fill();
         ctx.restore();
 
@@ -108,7 +108,7 @@ const SixStagesCanvas = ({ theme }) => {
         ctx.fill();
 
         // Title
-        ctx.font = `700 14px "Outfit", sans-serif`;
+        ctx.font = `700 14px "Raleway", sans-serif`;
         ctx.fillStyle = colors.text;
         ctx.textAlign = 'center';
         ctx.fillText(title.toUpperCase(), x, y + radius + 35);
@@ -136,7 +136,7 @@ const SixStagesCanvas = ({ theme }) => {
         // --- 2. Legend / Distribution Info ---
         const current = stages[hoveredStage].dynamic;
         ctx.textAlign = 'left';
-        ctx.font = `600 ${isMobile ? '12px' : '14px'} "Outfit", sans-serif`;
+        ctx.font = `600 ${isMobile ? '12px' : '14px'} "Raleway", sans-serif`;
         const legendX = isMobile ? padding : padding + 360;
         const legendYBase = isMobile ? chartY + 100 : chartY - 30;
 
@@ -161,11 +161,11 @@ const SixStagesCanvas = ({ theme }) => {
         const finalDescX = isMobile ? padding : descX;
 
         ctx.fillStyle = colors.equities;
-        ctx.font = `700 ${isMobile ? '20px' : '28px'} "Outfit", sans-serif`;
+        ctx.font = `700 ${isMobile ? '20px' : '28px'} "Raleway", sans-serif`;
         ctx.fillText(stages[hoveredStage].label, finalDescX, descY);
 
         ctx.fillStyle = colors.muted;
-        ctx.font = `400 ${isMobile ? '13px' : '16px'} "Outfit", sans-serif`;
+        ctx.font = `400 ${isMobile ? '13px' : '16px'} "Raleway", sans-serif`;
         const words = stages[hoveredStage].desc.split(' ');
         let line = '';
         let lineCount = 0;
@@ -225,7 +225,7 @@ const SixStagesCanvas = ({ theme }) => {
             }
 
             ctx.textAlign = 'center';
-            ctx.font = `700 ${h ? '18px' : '15px'} "Outfit", sans-serif`;
+            ctx.font = `700 ${h ? '18px' : '15px'} "Raleway", sans-serif`;
             ctx.fillStyle = h ? colors.text : colors.muted;
 
             const labelY = height - 20;
@@ -243,13 +243,13 @@ const SixStagesCanvas = ({ theme }) => {
             if (x === padding) ctx.moveTo(x, getCurveY(x));
             else ctx.lineTo(x, getCurveY(x));
         }
-        ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(124, 139, 176, 0.4)';
+        ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(142, 148, 168, 0.4)';
         ctx.lineWidth = 4;
         ctx.stroke();
 
         // Allocation Disclosure (Bottom Center)
         ctx.textAlign = 'center';
-        ctx.font = 'italic 400 12px "Outfit", sans-serif';
+        ctx.font = 'italic 400 12px "Raleway", sans-serif';
         ctx.fillStyle = colors.muted;
         ctx.fillText("* Allocations are illustrative of strategy philosophy and not actual portfolio holdings.", width / 2, height - 70);
     };
@@ -321,7 +321,7 @@ const SixStagesCanvas = ({ theme }) => {
             </div>
 
             <div className="text-center mt-4 opacity-50 small font-monospace px-4" style={{ color: colors.muted, fontSize: '0.7rem' }}>
-                — ANALYZE PORTFOLIO ADAPTATION ACROSS THE ECONOMIC CYCLE —
+                — SELECT A STAGE TO SEE ILLUSTRATIVE POSITIONING —
             </div>
         </div>
     );

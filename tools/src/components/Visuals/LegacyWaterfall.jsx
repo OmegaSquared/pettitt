@@ -30,14 +30,14 @@ const LegacyWaterfall = ({ theme, allocations, bridgedWealth = 0 }) => {
     const isDark = theme === 'dark-mode';
 
     const colors = {
-        water: '#7C8BB0', // PETTITT WEALTH Blue
-        mist: '#C9D3EA', // Light Blue
+        water: '#8E94A8', // PETTITT WEALTH Blue
+        mist: '#D3D6DD', // Light Blue
         reservoir: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)',
         text: isDark ? '#f8f9fa' : '#0F1F35',
-        muted: isDark ? '#94a3b8' : '#64748b',
+        muted: isDark ? '#AEB3C4' : '#8E94A8',
         border: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
         accent: '#F4C366', // PETTITT WEALTH Orange
-        danger: '#ff3b3b'
+        danger: '#C0504D'
     };
 
     // Organized layout for reservoirs
@@ -249,7 +249,7 @@ const LegacyWaterfall = ({ theme, allocations, bridgedWealth = 0 }) => {
                 ctx.fillText("warning", rx, ry + 12);
 
                 ctx.fillStyle = colors.accent;
-                ctx.font = 'bold 10px "Outfit", sans-serif';
+                ctx.font = 'bold 10px "Raleway", sans-serif';
                 ctx.fillText("DEPLETED", rx, ry - 15);
             }
 
@@ -267,7 +267,7 @@ const LegacyWaterfall = ({ theme, allocations, bridgedWealth = 0 }) => {
 
             // Label
             ctx.fillStyle = colors.text;
-            ctx.font = `bold ${isMobile ? '8px' : '12px'} "Outfit", sans-serif`;
+            ctx.font = `bold ${isMobile ? '8px' : '12px'} "Raleway", sans-serif`;
             ctx.textAlign = 'center';
 
             const labelLines = isMobile && res.label.length > 15 ? res.label.split(' ') : [res.label];
@@ -282,19 +282,19 @@ const LegacyWaterfall = ({ theme, allocations, bridgedWealth = 0 }) => {
             const allocationText = amount > 0 ? `$${(amount / 1000000).toFixed(2)}M` : (res.id === 'engine' ? (isZeroBalance ? 'INSUFFICIENT CAPITAL' : '$0.00M') : 'WAITING FOR FLOW');
 
             ctx.fillStyle = colors.muted;
-            ctx.font = '500 10px "Outfit", sans-serif';
+            ctx.font = '500 10px "Raleway", sans-serif';
             ctx.fillText(allocationText, rx, ry + rSize / 2 + (isMobile ? 32 : 60));
         });
 
         // --- Narrative Punchline ---
         ctx.textAlign = isMobile ? 'center' : 'left';
         ctx.fillStyle = colors.text;
-        ctx.font = `800 ${isMobile ? '18px' : '32px'} "Outfit", sans-serif`;
+        ctx.font = `800 ${isMobile ? '18px' : '32px'} "Raleway", sans-serif`;
         ctx.fillText("Physics of Wealth Transfer.", isMobile ? width / 2 : padding, isMobile ? 35 : 80);
 
         if (!isMobile) {
             ctx.fillStyle = colors.muted;
-            ctx.font = '400 16px "Outfit", sans-serif';
+            ctx.font = '400 16px "Raleway", sans-serif';
             ctx.fillText("Watch your core engine fuel multi-generational legacy in real-time.", padding, 110);
         }
     };
@@ -362,7 +362,7 @@ const LegacyWaterfall = ({ theme, allocations, bridgedWealth = 0 }) => {
                 style={{
                     width: '100%',
                     height: 'clamp(500px, 80vh, 800px)',
-                    background: isDark ? 'rgba(13, 22, 41, 0.4)' : 'rgba(255,255,255,0.02)',
+                    background: isDark ? 'rgba(15, 31, 53, 0.4)' : 'rgba(255,255,255,0.02)',
                     borderRadius: '30px',
                     border: `1px solid ${colors.border}`,
                     backdropFilter: 'blur(20px)',

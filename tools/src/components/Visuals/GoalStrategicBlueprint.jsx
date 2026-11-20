@@ -146,8 +146,8 @@ const GoalStrategicBlueprint = ({ theme, selectedGoals = {}, onToggleGoal }) => 
                                     onClick={() => onToggleGoal(goal.id, isSelected ? null : true)}
                                     style={{
                                         borderRadius: '12px',
-                                        backgroundColor: isSelected ? 'rgba(244, 195, 102,0.15)' : 'rgba(0,43,91,0.85)',
-                                        border: isSelected ? '2px solid #F4C366' : '1px solid rgba(169,197,230,0.45)',
+                                        backgroundColor: isSelected ? 'rgba(244, 195, 102,0.15)' : 'rgba(22, 44, 73,0.85)',
+                                        border: isSelected ? '2px solid #F4C366' : '1px solid rgba(211, 214, 221,0.45)',
                                         cursor: 'pointer',
                                         boxShadow: isSelected ? '0 0 30px rgba(244, 195, 102,0.2)' : 'none',
                                         display: 'flex',
@@ -168,7 +168,7 @@ const GoalStrategicBlueprint = ({ theme, selectedGoals = {}, onToggleGoal }) => 
 
                                     {/* Schematic Icon */}
                                     <div style={{ width: '84%', height: '84%', opacity: 1, position: 'relative' }}>
-                                        <BlueprintSketch type={goal.icon} color={isSelected ? '#F4C366' : '#DCE8F7'} />
+                                        <BlueprintSketch type={goal.icon} color={isSelected ? '#F4C366' : '#F5F1EB'} />
                                     </div>
 
                                     {/* Corner Technical Marks (More subtle) */}
@@ -201,7 +201,7 @@ const GoalStrategicBlueprint = ({ theme, selectedGoals = {}, onToggleGoal }) => 
                 .marker-br { bottom: 8px; right: 8px; border-left: 0; border-top: 0; }
                 
                 .blueprint-card.selected .marker { border-color: #F4C366; opacity: 0.8; }
-                :global(.goal-blueprint-container .op-blueprint-svg) { overflow: visible; filter: drop-shadow(0 0 4px rgba(169,197,230,0.35)); }
+                :global(.goal-blueprint-container .op-blueprint-svg) { overflow: visible; filter: drop-shadow(0 0 4px rgba(211, 214, 221,0.35)); }
                 .z-index-1 { z-index: 1; }
                 
                 .form-control::placeholder { color: rgba(255,255,255,0.3); }

@@ -12,8 +12,8 @@ const TickerTape = ({ position = 'fixed-bottom', isDark = true }) => {
     ];
 
     const spxTrend = symbols.find(s => s.symbol === 'SPX')?.trend || 'up';
-    const borderColor = spxTrend === 'up' ? '#156082' : '#F4C366';
-    const shadowColor = spxTrend === 'up' ? 'rgba(21, 96, 130, 0.2)' : 'rgba(244, 195, 102, 0.15)';
+    const borderColor = spxTrend === 'up' ? '#515A79' : '#F4C366';
+    const shadowColor = spxTrend === 'up' ? 'rgba(81, 90, 121, 0.2)' : 'rgba(244, 195, 102, 0.15)';
 
     // Double the symbols to ensure seamless looping
     const displaySymbols = [...symbols, ...symbols];
@@ -21,7 +21,7 @@ const TickerTape = ({ position = 'fixed-bottom', isDark = true }) => {
     const getPositionStyles = () => {
         if (position === 'inline') return {
             height: '45px',
-            background: 'rgba(13, 22, 41, 0.98)',
+            background: 'rgba(15, 31, 53, 0.98)',
             backdropFilter: 'blur(15px)',
             borderTop: `2px solid ${borderColor}`,
             borderRadius: '8px',
@@ -30,7 +30,7 @@ const TickerTape = ({ position = 'fixed-bottom', isDark = true }) => {
 
         return {
             height: '45px',
-            background: 'rgba(13, 22, 41, 0.98)',
+            background: 'rgba(15, 31, 53, 0.98)',
             backdropFilter: 'blur(15px)',
             borderTop: position === 'fixed-bottom' ? `2px solid ${borderColor}` : 'none',
             borderBottom: position === 'fixed-top' ? `2px solid ${borderColor}` : 'none',
@@ -67,7 +67,7 @@ const TickerTape = ({ position = 'fixed-bottom', isDark = true }) => {
                 <div className="px-3 h-100 d-flex align-items-center border-end border-white border-opacity-10" style={{
                     position: 'relative',
                     zIndex: 20,
-                    background: 'rgba(13, 22, 41, 1)',
+                    background: 'rgba(15, 31, 53, 1)',
                     boxShadow: '10px 0 20px rgba(0,0,0,0.5)',
                     whiteSpace: 'nowrap'
                 }}>
@@ -98,7 +98,7 @@ const TickerTape = ({ position = 'fixed-bottom', isDark = true }) => {
                 <div className="px-3 h-100 d-flex align-items-center gap-2 border-start border-white border-opacity-10" style={{
                     position: 'relative',
                     zIndex: 20,
-                    background: 'rgba(13, 22, 41, 1)',
+                    background: 'rgba(15, 31, 53, 1)',
                     boxShadow: '-10px 0 20px rgba(0,0,0,0.5)',
                     whiteSpace: 'nowrap'
                 }}>

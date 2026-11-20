@@ -10,11 +10,11 @@ const TaxAlphaBridge = ({ theme }) => {
 
     const colors = {
         pillar: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)',
-        pillarActive: '#7C8BB0', // PETTITT WEALTH Blue
-        leak: '#ff4444',
-        shield: '#C9D3EA', // Light Blue
+        pillarActive: '#8E94A8', // PETTITT WEALTH Blue
+        leak: '#C0504D',
+        shield: '#D3D6DD', // Light Blue
         text: isDark ? '#f8f9fa' : '#0F1F35',
-        muted: isDark ? '#94a3b8' : '#64748b',
+        muted: isDark ? '#AEB3C4' : '#8E94A8',
         accent: '#F4C366' // PETTITT WEALTH Orange
     };
 
@@ -61,12 +61,12 @@ const TaxAlphaBridge = ({ theme }) => {
 
             // Label
             ctx.fillStyle = colors.text;
-            ctx.font = 'bold 18px "Outfit", sans-serif';
+            ctx.font = 'bold 18px "Raleway", sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText(label, x + pWidth / 2, baselineY + 40);
 
             ctx.fillStyle = isActive ? colors.accent : colors.muted;
-            ctx.font = 'bold 28px "Outfit", sans-serif';
+            ctx.font = 'bold 28px "Raleway", sans-serif';
             ctx.fillText(value, x + pWidth / 2, baselineY - h - 25);
         };
 
@@ -113,7 +113,7 @@ const TaxAlphaBridge = ({ theme }) => {
             ctx.globalAlpha = 1.0;
 
             ctx.fillStyle = colors.leak;
-            ctx.font = '900 13px "Outfit", sans-serif';
+            ctx.font = '900 13px "Raleway", sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText("TAX FRICTION LEAK", cp1x, baselineY - 20);
         } else {
@@ -134,7 +134,7 @@ const TaxAlphaBridge = ({ theme }) => {
             ctx.restore();
 
             ctx.fillStyle = colors.shield;
-            ctx.font = 'bold 15px "Outfit", sans-serif';
+            ctx.font = 'bold 15px "Raleway", sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText("TAX ALPHA PROTOCOL ACTIVE", cp1x, baselineY - pHeightStart / 2 + 20);
         }
@@ -143,16 +143,16 @@ const TaxAlphaBridge = ({ theme }) => {
         ctx.textAlign = 'left';
         if (!strategyActive) {
             ctx.fillStyle = colors.leak;
-            ctx.font = '900 28px "Outfit", sans-serif';
+            ctx.font = '900 28px "Raleway", sans-serif';
             ctx.fillText("PROBLEM: UNPROTECTED VELOCITY.", padding, 200);
         } else {
             ctx.fillStyle = colors.pillarActive;
-            ctx.font = '900 28px "Outfit", sans-serif';
+            ctx.font = '900 28px "Raleway", sans-serif';
             ctx.fillText("SOLUTION: TAX EFFICIENCY.", padding, 200);
         }
 
         ctx.fillStyle = colors.muted;
-        ctx.font = '400 16px "Outfit", sans-serif';
+        ctx.font = '400 16px "Raleway", sans-serif';
         ctx.fillText(strategyActive
             ? "PETTITT WEALTH capture of friction redirects leakage back into the estate architecture."
             : "Without proactive defense, secondary and tertiary taxes erode your compounding base.", padding, 230);
@@ -211,7 +211,7 @@ const TaxAlphaBridge = ({ theme }) => {
                 style={{
                     width: '100%',
                     height: '750px',
-                    background: isDark ? 'rgba(13, 22, 41, 0.4)' : 'rgba(255,255,255,0.02)',
+                    background: isDark ? 'rgba(15, 31, 53, 0.4)' : 'rgba(255,255,255,0.02)',
                     borderRadius: '40px',
                     border: `1px solid ${colors.border}`,
                     backdropFilter: 'blur(20px)',

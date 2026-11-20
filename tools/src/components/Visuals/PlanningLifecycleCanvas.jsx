@@ -71,39 +71,39 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
     const phases = [
         {
             label: "Accumulation",
-            subtitle: "STRATEGIC GROWTH",
-            desc: "Focus on maximum capital efficiency and systematic wealth creation. Identifying high-asymmetry opportunities while time is the primary leverage.",
+            subtitle: "GROWTH",
+            desc: "Building wealth steadily through regular saving and investing, while time is on your side.",
             focus: "Compound Growth",
-            tactics: ["Tax-Efficient Saving", "Aggressive Reinvestment", "Risk-Aware Allocation"],
-            color: '#C9D3EA', // Light Blue
-            colorGlow: 'rgba(169, 197, 230, 0.4)'
+            tactics: ["Regular Saving", "Reinvesting Growth", "Risk-Aware Allocation"],
+            color: '#D3D6DD', // Light Blue
+            colorGlow: 'rgba(211, 214, 221, 0.4)'
         },
         {
             label: "Protection",
-            subtitle: "ASSET DEFENSE",
-            desc: "The critical pivot where protecting capital becomes as important as growing it. Locking in gains and insulating legacy from cyclical volatility.",
-            focus: "Capital Protection",
-            tactics: ["Defensive Layering", "Estate Architecture", "Volatility Dampening"],
+            subtitle: "PRESERVATION",
+            desc: "The point where protecting what you have built becomes as important as growing it.",
+            focus: "Capital Preservation",
+            tactics: ["Reducing Risk Over Time", "Insurance Review", "Estate Coordination"],
             color: '#F4C366', // PETTITT WEALTH Orange
             colorGlow: 'rgba(244, 195, 102, 0.4)'
         },
         {
             label: "Distribution",
-            subtitle: "LEGACY GOAL",
-            desc: "Converting wealth into a sustainable, tax-optimized engine for lifestyle and legacy. Ensuring capital is treated best as it transitions to the next generation.",
+            subtitle: "INCOME & LEGACY",
+            desc: "Turning savings into retirement income while keeping your legacy goals in view.",
             focus: "Income & Impact",
-            tactics: ["Tax Arbitrage", "Philanthropic Strategy", "Multi-Gen Transfer"],
-            color: '#7C8BB0', // PETTITT WEALTH Blue
-            colorGlow: 'rgba(124, 139, 176, 0.4)'
+            tactics: ["Withdrawal Planning", "Charitable Goals", "Legacy Coordination"],
+            color: '#8E94A8', // PETTITT WEALTH Blue
+            colorGlow: 'rgba(142, 148, 168, 0.4)'
         }
     ];
 
     const colors = {
         text: isDark ? '#f8f9fa' : '#0F1F35',
-        muted: isDark ? '#94a3b8' : '#64748b',
+        muted: isDark ? '#AEB3C4' : '#8E94A8',
         border: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
         white: '#ffffff',
-        cyan: '#00ffff'
+        cyan: '#F7D384'
     };
 
     const draw = (ctx, width, height) => {
@@ -202,16 +202,11 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
             // Phase Labels on Curve (DESKTOP ONLY to prevent overlap)
             if (!isMobile) {
                 ctx.textAlign = 'center';
-                ctx.font = `bold ${isMobile ? '14px' : '18px'} "Outfit", sans-serif`;
+                ctx.font = `bold ${isMobile ? '14px' : '18px'} "Raleway", sans-serif`;
                 ctx.fillStyle = colors.white;
                 ctx.fillText(phase.label.toUpperCase(), pt.x, pt.y - (isMobile ? 25 : 35));
             }
 
-            if (!isMobile) {
-                ctx.font = '8px font-monospace';
-                ctx.fillStyle = colors.muted;
-                ctx.fillText(`COORD: ${pt.x.toFixed(1)} / ${pt.y.toFixed(1)}`, pt.x, pt.y + 25);
-            }
         });
 
         // --- 5. Draw Tactical Detail Overlay (Top Left - DESKTOP ONLY) ---
@@ -222,15 +217,15 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
         if (!isMobile) {
             ctx.textAlign = 'left';
             ctx.fillStyle = activePhase.color;
-            ctx.font = `800 ${isMobile ? '12px' : '14px'} "Outfit", sans-serif`;
+            ctx.font = `800 ${isMobile ? '12px' : '14px'} "Raleway", sans-serif`;
             ctx.fillText(activePhase.subtitle, detailX, detailY);
 
             ctx.fillStyle = colors.text;
-            ctx.font = `700 ${isMobile ? '22px' : '32px'} "Outfit", sans-serif`;
+            ctx.font = `700 ${isMobile ? '22px' : '32px'} "Raleway", sans-serif`;
             ctx.fillText(activePhase.label, detailX, detailY + (isMobile ? 25 : 45));
 
             ctx.fillStyle = colors.muted;
-            ctx.font = `400 ${isMobile ? '14px' : '17px'} "Outfit", sans-serif`;
+            ctx.font = `400 ${isMobile ? '14px' : '17px'} "Raleway", sans-serif`;
             const words = activePhase.desc.split(' ');
             let line = '';
             let lineCount = 0;
@@ -254,8 +249,8 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
         if (!isMobile) {
             const prioY = height - (isMobile ? 120 : 80);
             ctx.fillStyle = colors.text;
-            ctx.font = `700 ${isMobile ? '13px' : '16px'} "Outfit", sans-serif`;
-            ctx.fillText("TACTICAL PRIORITIES:", detailX, isMobile ? prioY - 10 : prioY);
+            ctx.font = `700 ${isMobile ? '13px' : '16px'} "Raleway", sans-serif`;
+            ctx.fillText("PRIORITIES:", detailX, isMobile ? prioY - 10 : prioY);
 
             activePhase.tactics.forEach((tactic, i) => {
                 const tx = isMobile ? detailX : detailX + (i * 250);
@@ -265,7 +260,7 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
                 ctx.fillStyle = activePhase.color;
                 ctx.fill();
                 ctx.fillStyle = colors.text;
-                ctx.font = `500 ${isMobile ? '13px' : '17px'} "Outfit", sans-serif`;
+                ctx.font = `500 ${isMobile ? '13px' : '17px'} "Raleway", sans-serif`;
                 ctx.fillText(tactic, tx + 18, ty);
             });
         }
@@ -273,12 +268,12 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
         // --- 7. AXIS LABELS ---
         if (!isMobile) {
             ctx.textAlign = 'center';
-            ctx.font = 'bold 12px "Outfit", sans-serif';
+            ctx.font = 'bold 12px "Raleway", sans-serif';
             ctx.fillStyle = colors.muted;
             ctx.save();
             ctx.translate(30, height / 2);
             ctx.rotate(-Math.PI / 2);
-            ctx.fillText("ASSET MAGNITUDE (NAV)", 0, 0);
+            ctx.fillText("PORTFOLIO VALUE", 0, 0);
             ctx.restore();
             // Axis label at very bottom
             ctx.fillText("THE WEALTH LIFE CYCLE JOURNEY", width / 2, height - 12);
@@ -294,30 +289,30 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
 
             ctx.save();
             ctx.shadowBlur = isMobile ? 20 : 40;
-            ctx.shadowColor = '#00ffff';
+            ctx.shadowColor = '#F7D384';
             ctx.setLineDash([]);
             ctx.beginPath();
             ctx.arc(pt.x, pt.y, isMobile ? 10 : 18, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 255, 255, 0.8)';
+            ctx.fillStyle = 'rgba(247, 211, 132, 0.8)';
             ctx.fill();
 
             const pulse = (Math.sin(Date.now() / 300) + 1) / 2;
             ctx.beginPath();
             ctx.arc(pt.x, pt.y, (isMobile ? 14 : 25) + pulse * (isMobile ? 5 : 10), 0, Math.PI * 2);
-            ctx.strokeStyle = 'rgba(0, 255, 255, 0.3)';
+            ctx.strokeStyle = 'rgba(247, 211, 132, 0.3)';
             ctx.lineWidth = 2;
             ctx.stroke();
             ctx.restore();
 
             // Coordinate Label
             ctx.textAlign = 'left';
-            ctx.font = `bold ${isMobile ? '9px' : '14px'} "Outfit"`;
-            ctx.fillStyle = '#00ffff';
-            ctx.fillText("CURRENT POSITION", pt.x + (isMobile ? 15 : 30), pt.y - (isMobile ? 5 : 10));
+            ctx.font = `bold ${isMobile ? '9px' : '14px'} "Raleway"`;
+            ctx.fillStyle = '#F7D384';
+            ctx.fillText("YOU ARE HERE", pt.x + (isMobile ? 15 : 30), pt.y - (isMobile ? 5 : 10));
 
             if (!isMobile) {
                 ctx.font = '10px font-monospace';
-                ctx.fillText(`AGE: ${displayInputs.age} // CAP_DENSITY: ${(displayInputs.capital / 1000000).toFixed(1)}M`, pt.x + 30, pt.y + 10);
+                ctx.fillText(`AGE ${displayInputs.age} · PORTFOLIO $${(displayInputs.capital / 1000000).toFixed(1)}M`, pt.x + 30, pt.y + 10);
             }
         }
     };
@@ -392,7 +387,7 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
                 style={{
                     width: '100%',
                     height: isMobile ? '520px' : 'clamp(600px, 85vh, 900px)',
-                    background: isDark ? 'rgba(13, 22, 41, 0.4)' : 'rgba(255,255,255,0.02)',
+                    background: isDark ? 'rgba(15, 31, 53, 0.4)' : 'rgba(255,255,255,0.02)',
                     borderRadius: '40px',
                     border: '1px solid ' + colors.border,
                     backdropFilter: 'blur(30px)',
@@ -437,7 +432,7 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
                         >
                             <div className="glass-premium-dark h-100 rounded-4 border-white-10 p-4 shadow-2xl d-flex flex-column overflow-auto">
                                 <div className="d-flex justify-content-between align-items-center mb-4">
-                                    <div className="nav-label text-gradient-orange mb-0" style={{ fontSize: 'var(--font-size-small)', letterSpacing: '2px' }}>COORDINATE DIAGNOSTIC</div>
+                                    <div className="nav-label text-gradient-orange mb-0" style={{ fontSize: 'var(--font-size-small)', letterSpacing: '2px' }}>YOUR STARTING POINT</div>
                                     <button onClick={() => setIsOverlayOpen(false)} className="btn btn-sm btn-link text-white-50 p-0 hover-rotate">
                                         <span className="material-icons">close</span>
                                     </button>
@@ -507,10 +502,10 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
                                     <div className="glass-vibrant p-3 rounded-3 mb-3" style={{ background: 'rgba(244, 195, 102,0.05)' }}>
                                         <div className="d-flex align-items-center gap-2 text-orange mb-1">
                                             <span className="material-icons" style={{ fontSize: '1rem' }}>auto_awesome</span>
-                                            <span className="fw-bold small font-monospace tracking-widest">PROJECTION SYNC</span>
+                                            <span className="fw-bold small font-monospace tracking-widest">ABOUT THESE INPUTS</span>
                                         </div>
                                         <p className="text-white-70 mb-0" style={{ fontSize: 'var(--font-size-tiny)', lineHeight: '1.6' }}>
-                                            This data calibrates your current trajectory and can be used in future planning assessments.
+                                            These inputs shape the illustration on this page. Nothing is sent to us.
                                         </p>
                                     </div>
                                     <button
@@ -519,7 +514,7 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
                                         style={{
                                             fontSize: 'clamp(0.75rem, 1.5vw, 0.85rem)',
                                             letterSpacing: '3px',
-                                            background: 'linear-gradient(135deg, #F4C366 0%, #FFB200 100%)',
+                                            background: 'linear-gradient(135deg, #F4C366 0%, #F7D384 100%)',
                                             border: 'none',
                                             boxShadow: '0 0 30px rgba(244, 195, 102, 0.4)'
                                         }}
@@ -534,13 +529,13 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
                 </AnimatePresence>
 
                 <div className="position-absolute bottom-0 end-0 p-2 p-lg-4 opacity-30 small font-monospace tracking-widest text-muted" style={{ fontSize: '0.55rem' }}>
-                    INTERACTIVE LIFE CYCLE PLATFORM // v2.4.0
+                    INTERACTIVE PLANNING TOOL
                 </div>
             </div>
 
             <style jsx>{`
                 .accent-orange { accent-color: #F4C366; }
-                .diagnostic-active { border-color: rgba(0, 255, 255, 0.4) !important; box-shadow: 0 0 50px rgba(0, 255, 255, 0.1) !important; }
+                .diagnostic-active { border-color: rgba(247, 211, 132, 0.4) !important; box-shadow: 0 0 50px rgba(247, 211, 132, 0.1) !important; }
                 .glass-premium-dark { background: rgba(10, 15, 25, 0.95); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); }
                 .shadow-2xl { box-shadow: 0 50px 100px -20px rgba(0,0,0,0.8); }
                 .hover-scale:hover { transform: scale(1.02); }
@@ -560,7 +555,7 @@ const PlanningLifecycleCanvas = ({ theme, inputs, onUpdate, isDiagnosticMode, hi
             `}</style>
 
             <div className="text-center mt-4 opacity-50 small font-monospace" style={{ color: colors.muted, fontSize: '0.7rem' }}>
-                — ANALYZE STRATEGIC ADAPTATION ACROSS THE WEALTH CURVE —
+                — SEE HOW YOUR PLAN CHANGES ACROSS THE WEALTH LIFE CYCLE —
             </div>
         </div>
     );

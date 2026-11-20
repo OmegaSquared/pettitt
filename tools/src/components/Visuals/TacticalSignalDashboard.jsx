@@ -10,72 +10,57 @@ const TacticalSignalDashboard = () => {
                         {/* Atmospheric Background Glow */}
                         <div className="position-absolute top-50 start-50 translate-middle w-100 h-100"
                             style={{
-                                background: 'radial-gradient(circle, rgba(124, 139, 176, 0.15) 0%, rgba(13, 22, 41, 0) 70%)',
+                                background: 'radial-gradient(circle, rgba(142, 148, 168, 0.15) 0%, rgba(15, 31, 53, 0) 70%)',
                                 zIndex: 0
                             }}></div>
 
                         <div className="position-relative" style={{ zIndex: 1 }}>
-                            <div className="nav-label text-gradient-orange mb-3 fs-5" style={{ letterSpacing: '4px' }}>TACTICAL SIGNAL HUB</div>
-                            <h2 className="display-4 fw-bold mb-4 text-white">The Cycle Pulse.</h2>
+                            <div className="nav-label text-gradient-orange mb-3 fs-5" style={{ letterSpacing: '4px' }}>A QUESTION WORTH ASKING</div>
+                            <h2 className="display-4 fw-bold mb-4 text-white">Where Is the Economy in the Cycle?</h2>
 
                             <div className="row justify-content-center mt-5 g-4 text-start">
-                                {/* Benchmark Gauge */}
                                 <div className="col-md-5 col-lg-4">
                                     <div className="glass-card p-4 h-100 border-white border-opacity-10" style={{ background: 'rgba(255,255,255,0.03)' }}>
                                         <div className="d-flex align-items-center gap-3 mb-4">
                                             <Gauge className="text-omega-light-blue" size={28} />
-                                            <div className="nav-label text-muted mb-0 small uppercase">Current Regime</div>
+                                            <div className="nav-label text-muted mb-0 small uppercase">The Stage</div>
                                         </div>
-                                        <div className="h3 fw-bold text-white mb-2">Approaching Recession</div>
-                                        <div className="progress bg-dark" style={{ height: '8px', borderRadius: '4px' }}>
-                                            <div className="progress-bar bg-omega-orange" style={{ width: '92%', boxShadow: '0 0 15px var(--omega-orange)' }}></div>
-                                        </div>
-                                        <div className="mt-3 d-flex justify-content-between small text-muted">
-                                            <span>INFLECTION</span>
-                                            <span>ACTIVE PHASE</span>
-                                            <span className="text-omega-orange fw-bold">PEAK TRIGGER</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Cycle Sensor Status */}
-                                <div className="col-md-5 col-lg-4">
-                                    <div className="glass-card p-4 h-100 border-white border-opacity-10" style={{ background: 'rgba(255,255,255,0.03)' }}>
-                                        <div className="d-flex align-items-center gap-3 mb-4">
-                                            <Activity className="text-omega-orange" size={28} />
-                                            <div className="nav-label text-muted mb-0 small uppercase">Cycle Sensor</div>
-                                        </div>
-                                        <div className="d-flex align-items-center gap-2 mb-3">
-                                            <div className="rounded-circle bg-danger" style={{ width: '12px', height: '12px', boxShadow: '0 0 10px #dc3545' }}></div>
-                                            <h4 className="h4 fw-bold text-white mb-0">Negative Feedback</h4>
-                                        </div>
+                                        <div className="h4 fw-bold text-white mb-3">Six stages, one cycle</div>
                                         <p className="small text-light-muted mb-0">
-                                            Production inflection detected. Consumption-Income loop is showing structural weakening across primary lead-indicators.
+                                            The Clock estimates which of the six stages the economy is in. That estimate can change as new economic data is released.
                                         </p>
                                     </div>
                                 </div>
 
-                                {/* Navigation Context */}
+                                <div className="col-md-5 col-lg-4">
+                                    <div className="glass-card p-4 h-100 border-white border-opacity-10" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                                        <div className="d-flex align-items-center gap-3 mb-4">
+                                            <Activity className="text-omega-orange" size={28} />
+                                            <div className="nav-label text-muted mb-0 small uppercase">The Signals</div>
+                                        </div>
+                                        <div className="h4 fw-bold text-white mb-3">Feedback loops</div>
+                                        <p className="small text-light-muted mb-0">
+                                            It watches the income, consumption, production and employment loop for signs that momentum may be shifting.
+                                        </p>
+                                    </div>
+                                </div>
+
                                 <div className="col-md-10 col-lg-4">
                                     <div className="glass-card p-4 h-100 border-white border-opacity-10" style={{ background: 'rgba(255,255,255,0.03)' }}>
                                         <div className="d-flex align-items-center gap-3 mb-4">
                                             <Navigation className="text-white" size={28} />
-                                            <div className="nav-label text-muted mb-0 small uppercase">Tactical Posture</div>
+                                            <div className="nav-label text-muted mb-0 small uppercase">Your Portfolio</div>
                                         </div>
-                                        <div className="h4 fw-bold text-white mb-3">Risk Mitigation</div>
-                                        <div className="d-flex flex-wrap gap-2 mb-3">
-                                            <span className="badge rounded-pill border border-orange-glow px-3 py-2" style={{ background: 'rgba(244, 195, 102, 0.2)' }}>60/40 DEFENSIVE</span>
-                                            <span className="badge rounded-pill border border-blue-glow px-3 py-2" style={{ background: 'rgba(124, 139, 176, 0.2)' }}>CAPITAL PRESERVATION</span>
-                                        </div>
-                                        <div className="text-muted italic" style={{ fontSize: '0.7rem', opacity: 0.6 }}>
-                                            *Illustrative only; not actual client allocations.
-                                        </div>
+                                        <div className="h4 fw-bold text-white mb-3">What it means for you</div>
+                                        <p className="small text-light-muted mb-0">
+                                            The more important question is how the stage of the cycle could affect your goals, time horizon and comfort with risk.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
-                            <p className="mt-5 text-muted small italic opacity-50 mx-auto" style={{ maxWidth: '600px' }}>
-                                *Live illustrative benchmark based on our cyclical filters.
+                            <p className="mt-5 text-muted small italic opacity-50 mx-auto" style={{ maxWidth: '640px' }}>
+                                *The Clock is an educational framework. It relies on historical data, which is not a guarantee of future results, and does not predict market movements.
                             </p>
                         </div>
                     </div>

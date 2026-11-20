@@ -8,15 +8,15 @@ const ExecutionRealityCard = () => {
                 <div className="col-lg-10">
                     <div className="glass-card p-0 rounded-5 overflow-hidden border-blue-glow shadow-lg" data-aos="fade-up">
                         <div className="row g-0">
-                            {/* Left Side: PETTITT WEALTH Edge (Institutional) */}
-                            <div className="col-md-6 p-5 border-end border-white border-opacity-10" style={{ background: 'rgba(124, 139, 176, 0.05)' }}>
+                            {/* Left Side: disciplined process */}
+                            <div className="col-md-6 p-5 border-end border-white border-opacity-10" style={{ background: 'rgba(142, 148, 168, 0.05)' }}>
                                 <div className="d-flex align-items-center gap-3 mb-4 text-omega-light-blue">
                                     <ShieldCheck size={32} />
-                                    <h3 className="h4 fw-bold mb-0 uppercase tracking-wider">Institutional Perspective</h3>
+                                    <h3 className="h4 fw-bold mb-0 uppercase tracking-wider">A Disciplined Process</h3>
                                 </div>
                                 <div className="mb-4">
-                                    <div className="nav-label text-muted mb-2 small uppercase">Methodological Approach</div>
-                                    <p className="h5 fw-bold text-white mb-0">Tactical Regime Analysis</p>
+                                    <div className="nav-label text-muted mb-2 small uppercase">How Decisions Are Made</div>
+                                    <p className="h5 fw-bold text-white mb-0">Business-cycle analysis</p>
                                 </div>
                                 <ul className="list-unstyled space-y-4">
                                     <li className="d-flex gap-3 mb-3">
@@ -33,18 +33,18 @@ const ExecutionRealityCard = () => {
                                     </li>
                                 </ul>
                                 <div className="mt-5 pt-3 border-top border-white border-opacity-10 text-omega-light-blue fw-bold small uppercase tracking-widest">
-                                    Goal: Systematic Strategy Discipline
+                                    Goal: a consistent, disciplined process
                                 </div>
                             </div>
 
-                            {/* Right Side: Retail Reaction (Emotional) */}
-                            <div className="col-md-6 p-5" style={{ background: 'rgba(204, 81, 13, 0.05)' }}>
+                            {/* Right Side: emotional reactions */}
+                            <div className="col-md-6 p-5" style={{ background: 'rgba(201, 150, 46, 0.05)' }}>
                                 <div className="d-flex align-items-center gap-3 mb-4 text-omega-orange">
                                     <AlertTriangle size={32} />
-                                    <h3 className="h4 fw-bold mb-0 uppercase tracking-wider">Retail Reaction</h3>
+                                    <h3 className="h4 fw-bold mb-0 uppercase tracking-wider">Emotional Reactions</h3>
                                 </div>
                                 <div className="mb-4">
-                                    <div className="nav-label text-muted mb-2 small uppercase">Information Processing</div>
+                                    <div className="nav-label text-muted mb-2 small uppercase">How Decisions Are Made</div>
                                     <p className="h5 fw-bold text-white mb-0">Reacting to Headlines</p>
                                 </div>
                                 <ul className="list-unstyled space-y-4">

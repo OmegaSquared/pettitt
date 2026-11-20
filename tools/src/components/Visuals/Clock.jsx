@@ -8,26 +8,26 @@ const Clock = ({ theme }) => {
     const isDark = theme === 'dark-mode';
 
     const sectors = [
-        { label: "RECOVERY", color: isDark ? "#C9D3EA" : "#7C8BB0" },
-        { label: "EARLY EXP", color: isDark ? "#60A5FA" : "#3B82F6" },
-        { label: "MID EXP", color: isDark ? "#3B82F6" : "#1D4ED8" },
-        { label: "LATE EXP", color: isDark ? "#1E40AF" : "#1E3A8A" },
+        // PETTITT WEALTH palette: Independence tints through the expansion, golds as the cycle matures.
+        { label: "RECOVERY", color: isDark ? "#F5F1EB" : "#8E94A8" },
+        { label: "EARLY EXP", color: isDark ? "#D3D6DD" : "#6B7391" },
+        { label: "MID EXP", color: isDark ? "#AEB3C4" : "#515A79" },
+        { label: "LATE EXP", color: isDark ? "#8E94A8" : "#162C49" },
         { label: "IMMINENT", color: "#F4C366" },
-        { label: "RECESSION", color: "#B91C1C" }
+        { label: "RECESSION", color: "#C9962E" }
     ];
 
     const colors = {
         bg: isDark ? '#0F1F35' : '#ffffff',
-        text: isDark ? '#f1f5f9' : '#0F1F35',
+        text: isDark ? '#F5F1EB' : '#0F1F35',
         accent: '#F4C366',
-        blue: '#7C8BB0',
-        ring: isDark ? '#94a3b8' : '#64748b',
-        lines: isDark ? '#cbd5e1' : '#94a3b8',
-        needleLine: isDark ? 'rgba(255, 255, 255, 0.25)' : 'rgba(15, 23, 42, 0.15)',
+        blue: '#8E94A8',
+        ring: isDark ? '#8E94A8' : '#515A79',
+        lines: isDark ? '#D3D6DD' : '#8E94A8',
+        needleLine: isDark ? 'rgba(255, 255, 255, 0.25)' : 'rgba(15, 31, 53, 0.15)',
         needleCap: isDark ? '#ffffff' : '#0F1F35',
         trueNorth: isDark ? '#ffffff' : '#0F1F35',
-        red: '#ef4444',
-        compassRing: isDark ? '#cbd5e1' : '#64748b'
+        compassRing: isDark ? '#D3D6DD' : '#515A79'
     };
 
     const drawFace = (ctx, size) => {
@@ -49,7 +49,7 @@ const Clock = ({ theme }) => {
         const drawTextAlongArc = (text, radius, startAngle, sectorSize) => {
             const characters = text.split("");
             const fontSize = Math.round(r * 0.075);
-            ctx.font = `700 ${fontSize}px "Outfit", sans-serif`;
+            ctx.font = `700 ${fontSize}px "Raleway", sans-serif`;
 
             const totalWidth = ctx.measureText(text).width;
             const angularWidth = totalWidth / radius;
@@ -155,14 +155,10 @@ const Clock = ({ theme }) => {
         ctx.save();
         ctx.translate(cx, cy);
 
-        // Hands
-        const minuteAngle = (49 / 60) * Math.PI * 2 - Math.PI / 2;
-        drawHand(ctx, r * 0.88, minuteAngle, 4, colors.accent);
-
-        const now = new Date();
-        const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
-        const secondAngle = (seconds / 60) * Math.PI * 2 - Math.PI / 2;
-        drawHand(ctx, r * 0.92, secondAngle, 1, colors.red);
+        // Hand: sweeps steadily through all six stages (one turn a minute). It deliberately does not
+        // point at a "current" stage, so the page never shows a market reading that needs updating.
+        const sweepAngle = ((Date.now() % 60000) / 60000) * Math.PI * 2 - Math.PI / 2;
+        drawHand(ctx, r * 0.88, sweepAngle, 3, colors.accent);
 
         // Center Cap
         ctx.beginPath();

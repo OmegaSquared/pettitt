@@ -2,9 +2,9 @@ import React from 'react';
 
 const TrustSignals = () => {
     const signals = [
-        { icon: 'gavel', title: 'Fiduciary Duty', text: 'A legal commitment to act in your best interest, always.' },
-        { icon: 'verified_user', title: 'Institutional Grade', text: 'Engineered for the complexity of private wealth legacies.' },
-        { icon: 'history_edu', title: 'Cycle Proven', text: 'Proprietary framework tested across multiple economic inflections.' }
+        { icon: 'gavel', title: 'Fiduciary Approach', text: 'Advice built on integrity, transparency and your best interests.' },
+        { icon: 'verified_user', title: 'Thoughtful Analysis', text: 'Scenarios and assumptions tested against your goals.' },
+        { icon: 'history_edu', title: 'Cycle Aware', text: 'A framework informed by historical business-cycle data.' }
     ];
 
     return (

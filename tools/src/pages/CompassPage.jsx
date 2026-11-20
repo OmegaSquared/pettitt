@@ -201,16 +201,16 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                 <span className="text-omega-orange fw-bold tracking-widest uppercase" style={{ fontSize: '0.9rem', letterSpacing: '8px' }}>THE COMPASS</span>
                             </div>
                             <div className="mb-4">
-                                <span className="text-white-50 fw-bold tracking-widest uppercase" style={{ fontSize: '0.7rem', letterSpacing: '4px' }}>INSTITUTIONAL STRATEGIC PLANNING PROTOCOL</span>
+                                <span className="text-white-50 fw-bold tracking-widest uppercase" style={{ fontSize: '0.7rem', letterSpacing: '4px' }}>FINANCIAL PLANNING</span>
                             </div>
 
                             <h1 className="display-1 fw-bold mb-4 ls-tight">
-                                <span style={{ color: '#C9D3EA' }}>Architecting Wealth.</span><br />
-                                <span className="text-omega-orange">Navigating the Wealth Life Cycle.</span>
+                                <span style={{ color: '#D3D6DD' }}>Building Wealth.</span><br />
+                                <span className="text-omega-orange">Planning for Every Stage of Life.</span>
                             </h1>
 
                             <p className="lead text-white-50 mb-5 mx-auto mx-lg-0" style={{ fontSize: '1.25rem', maxWidth: '600px', lineHeight: '1.6' }}>
-                                Wealth is a sequence of critical transitions. <span className="text-white fw-bold">The Compass</span> synchronizes your trajectory across the entire wealth life cycle.
+                                Wealth moves through several stages. <span className="text-white fw-bold">The Compass</span> helps you plan for each of them, from building wealth to protecting it and, eventually, using it.
                             </p>
 
                             <button
@@ -237,9 +237,9 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                 <section className="container py-5 my-5">
                     <div className="text-start mb-5" data-aos="fade-up">
                         <div className="nav-label text-omega-orange mb-3" style={{ fontSize: '0.9rem', letterSpacing: '4px' }}>THE WEALTH LIFE CYCLE</div>
-                        <h2 className="display-3 fw-bold mb-4">The Journey: <br /><span className="text-omega-blue">Architecting Your Trajectory</span></h2>
+                        <h2 className="display-3 fw-bold mb-4">The Journey: <br /><span className="text-omega-blue">Planning Your Path</span></h2>
                         <p className="lead text-white-70 ms-0" style={{ maxWidth: '900px', fontSize: '1.25rem', lineHeight: '1.6' }}>
-                            Wealth is not a single number, but a sequence of critical transitions. Every journey moves through three distinct phases: <span className="text-white fw-bold">Accumulation</span>, <span className="text-white fw-bold">Protection</span>, and <span className="text-white fw-bold">Distribution</span>. Understanding where you are on this curve is the first step in architecting your legacy.
+                            Wealth is not a single number, but a series of important transitions. Every journey moves through three phases: <span className="text-white fw-bold">Accumulation</span>, <span className="text-white fw-bold">Protection</span>, and <span className="text-white fw-bold">Distribution</span>. Understanding where you are on this curve is the first step in planning your legacy.
                         </p>
                     </div>
 
@@ -299,8 +299,8 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                 transition={{ duration: 0.8 }}
                                 className="glass-card p-4 p-lg-5 rounded-5 text-center position-relative overflow-hidden w-100"
                                 style={{
-                                    background: 'rgba(5, 12, 24, 0.8)',
-                                    border: '1px solid rgba(255, 120, 48, 0.2)',
+                                    background: 'rgba(11, 23, 48, 0.8)',
+                                    border: '1px solid rgba(244, 195, 102, 0.2)',
                                     backdropFilter: 'blur(30px)',
                                     margin: 0,
                                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(0, 0, 0, 0.3)'
@@ -312,7 +312,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                     style={{
                                         fontSize: 'clamp(1rem, 4vw, 1.3rem)'
                                     }}>
-                                    <span style={{ color: '#F4C366' }}>OUR RETIREMENT SIMULATOR // THE COMPASS</span>
+                                    <span style={{ color: '#F4C366' }}>OUR RETIREMENT SIMULATOR: THE COMPASS</span>
                                 </h3>
                                 <p className="text-white-80 mb-4" style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', lineHeight: '1.6' }}>
                                     The best way to teach you what we do is by example. Follow along by entering your information to see how <span className="text-white fw-bold">The Compass</span> answers questions unique to your circumstances.
@@ -343,7 +343,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                 {/* Step One // Discovery Section */}
                 <section className="container py-5 my-5">
                     <div className="text-center text-lg-start mb-5" data-aos="fade-up">
-                        <div className="nav-label text-omega-orange mb-3" style={{ fontSize: '0.9rem', letterSpacing: '8px' }}>STEP ONE // DESIGNING YOUR BLUEPRINT</div>
+                        <div className="nav-label text-omega-orange mb-3" style={{ fontSize: '0.9rem', letterSpacing: '8px' }}>STEP ONE: DESIGNING YOUR BLUEPRINT</div>
                         <h2 className="display-2 fw-bold mb-4 ls-tight">
                             Defining Your Goals: <br />
                             <span className="text-omega-blue">The Blueprints of Your Wealth Lifecycle</span>
@@ -355,7 +355,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                             <div className="vr d-none d-lg-block opacity-20" style={{ height: '60px' }}></div>
                             <div className="d-flex align-items-center gap-2">
                                 <span className="material-icons text-omega-orange" style={{ fontSize: '1.5rem' }}>architecture</span>
-                                <span className="tiny font-monospace text-white-30 uppercase tracking-widest">PHASE_01 // DISCOVERY</span>
+                                <span className="tiny font-monospace text-white-30 uppercase tracking-widest">PHASE 1: DISCOVERY</span>
                             </div>
                         </div>
                     </div>
@@ -382,16 +382,16 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                 <section className="container py-5" data-aos="fade-up">
                     <div className="glass-card p-0 rounded-5 overflow-hidden shadow-2xl"
                         style={{
-                            background: 'rgba(10, 20, 40, 0.4)',
-                            border: '1px solid rgba(169, 197, 230, 0.2)',
+                            background: 'rgba(15, 31, 53, 0.4)',
+                            border: '1px solid rgba(211, 214, 221, 0.2)',
                             backdropFilter: 'blur(40px)',
                             boxShadow: '0 40px 100px -20px rgba(0,0,0,0.6)'
                         }}>
                         <div className="p-0">
                             {/* Table Header - Desktop Only */}
                             <div className="d-none d-lg-flex border-bottom border-white-10 px-5 py-4 op-70">
-                                <div className="flex-grow-1 tiny font-monospace uppercase tracking-widest fw-bold">STRATEGIC_PARAMETER</div>
-                                <div className="tiny font-monospace uppercase tracking-widest fw-bold text-end" style={{ width: '300px' }}>CURRENT_CALIBRATION</div>
+                                <div className="flex-grow-1 tiny font-monospace uppercase tracking-widest fw-bold">YOUR INPUTS</div>
+                                <div className="tiny font-monospace uppercase tracking-widest fw-bold text-end" style={{ width: '300px' }}>CURRENT SETTING</div>
                             </div>
 
                             {/* Simulation Starting Value */}
@@ -402,7 +402,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                     </div>
                                     <div>
                                         <div className="text-white fw-bold tracking-tight mb-0" style={{ fontSize: '1.1rem' }}>Simulation Starting Value</div>
-                                        <div className="tiny text-white-30 uppercase font-monospace">LIQUID_CAPITAL_BASE</div>
+                                        <div className="tiny text-white-30 uppercase font-monospace">INVESTED ASSETS TODAY</div>
                                     </div>
                                 </div>
                                 <div className="w-100 w-lg-auto text-end">
@@ -425,7 +425,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                     </div>
                                     <div>
                                         <div className="text-white fw-bold tracking-tight mb-0" style={{ fontSize: '1.1rem' }}>Current Age</div>
-                                        <div className="tiny text-white-30 uppercase font-monospace">TEMPORAL_ANCHOR</div>
+                                        <div className="tiny text-white-30 uppercase font-monospace">TODAY</div>
                                     </div>
                                 </div>
                                 <div className="w-100 w-lg-auto text-end">
@@ -440,8 +440,8 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                         <span className="material-icons text-omega-orange" style={{ fontSize: '1.4rem' }}>shield</span>
                                     </div>
                                     <div>
-                                        <div className="text-omega-orange fw-bold tracking-tight mb-0" style={{ fontSize: '1.1rem' }}>Protection Phase Initiation</div>
-                                        <div className="tiny text-white-30 uppercase font-monospace">DERISKING_THRESHOLD</div>
+                                        <div className="text-omega-orange fw-bold tracking-tight mb-0" style={{ fontSize: '1.1rem' }}>Protection Phase Begins</div>
+                                        <div className="tiny text-white-30 uppercase font-monospace">WHEN RISK IS REDUCED</div>
                                     </div>
                                 </div>
                                 <div className="w-100 w-lg-auto text-end">
@@ -459,7 +459,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                     </div>
                                     <div>
                                         <div className="text-white fw-bold tracking-tight mb-0" style={{ fontSize: '1.1rem' }}>Retirement Age</div>
-                                        <div className="tiny text-white-30 uppercase font-monospace">DEPLOYMENT_WINDOW</div>
+                                        <div className="tiny text-white-30 uppercase font-monospace">WHEN WITHDRAWALS BEGIN</div>
                                     </div>
                                 </div>
                                 <div className="w-100 w-lg-auto text-end">
@@ -470,16 +470,16 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                             {/* Retirement Capital Target */}
                             <div className="d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between border-bottom border-white-5 transition-all hover-bg-white-5 px-4 px-lg-5 py-4">
                                 <div className="d-flex align-items-center gap-3 mb-3 mb-lg-0">
-                                    <div className="bg-success-10 p-2 rounded-3">
-                                        <span className="material-icons text-success" style={{ fontSize: '1.4rem' }}>flag</span>
+                                    <div className="bg-omega-orange-10 p-2 rounded-3">
+                                        <span className="material-icons text-omega-orange" style={{ fontSize: '1.4rem' }}>flag</span>
                                     </div>
                                     <div>
-                                        <div className="text-success fw-bold tracking-tight mb-0" style={{ fontSize: '1.1rem' }}>Retirement Capital Target</div>
-                                        <div className="tiny text-white-30 uppercase font-monospace">STRATEGIC_OBJECTIVE</div>
+                                        <div className="text-omega-orange fw-bold tracking-tight mb-0" style={{ fontSize: '1.1rem' }}>Retirement Capital Target</div>
+                                        <div className="tiny text-white-30 uppercase font-monospace">YOUR GOAL</div>
                                     </div>
                                 </div>
                                 <div className="w-100 w-lg-auto text-end">
-                                    <span className="fw-900 text-success mb-0 font-monospace" style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)' }}>
+                                    <span className="fw-900 text-omega-orange mb-0 font-monospace" style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)' }}>
                                         {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(diagnosticInputs.target)}
                                     </span>
                                 </div>
@@ -493,7 +493,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                     </div>
                                     <div>
                                         <div className="text-white fw-bold tracking-tight mb-0" style={{ fontSize: '1.1rem' }}>Investment Time Horizon</div>
-                                        <div className="tiny text-white-30 uppercase font-monospace">ACCUMULATION_RUNWAY</div>
+                                        <div className="tiny text-white-30 uppercase font-monospace">YEARS TO RETIREMENT</div>
                                     </div>
                                 </div>
                                 <div className="w-100 w-lg-auto text-end">
@@ -516,21 +516,21 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                             if (newState) captureIntent('Expanded The Ugly Truth // Inflation Analysis Module');
                         }}
                         style={{
-                            background: showUglyTruth ? 'rgba(235, 64, 52, 0.1)' : 'rgba(255, 255, 255, 0.03)',
-                            border: showUglyTruth ? '1px solid rgba(235, 64, 52, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
+                            background: showUglyTruth ? 'rgba(192, 80, 77, 0.1)' : 'rgba(255, 255, 255, 0.03)',
+                            border: showUglyTruth ? '1px solid rgba(192, 80, 77, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
                             maxWidth: '100%'
                         }}
                     >
                         <div className="d-flex align-items-center gap-2 gap-lg-3 overflow-hidden">
-                            <div className="bg-danger d-flex align-items-center justify-content-center rounded-2 flex-shrink-0" style={{ background: '#EB4034', width: '38px', height: '38px' }}>
+                            <div className="bg-danger d-flex align-items-center justify-content-center rounded-2 flex-shrink-0" style={{ background: '#C0504D', width: '38px', height: '38px' }}>
                                 <span className="material-icons text-white" style={{ fontSize: '1.4rem' }}>warning</span>
                             </div>
                             <div className="overflow-hidden text-center text-lg-start">
                                 <div className="mb-0 fw-bold text-white tracking-widest uppercase d-flex align-items-center justify-content-center justify-content-lg-start gap-2" style={{ fontSize: 'clamp(0.7rem, 3vw, 1.1rem)', whiteSpace: 'nowrap' }}>
-                                    THE UGLY TRUTH // THE INFLATION TAX
+                                    THE HIDDEN COST OF INFLATION
                                 </div>
                                 <div className="tiny text-white-30 font-monospace uppercase tracking-widest" style={{ fontSize: 'clamp(0.45rem, 1.8vw, 0.65rem)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                    {showUglyTruth ? 'ACTIVE ANALYSIS // DEPRECIATION' : 'CLICK TO VIEW // PURCHASING POWER RISK'}
+                                    {showUglyTruth ? 'HOW INFLATION REDUCES BUYING POWER' : 'CLICK TO VIEW: PURCHASING POWER RISK'}
                                 </div>
                             </div>
                         </div>
@@ -566,19 +566,19 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                 {/* Step Two // Planning Section */}
                 <section className="container py-5 mt-5">
                     <div className="text-center text-lg-start mb-5" data-aos="fade-up">
-                        <div className="nav-label text-omega-orange mb-3" style={{ fontSize: '0.9rem', letterSpacing: '8px' }}>STEP TWO // PLANNING</div>
+                        <div className="nav-label text-omega-orange mb-3" style={{ fontSize: '0.9rem', letterSpacing: '8px' }}>STEP TWO: PLANNING</div>
                         <h2 className="display-2 fw-bold mb-4 ls-tight">
-                            Navigation Protocol: <br />
-                            <span className="text-omega-blue">Calculating Your Probable Path</span>
+                            Planning Ahead: <br />
+                            <span className="text-omega-blue">Exploring Your Possible Paths</span>
                         </h2>
                         <div className="d-flex flex-column flex-lg-row align-items-lg-center gap-4">
                             <p className="lead text-white-70 mb-0" style={{ maxWidth: '800px', fontSize: '1.25rem', lineHeight: '1.6' }}>
-                                Using <span className="text-white fw-bold">The Compass</span> to calculate the most probable path to your goals, synchronizing your trajectory across the entire wealth life cycle.
+                                Using <span className="text-white fw-bold">The Compass</span> to explore a range of possible outcomes for your goals across each stage of the wealth life cycle.
                             </p>
                             <div className="vr d-none d-lg-block opacity-20" style={{ height: '60px' }}></div>
                             <div className="d-flex align-items-center gap-2">
                                 <span className="material-icons text-omega-orange" style={{ fontSize: '1.5rem' }}>explore</span>
-                                <span className="tiny font-monospace text-white-30 uppercase tracking-widest">PHASE_02 // PLANNING</span>
+                                <span className="tiny font-monospace text-white-30 uppercase tracking-widest">PHASE 2: PLANNING</span>
                             </div>
                         </div>
                     </div>
@@ -594,13 +594,13 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                             if (newState) captureIntent('Expanded Volatility & Risk Analysis Module');
                         }}
                         style={{
-                            background: showVolatilitySlider ? 'rgba(124, 139, 176, 0.1)' : 'rgba(255, 255, 255, 0.03)',
-                            border: showVolatilitySlider ? '1px solid rgba(124, 139, 176, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
+                            background: showVolatilitySlider ? 'rgba(142, 148, 168, 0.1)' : 'rgba(255, 255, 255, 0.03)',
+                            border: showVolatilitySlider ? '1px solid rgba(142, 148, 168, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
                             maxWidth: '100%'
                         }}
                     >
                         <div className="d-flex align-items-center gap-2 gap-lg-3 overflow-hidden">
-                            <div className="bg-omega-blue p-1.5 rounded-2 flex-shrink-0" style={{ background: '#7C8BB0' }}>
+                            <div className="bg-omega-blue p-1.5 rounded-2 flex-shrink-0" style={{ background: '#8E94A8' }}>
                                 <span className="material-icons text-white">tune</span>
                             </div>
                             <div className="overflow-hidden">
@@ -608,7 +608,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                     VOLATILITY & RISK ANALYSIS
                                 </div>
                                 <div className="tiny text-white-30 font-monospace uppercase tracking-widest" style={{ fontSize: 'clamp(0.45rem, 1.8vw, 0.65rem)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                    {showVolatilitySlider ? 'ACTIVE PROTOCOL // ADJUSTING' : 'CLICK TO VIEW // RISK SLIDER'}
+                                    {showVolatilitySlider ? 'ADJUST VOLATILITY BELOW' : 'CLICK TO VIEW: RISK SLIDER'}
                                 </div>
                             </div>
                         </div>
@@ -630,21 +630,21 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                     >
                         <div className="glass-card p-3 p-lg-4 rounded-4 position-relative overflow-hidden"
                             style={{
-                                background: 'rgba(124, 139, 176, 0.05)',
-                                border: '1px solid rgba(169, 197, 230, 0.2)',
+                                background: 'rgba(142, 148, 168, 0.05)',
+                                border: '1px solid rgba(211, 214, 221, 0.2)',
                                 backdropFilter: 'blur(30px)'
                             }}>
                             <div className="row align-items-center g-2 g-lg-4">
                                 <div className="col-lg-6">
                                     <div className="d-flex align-items-center gap-2 mb-1">
-                                        <div className="bg-omega-blue px-2 py-0.5 rounded text-white fw-bold tracking-widest uppercase" style={{ background: '#7C8BB0', fontSize: '10px' }}>INTERACTIVE</div>
+                                        <div className="bg-omega-blue px-2 py-0.5 rounded text-white fw-bold tracking-widest uppercase" style={{ background: '#8E94A8', fontSize: '10px' }}>INTERACTIVE</div>
                                     </div>
                                     <h4 className="text-white fw-bold mb-1 d-flex align-items-center" style={{ fontSize: 'clamp(1.1rem, 3vw, 1.4rem)' }}>
                                         <span className="material-icons text-omega-blue me-2" style={{ fontSize: '1.3rem' }}>tune</span>
                                         STRESS TEST
                                     </h4>
                                     <p className="text-white-50 mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.5' }}>
-                                        Adjust market volatility to simulate different risk environments and observe structural plan resilience.
+                                        Adjust market volatility to see how your plan might hold up in calmer or rougher markets.
                                     </p>
                                 </div>
                                 <div className="col-lg-6 mt-3 mt-lg-0">
@@ -680,8 +680,8 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                 {/* Interactive Life Cycle Platform */}
                 <section className="container py-5 my-5">
                     <div className="text-center mb-5 d-none d-lg-block" data-aos="fade-up">
-                        <div className="nav-label text-omega-blue mb-3" style={{ fontSize: '0.8rem', letterSpacing: '2px' }}>INTERACTIVE LIFE CYCLE PLATFORM // v2.4.0</div>
-                        <h2 className="text-white-50 font-monospace tracking-widest" style={{ fontSize: '0.9rem' }}>— ANALYZE STRATEGIC ADAPTATION ACROSS THE WEALTH CURVE —</h2>
+                        <div className="nav-label text-omega-blue mb-3" style={{ fontSize: '0.8rem', letterSpacing: '2px' }}>INTERACTIVE PLANNING TOOL</div>
+                        <h2 className="text-white-50 font-monospace tracking-widest" style={{ fontSize: '0.9rem' }}>— SEE HOW YOUR PLAN CHANGES ACROSS THE WEALTH LIFE CYCLE —</h2>
                     </div>
                     <div className="plot-container" data-aos="fade-up">
                         <MonteCarloChart
@@ -696,10 +696,10 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
 
                 {/* Ready to Architect Section */}
                 <section className="container py-4 my-2" data-aos="fade-up">
-                    <div className="glass-card p-5 rounded-5 text-start shadow-2xl overflow-hidden position-relative" style={{ background: 'linear-gradient(135deg, rgba(244, 195, 102, 0.1) 0%, rgba(124, 139, 176, 0.1) 100%)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <h2 className="display-2 fw-bold mb-4">Ready to Architect Your Legacy?</h2>
+                    <div className="glass-card p-5 rounded-5 text-start shadow-2xl overflow-hidden position-relative" style={{ background: 'linear-gradient(135deg, rgba(244, 195, 102, 0.1) 0%, rgba(142, 148, 168, 0.1) 100%)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <h2 className="display-2 fw-bold mb-4">Ready to Plan Your Legacy?</h2>
                         <p className="lead text-white-50 mb-5 ms-0" style={{ maxWidth: '700px' }}>
-                            Schedule a high-delta strategic review with a PETTITT WEALTH advisor to finalize your Roadmap.
+                            Talk with Eric about turning these results into a personalized financial plan.
                         </p>
                         <div className="d-flex flex-wrap justify-content-start align-items-center gap-4">
                             <button 
@@ -718,7 +718,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                 className="text-white-50 text-decoration-none hover-white transition-all d-flex align-items-center gap-2" 
                                 style={{ fontSize: '1rem' }}
                             >
-                                <span className="border-bottom border-white-30 pb-1">Learn more about our Asset Management & our difference</span>
+                                <span className="border-bottom border-white-30 pb-1">Learn how the Clock informs investment decisions</span>
                                 <span className="material-icons" style={{ fontSize: '1.2rem' }}>arrow_forward</span>
                             </a>
                         </div>
@@ -770,10 +770,10 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                     <div className="glass-card p-3 p-lg-5 rounded-5 border-white-10" data-aos="fade-up">
                         <div className="row g-4 g-lg-5">
                             <div className="col-lg-6">
-                                <div className="nav-label text-success mb-3" style={{ fontSize: '0.8rem', letterSpacing: '4px' }}>COMPASS ANALYSIS</div>
-                                <h2 className="fw-bold mb-4 text-white" style={{ fontSize: 'clamp(1.8rem, 5vw, 3.5rem)', lineHeight: '1.2' }}>Optimism is <br /><span className="text-success">Mathematically Justified.</span></h2>
+                                <div className="nav-label text-omega-orange mb-3" style={{ fontSize: '0.8rem', letterSpacing: '4px' }}>COMPASS ANALYSIS</div>
+                                <h2 className="fw-bold mb-4 text-white" style={{ fontSize: 'clamp(1.8rem, 5vw, 3.5rem)', lineHeight: '1.2' }}>Reading <br /><span className="text-omega-orange">Your Results.</span></h2>
                                 <p className="lead text-white-50 mb-4 mb-lg-5" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
-                                    Your results are mixed but promising. With minor tactical adjustments to your volatility exposure or distribution rate, we can significantly tighten these corridors to meet your institutional standards.
+                                    These projections show a range of possible outcomes based on the inputs you entered. Changes to savings, risk level or withdrawal rate can shift the results, and a personalized plan can consider far more than a simulator can.
                                 </p>
 
 
@@ -801,7 +801,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                 <div className="p-0">
                                     {/* Milestone Header - Desktop Only */}
                                     <div className="d-none d-lg-flex border-bottom border-white-10 pb-3 op-50">
-                                        <div className="col-4 tiny uppercase tracking-widest">Strategic Milestone</div>
+                                        <div className="col-4 tiny uppercase tracking-widest">Milestone</div>
                                         <div className="col-2 tiny uppercase tracking-widest text-center">Age</div>
                                         <div className="col-3 tiny uppercase tracking-widest text-end">Target Value</div>
                                         <div className="col-3 tiny uppercase tracking-widest text-end">Probability</div>
@@ -839,7 +839,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                         {/* Summary Blocks */}
                         <div className="mt-5 d-flex flex-column gap-4">
                             {/* Lifecycle Confidence Card */}
-                            <div className="d-flex flex-column flex-lg-row align-items-center justify-content-lg-between p-3 p-lg-4 px-lg-5 rounded-4 gap-3 gap-lg-4" style={{ background: '#0A1322', border: '1px solid rgba(255,255,255,0.05)' }}>
+                            <div className="d-flex flex-column flex-lg-row align-items-center justify-content-lg-between p-3 p-lg-4 px-lg-5 rounded-4 gap-3 gap-lg-4" style={{ background: '#0F1F35', border: '1px solid rgba(255,255,255,0.05)' }}>
                                 <div className="d-flex flex-column flex-lg-row align-items-center gap-3 gap-lg-4 text-center text-lg-start">
                                     <span className="material-icons text-omega-orange" style={{ fontSize: 'clamp(2rem, 6vw, 2.5rem)' }}>shield</span>
                                     <div className="vr opacity-20 mx-2 d-none d-lg-block" style={{ height: '40px' }}></div>
@@ -852,15 +852,15 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                             </div>
 
                             {/* Ugly Truth Card */}
-                            <div className="p-3 p-lg-5 rounded-4 position-relative overflow-hidden" style={{ background: 'rgba(255,50,50,0.02)', border: '1px dashed rgba(255,50,50,0.2)' }}>
+                            <div className="p-3 p-lg-5 rounded-4 position-relative overflow-hidden" style={{ background: 'rgba(192, 80, 77,0.02)', border: '1px dashed rgba(192, 80, 77,0.2)' }}>
                                 <div className="row align-items-center g-4">
                                     <div className="col-lg-6 text-center text-lg-start">
                                         <div className="d-flex align-items-center justify-content-center justify-content-lg-start gap-2 mb-3">
                                             <span className="material-icons text-danger" style={{ fontSize: '1.2rem' }}>warning</span>
-                                            <span className="small fw-900 text-danger uppercase tracking-widest" style={{ fontSize: '0.7rem' }}>90% PROBABLE TAIL OUTCOME</span>
+                                            <span className="small fw-900 text-danger uppercase tracking-widest" style={{ fontSize: '0.7rem' }}>LOWER-RANGE SCENARIO</span>
                                         </div>
                                         <p className="small text-white-50 mb-0 mx-auto mx-lg-0" style={{ maxWidth: '400px', lineHeight: '1.6', fontSize: '0.85rem' }}>
-                                            The "Ugly Truth" Scenario: This illustrates the joint probability of experiencing lower-bound (-2SD) performance across both your remaining accumulation years and your entire distribution lifecycle.
+                                            The Lower-Range Scenario: This illustrates the joint probability of experiencing lower-bound (-2SD) performance across both your remaining accumulation years and your entire distribution lifecycle.
                                         </p>
                                     </div>
                                     <div className="col-lg-6">
@@ -890,7 +890,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
 
                 {/* Compliance & Legal Disclosures */}
                 <section className="container py-4 my-2">
-                    <div className="glass-card p-4 p-lg-5 rounded-5 border-white-10" style={{ background: 'rgba(5, 12, 24, 0.4)' }}>
+                    <div className="glass-card p-4 p-lg-5 rounded-5 border-white-10" style={{ background: 'rgba(11, 23, 48, 0.4)' }}>
                         <div className="nav-label text-omega-orange mb-4" style={{ fontSize: '0.75rem', letterSpacing: '4px', fontWeight: 'bold' }}>COMPLIANCE & LEGAL DISCLOSURES</div>
 
                         <div className="row g-4 mb-5">
@@ -904,14 +904,14 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                             <div className="col-lg-6">
                                 <h4 className="fw-bold text-white mb-3" style={{ fontSize: '1rem', letterSpacing: '1px' }}>MONTE CARLO STATISTICAL RISK:</h4>
                                 <p className="text-white-50" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-                                    The probability modeling utilized in our interactive charts (1,000 iterations) provides a mathematical projection of potential outcomes. Users must acknowledge that statistical variance and market volatility can lead to results significantly different from those illustrated. Institutional-grade planning typically requires more rigorous, continuous monitoring and higher-density modeling (1,000+ iterations) to achieve professional confidence standards.
+                                    The probability modeling utilized in our interactive charts (1,000 iterations) provides a mathematical projection of potential outcomes. Users must acknowledge that statistical variance and market volatility can lead to results significantly different from those illustrated. A full financial plan typically involves more detailed modeling and ongoing monitoring.
                                 </p>
                             </div>
 
                             <div className="col-lg-6">
                                 <h4 className="fw-bold text-white mb-3" style={{ fontSize: '1rem', letterSpacing: '1px' }}>PROFESSIONAL PLANNING REQUIREMENT:</h4>
                                 <p className="text-white-50" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-                                    Accuracy and tracking of a real-world financial plan require coordination with licensed professionals, updated data feeds, and adjustment for specific tax, insurance, and estate circumstances. No automated tool can replace the strategic oversight provided by a dedicated advisor. We recommend a full strategic Roadmap review twice annually to recalibrate for life-event delta and market shifts.
+                                    Accuracy and tracking of a real-world financial plan require coordination with licensed professionals, updated data feeds, and adjustment for specific tax, insurance, and estate circumstances. No automated tool can replace the strategic oversight provided by a dedicated advisor. We recommend reviewing your plan regularly to account for life events and changing market conditions.
                                 </p>
                             </div>
                         </div>
@@ -927,30 +927,30 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                 {/* Step Three // Execution */}
                 <section className="container py-5 my-5 strategic-modeling">
                     <div className="text-start mb-5" data-aos="fade-up">
-                        <div className="nav-label text-omega-orange mb-3" style={{ fontSize: '0.9rem', letterSpacing: '4px' }}>STEP THREE // EXECUTION</div>
-                        <h2 className="display-3 fw-bold mb-4">From Probabilistic Modeling <br /><span className="text-omega-blue">to Execution</span></h2>
+                        <div className="nav-label text-omega-orange mb-3" style={{ fontSize: '0.9rem', letterSpacing: '4px' }}>STEP THREE: TAKING ACTION</div>
+                        <h2 className="display-3 fw-bold mb-4">From Planning <br /><span className="text-omega-blue">to Action</span></h2>
                         <p className="lead text-white-50 ms-0 mb-4" style={{ maxWidth: '800px', fontSize: '1.2rem' }}>
-                            The final step is the Execution phase. Modeling provides the coordinates, but professional implementation secures the trajectory. Contacting our firm to finalize your strategic roadmap is the definitive move to better your odds.
+                            The final step is putting a plan into action. A simulation can show possibilities, but a personalized plan considers your full situation. A conversation with Eric is the place to start.
                         </p>
                         <div className="d-flex align-items-center gap-4 flex-wrap">
                             <button onClick={onOpenScheduling} className="btn btn-premium px-5 py-3 rounded-pill fw-bold uppercase tracking-widest shadow-lg" style={{ background: '#F4C366', color: 'white', border: 'none' }}>
                                 Start a Conversation
                             </button>
                             <a href="clock.html" className="text-white-50 text-decoration-none hover-white transition-all d-flex align-items-center gap-2" style={{ fontSize: '1rem' }}>
-                                <span className="border-bottom border-white-30 pb-1">Learn more about our Asset Management & our difference</span>
+                                <span className="border-bottom border-white-30 pb-1">Learn how the Clock informs investment decisions</span>
                                 <span className="material-icons" style={{ fontSize: '1.2rem' }}>arrow_forward</span>
                             </a>
                         </div>
                     </div>
 
                     <div className="glass-card p-5 rounded-4 text-center border-white-10 shadow-lg" style={{ background: 'rgba(244, 195, 102, 0.05)', border: '1px dashed #F4C366' }}>
-                        <h4 className="text-omega-orange fw-900 tracking-widest mb-4 uppercase">STRATEGIC ANALYSIS</h4>
-                        <h3 className="display-6 text-white fw-bold mb-5">Find the Portfolio to Better the Odds.</h3>
+                        <h4 className="text-omega-orange fw-900 tracking-widest mb-4 uppercase">WHY PETTITT WEALTH</h4>
+                        <h3 className="display-6 text-white fw-bold mb-5">Planning Built Around You.</h3>
                         <div className="row g-4 justify-content-center">
                             {[
-                                { icon: "gavel", label: "FIDUCIARY DUTY", text: "Legally bound to act in your best interest." },
-                                { icon: "account_balance", label: "INSTITUTIONAL GRADE", text: "Access to private markets and sovereign strategies." },
-                                { icon: "restart_alt", label: "CYCLE PROVEN", text: "Tested across multiple economic regimes." }
+                                { icon: "gavel", label: "FIDUCIARY APPROACH", text: "Advice built on integrity and your best interests." },
+                                { icon: "account_balance", label: "THOUGHTFUL ANALYSIS", text: "Scenarios and assumptions tested against your goals." },
+                                { icon: "restart_alt", label: "CYCLE AWARE", text: "Informed by historical business-cycle data." }
                             ].map((item, i) => (
                                 <div key={i} className="col-md-4">
                                     <span className="material-icons text-white-50 mb-3" style={{ fontSize: '2.5rem' }}>{item.icon}</span>
@@ -967,7 +967,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
 
             <style jsx>{`
                 .text-omega-orange { color: #F4C366 !important; }
-                .text-omega-blue { color: #C9D3EA !important; }
+                .text-omega-blue { color: #D3D6DD !important; }
                 .tracking-widest { letter-spacing: 0.2em; }
                 .hover-bg-orange:hover {
                     background: #F4C366 !important;
@@ -1008,7 +1008,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                 .hover-white:hover .border-white-30 { border-color: white !important; }
 
                 .blueprint-card-target:hover {
-                    background: rgba(0, 43, 91, 0.6) !important;
+                    background: rgba(22, 44, 73, 0.6) !important;
                     border-color: rgba(244, 195, 102, 0.5) !important;
                     box-shadow: 0 0 30px rgba(244, 195, 102, 0.1);
                 }
@@ -1016,7 +1016,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                     position: absolute;
                     width: 10px;
                     height: 10px;
-                    border: 1px solid rgba(169, 197, 230, 0.3);
+                    border: 1px solid rgba(211, 214, 221, 0.3);
                     z-index: 2;
                 }
                 .marker-tl { top: 12px; left: 12px; border-right: 0; border-bottom: 0; }

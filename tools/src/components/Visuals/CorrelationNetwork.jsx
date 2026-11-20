@@ -9,14 +9,14 @@ const CorrelationNetwork = ({ theme }) => {
 
     const colors = {
         equities: '#F4C366', // PETTITT WEALTH Orange
-        fixedIncome: '#C9D3EA', // Light Blue
-        alternative: '#7C8BB0', // PETTITT WEALTH Blue
-        alpha: '#F9A36C', // Light Orange
+        fixedIncome: '#D3D6DD', // Light Blue
+        alternative: '#8E94A8', // PETTITT WEALTH Blue
+        alpha: '#F7D384', // Light Orange
         text: isDark ? '#f8f9fa' : '#0F1F35',
-        muted: isDark ? '#94a3b8' : '#64748b',
+        muted: isDark ? '#AEB3C4' : '#8E94A8',
         border: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
-        danger: '#ff4444',
-        success: '#44ff44'
+        danger: '#C0504D',
+        success: '#6FA287'
     };
 
     const nodes = [
@@ -111,7 +111,7 @@ const CorrelationNetwork = ({ theme }) => {
 
             // Simple Label
             ctx.fillStyle = colors.text;
-            ctx.font = 'bold 11px "Outfit", sans-serif';
+            ctx.font = 'bold 11px "Raleway", sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText(node.label, p.x, p.y + (mode === 'retail' ? 30 : 25));
         });
@@ -123,24 +123,24 @@ const CorrelationNetwork = ({ theme }) => {
 
         if (mode === 'retail') {
             ctx.fillStyle = colors.danger;
-            ctx.font = '900 24px "Outfit", sans-serif';
+            ctx.font = '900 24px "Raleway", sans-serif';
             ctx.fillText("PROBLEM: NOT AS DIVERSIFIED AS YOU THINK.", legX, legY - 30);
 
             ctx.fillStyle = colors.text;
-            ctx.font = '800 16px "Outfit", sans-serif';
+            ctx.font = '800 16px "Raleway", sans-serif';
             ctx.fillText("Retail models fail when correlation hits 1.0. Everything collapses together.", legX, legY);
         } else {
             ctx.fillStyle = colors.alternative;
-            ctx.font = '900 24px "Outfit", sans-serif';
+            ctx.font = '900 24px "Raleway", sans-serif';
             ctx.fillText("SOLUTION: TRUE INSTITUTIONAL DIVERSIFICATION.", legX, legY - 30);
 
             ctx.fillStyle = colors.text;
-            ctx.font = '800 16px "Outfit", sans-serif';
+            ctx.font = '800 16px "Raleway", sans-serif';
             ctx.fillText("Active diversification ensures your capital stays protected across the cycle.", legX, legY);
         }
 
         ctx.fillStyle = colors.muted;
-        ctx.font = '400 14px "Outfit", sans-serif';
+        ctx.font = '400 14px "Raleway", sans-serif';
         ctx.fillText(mode === 'retail'
             ? "Mainstream portfolios are built for 'fair weather'—they fail exactly when you need them most."
             : "PETTITT WEALTH architects asset independence, ensuring that a storm in one sector doesn't sink the entire estate.", legX, legY + 25);
@@ -199,7 +199,7 @@ const CorrelationNetwork = ({ theme }) => {
                 style={{
                     width: '100%',
                     height: '650px',
-                    background: isDark ? 'rgba(13, 22, 41, 0.4)' : 'rgba(255,255,255,0.02)',
+                    background: isDark ? 'rgba(15, 31, 53, 0.4)' : 'rgba(255,255,255,0.02)',
                     borderRadius: '40px',
                     border: `1px solid ${colors.border}`,
                     backdropFilter: 'blur(20px)',

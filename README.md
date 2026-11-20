@@ -25,9 +25,9 @@ A fully static site (no back end, no build tooling required) for GitHub Pages.
 
 - Everything runs in the browser. Simulator inputs are saved in the visitor's `localStorage`
   (key `pettitt-compass-inputs`), not on any server.
-- The Clock's "Live Stance" (currently *Approaching Recession*) is hard-coded text in
-  `tools/src/pages/AssetManagement.jsx` and `tools/src/components/Visuals/TacticalSignalDashboard.jsx`;
-  update it there and rebuild when the reading changes.
+- The Clock deliberately shows no current market reading: its hand sweeps through all six stages and the
+  page asks "Where is the economy in the business cycle?" instead (approved Nov 2026), so nothing on the
+  site needs updating when the reading changes. Don't reintroduce a hard-coded stance without compliance review.
 - The old lead-capture form and stock ticker were removed (they needed a back end / live data).
 
 ## Contact

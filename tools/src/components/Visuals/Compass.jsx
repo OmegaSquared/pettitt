@@ -13,27 +13,27 @@ const Compass = ({ theme }) => {
         isLocked: false
     });
 
+    // The five services named in the site copy (Home "A Comprehensive Approach…" grid).
     const services = [
-        "Estate Planning",
-        "Retirement Analysis",
+        "Wealth Management",
         "Retirement Planning",
-        "Investments",
         "Risk Management",
-        "Special Situations"
+        "Estate & Legacy",
+        "Business Solutions"
     ];
 
     const colors = {
         bg: isDark ? '#0F1F35' : '#ffffff',
-        text: isDark ? '#f1f5f9' : '#0F1F35',
+        text: isDark ? '#F5F1EB' : '#0F1F35',
         accent: '#F4C366',
-        blue: '#7C8BB0',
-        ring: isDark ? '#94a3b8' : '#64748b',
-        lines: isDark ? '#cbd5e1' : '#94a3b8',
-        needleLine: isDark ? 'rgba(255, 255, 255, 0.25)' : 'rgba(15, 23, 42, 0.15)',
+        blue: '#8E94A8',
+        ring: isDark ? '#8E94A8' : '#515A79',
+        lines: isDark ? '#D3D6DD' : '#8E94A8',
+        needleLine: isDark ? 'rgba(255, 255, 255, 0.25)' : 'rgba(15, 31, 53, 0.15)',
         needleCap: isDark ? '#ffffff' : '#0F1F35',
         trueNorth: isDark ? '#ffffff' : '#0F1F35',
-        red: '#ef4444',
-        compassRing: isDark ? '#cbd5e1' : '#64748b'
+        north: '#F4C366',
+        compassRing: isDark ? '#D3D6DD' : '#515A79'
     };
 
     const handleInput = (x) => {
@@ -83,7 +83,7 @@ const Compass = ({ theme }) => {
         ctx.lineTo(-6, -r - 15);
         ctx.lineTo(6, -r - 15);
         ctx.closePath();
-        ctx.fillStyle = colors.red;
+        ctx.fillStyle = colors.north;
         ctx.fill();
 
         ctx.save();
@@ -98,10 +98,10 @@ const Compass = ({ theme }) => {
         if (state.current.isLocked && Math.abs(state.current.angle) < 0.01) {
             const textOffset = r * 0.12;
             ctx.textAlign = 'left';
-            ctx.font = `700 ${Math.round(r * 0.06)}px "Outfit", sans-serif`;
+            ctx.font = `700 ${Math.round(r * 0.06)}px "Raleway", sans-serif`;
             ctx.fillStyle = colors.trueNorth;
             ctx.fillText("TRUE NORTH", textOffset, -r * 0.02);
-            ctx.font = `600 ${Math.round(r * 0.04)}px "Outfit", sans-serif`;
+            ctx.font = `600 ${Math.round(r * 0.04)}px "Raleway", sans-serif`;
             ctx.fillStyle = colors.accent;
             ctx.fillText("ON TARGET", textOffset, r * 0.06);
         }
@@ -146,7 +146,7 @@ const Compass = ({ theme }) => {
             ctx.translate(x, y);
             ctx.rotate(angle + Math.PI / 2);
             if (dir === 'N') {
-                ctx.fillStyle = colors.red;
+                ctx.fillStyle = colors.north;
                 ctx.scale(pulse, pulse);
             } else {
                 ctx.fillStyle = colors.text;
@@ -161,11 +161,11 @@ const Compass = ({ theme }) => {
         ctx.save();
         ctx.beginPath();
         ctx.moveTo(0, 0); ctx.lineTo(-w, 0); ctx.lineTo(0, -r); ctx.lineTo(w, 0);
-        ctx.fillStyle = 'rgba(194, 65, 12, 0.85)';
+        ctx.fillStyle = 'rgba(244, 195, 102, 0.9)';
         ctx.fill();
         ctx.beginPath();
         ctx.moveTo(0, 0); ctx.lineTo(-w, 0); ctx.lineTo(0, r); ctx.lineTo(w, 0);
-        ctx.fillStyle = 'rgba(30, 58, 138, 0.85)';
+        ctx.fillStyle = isDark ? 'rgba(174, 179, 196, 0.85)' : 'rgba(81, 90, 121, 0.85)';
         ctx.fill();
         ctx.beginPath();
         ctx.arc(0, 0, r * 0.07, 0, Math.PI * 2);
@@ -184,7 +184,7 @@ const Compass = ({ theme }) => {
         ctx.arc(0, 0, outerBandR, Math.PI / 2, 3 * Math.PI / 2);
         ctx.arc(0, 0, innerBandR, 3 * Math.PI / 2, Math.PI / 2, true);
         ctx.closePath();
-        ctx.fillStyle = 'rgba(59, 130, 246, 0.2)';
+        ctx.fillStyle = 'rgba(142, 148, 168, 0.25)';
         ctx.fill();
         ctx.beginPath();
         ctx.arc(0, 0, outerBandR, -Math.PI / 2, Math.PI / 2);
@@ -196,7 +196,7 @@ const Compass = ({ theme }) => {
             const startAngle = i * step - Math.PI / 2 - step / 2;
             const midAngle = startAngle + step / 2;
             ctx.save();
-            ctx.font = `700 ${Math.round(r * 0.06)}px "Outfit", sans-serif`;
+            ctx.font = `700 ${Math.round(r * 0.06)}px "Raleway", sans-serif`;
             ctx.fillStyle = colors.text;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
@@ -206,9 +206,9 @@ const Compass = ({ theme }) => {
     };
 
     const drawProcessSteps = (ctx, r) => {
-        const count = 7;
+        const count = 5; // five-step PETTITT WEALTH planning process
         const step = (Math.PI * 2) / count;
-        ctx.font = `italic 600 ${Math.round(r * 0.04)}px "Outfit", sans-serif`;
+        ctx.font = `italic 600 ${Math.round(r * 0.04)}px "Raleway", sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
@@ -310,7 +310,7 @@ const Compass = ({ theme }) => {
                 height: 'auto',
                 maxWidth: '950px',
                 aspectRatio: '1/1',
-                filter: 'drop-shadow(0 0 120px rgba(124, 139, 176,0.4)) drop-shadow(0 0 40px rgba(124, 139, 176,0.2))'
+                filter: 'drop-shadow(0 0 120px rgba(142, 148, 168,0.4)) drop-shadow(0 0 40px rgba(142, 148, 168,0.2))'
             }}>
             <canvas ref={canvasRef} style={{ width: '100%', height: '100%', display: 'block' }}></canvas>
         </div>

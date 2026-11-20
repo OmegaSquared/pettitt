@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-const QuadrantDisk = ({ size = 400, direction = 1, color = '#64b4ff', prefix = "More ", onHover }) => {
+const QuadrantDisk = ({ size = 400, direction = 1, color = '#AEB3C4', prefix = "More ", onHover }) => {
     const canvasRef = useRef(null);
     const requestRef = useRef();
     const hoveredRef = useRef(null);
@@ -153,8 +153,8 @@ const QuadrantDisk = ({ size = 400, direction = 1, color = '#64b4ff', prefix = "
             // Draw Quadrants with updated focus logic
             const currentHover = hoveredRef.current;
             drawQuadrant(0, -Math.PI, -Math.PI / 2, 'rgba(120, 120, 120, 0.85)', 'Income', currentHover);
-            drawQuadrant(1, -Math.PI / 2, 0, 'rgba(45, 95, 150, 0.95)', 'Consumption', currentHover);
-            drawQuadrant(2, 0, Math.PI / 2, 'rgba(215, 105, 50, 0.95)', 'Production', currentHover);
+            drawQuadrant(1, -Math.PI / 2, 0, 'rgba(142, 148, 168, 0.95)', 'Consumption', currentHover);
+            drawQuadrant(2, 0, Math.PI / 2, 'rgba(244, 195, 102, 0.95)', 'Production', currentHover);
             drawQuadrant(3, Math.PI / 2, Math.PI, 'rgba(80, 80, 80, 0.85)', 'Employment', currentHover);
 
             // Directional Pulse: Velocity boost on hover
@@ -192,7 +192,7 @@ const QuadrantDisk = ({ size = 400, direction = 1, color = '#64b4ff', prefix = "
 const IntertwinedLoopCanvas = () => {
     const containerRef = useRef(null);
     const [scale, setScale] = useState(1);
-    const [activeInfo, setActiveInfo] = useState({ label: null, color: '#64b4ff' });
+    const [activeInfo, setActiveInfo] = useState({ label: null, color: '#AEB3C4' });
     const [dynamicTitle, setDynamicTitle] = useState('Economic Feedback Loops');
 
     useEffect(() => {
@@ -266,7 +266,7 @@ const IntertwinedLoopCanvas = () => {
                                 <QuadrantDisk
                                     size={diskSize}
                                     direction={1}
-                                    color="#64b4ff"
+                                    color="#AEB3C4"
                                     prefix="More "
                                     onHover={(info) => handleHover(info, 'positive')}
                                 />
@@ -278,7 +278,7 @@ const IntertwinedLoopCanvas = () => {
                                 <QuadrantDisk
                                     size={diskSize}
                                     direction={1}
-                                    color="#ff9664"
+                                    color="#F7D384"
                                     prefix="Lower "
                                     onHover={(info) => handleHover(info, 'negative')}
                                 />
@@ -301,8 +301,8 @@ const IntertwinedLoopCanvas = () => {
                 <div
                     className="d-inline-block glass-card px-4 py-2 rounded-pill shadow-lg transition-all duration-300"
                     style={{
-                        background: 'rgba(13, 22, 41, 0.8)',
-                        border: `1px solid ${activeInfo.color || '#64b4ff'}`,
+                        background: 'rgba(15, 31, 53, 0.8)',
+                        border: `1px solid ${activeInfo.color || '#AEB3C4'}`,
                         boxShadow: `0 0 25px ${activeInfo.color}44`
                     }}
                 >

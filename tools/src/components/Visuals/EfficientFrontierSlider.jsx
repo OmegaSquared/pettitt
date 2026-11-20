@@ -236,7 +236,7 @@ const EfficientFrontierSlider = ({
                     <path
                         d={activePathData}
                         fill="none"
-                        stroke="#A855F7"
+                        stroke="#AEB3C4"
                         strokeWidth="6"
                         strokeLinecap="round"
                         className="transition-all duration-300"
@@ -247,9 +247,9 @@ const EfficientFrontierSlider = ({
                         cx={currentPoint.x}
                         cy={currentPoint.y}
                         r="8"
-                        fill="#A855F7"
+                        fill="#AEB3C4"
                         style={{
-                            filter: 'drop-shadow(0 0 8px rgba(168,85,247,0.5))',
+                            filter: 'drop-shadow(0 0 8px rgba(174, 179, 196,0.5))',
                             cursor: 'grab'
                         }}
                     />

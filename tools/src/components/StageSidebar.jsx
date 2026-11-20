@@ -77,7 +77,7 @@ const StageSidebar = ({ state, onStateChange, theme }) => {
                         }}
                         className={`stage-sidebar position-fixed top-0 start-0 h-100 shadow-2xl overflow-hidden`}
                         style={{
-                            background: isDark ? 'rgba(13, 22, 41, 0.95)' : 'rgba(255, 255, 255, 0.98)',
+                            background: isDark ? 'rgba(15, 31, 53, 0.95)' : 'rgba(255, 255, 255, 0.98)',
                             backdropFilter: 'blur(40px)',
                             borderRight: '1px solid rgba(255, 255, 255, 0.08)',
                             zIndex: 2000,

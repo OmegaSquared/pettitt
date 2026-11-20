@@ -99,7 +99,7 @@ const AccountValueChart = ({ data, theme, currentBalance, hideHeader = false }) 
                             <stop offset="100%" stopColor="#F4C366" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient id="lineGradient" x1="0" x2="1" y1="0" y2="0">
-                            <stop offset="0%" stopColor="#7C8BB0" />
+                            <stop offset="0%" stopColor="#8E94A8" />
                             <stop offset="100%" stopColor="#F4C366" />
                         </linearGradient>
                         <filter id="glow">

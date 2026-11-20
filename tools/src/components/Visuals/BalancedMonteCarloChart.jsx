@@ -38,11 +38,11 @@ const BalancedMonteCarloChart = ({
         band1: isDark ? 'rgba(244, 195, 102, 0.15)' : 'rgba(244, 195, 102, 0.08)',
         band2: isDark ? 'rgba(244, 195, 102, 0.08)' : 'rgba(244, 195, 102, 0.04)',
         text: isDark ? '#f8f9fa' : '#0F1F35',
-        muted: isDark ? '#94a3b8' : '#64748b',
+        muted: isDark ? '#AEB3C4' : '#8E94A8',
         border: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)',
-        success: '#00ff64',
-        warning: '#ff4444',
-        threshold: '#C9D3EA' // Blue for total threshold
+        success: '#6FA287',
+        warning: '#C0504D',
+        threshold: '#D3D6DD' // Blue for total threshold
     };
 
     const activeThreshold = useInflation ? recalibratedThreshold : totalThreshold;
@@ -161,7 +161,7 @@ const BalancedMonteCarloChart = ({
                 phaseProb: 50,
                 value: meanPath[numSteps - 1],
                 jointProb: ((activeAccProb * 50) / 100).toFixed(1),
-                color: '#C9D3EA'
+                color: '#D3D6DD'
             },
             {
                 id: 'joint_68',
@@ -223,13 +223,13 @@ const BalancedMonteCarloChart = ({
 
             // Joint Probability Label
             ctx.fillStyle = t.color;
-            ctx.font = '800 11px "Outfit"';
+            ctx.font = '800 11px "Raleway"';
             ctx.textAlign = 'left';
             ctx.fillText(`${t.jointProb}% JOINT PROBABILITY`, x, y);
 
             // Amount/Value (Primary)
             ctx.fillStyle = t.color;
-            ctx.font = '800 32px "Outfit"';
+            ctx.font = '800 32px "Raleway"';
             const formattedValue = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
@@ -240,7 +240,7 @@ const BalancedMonteCarloChart = ({
 
             // Sub-label (Components / Calculation)
             ctx.fillStyle = colors.muted;
-            ctx.font = '700 9px "Outfit"';
+            ctx.font = '700 9px "Raleway"';
             ctx.fillText(`${t.accProb}% \u00D7 ${t.phaseProb}% BY AGE ${retirement}`, x, y + 48);
         });
 
@@ -286,7 +286,7 @@ const BalancedMonteCarloChart = ({
         ctx.beginPath(); ctx.moveTo(padding, ty); ctx.lineTo(width - padding, ty); ctx.stroke();
 
         ctx.fillStyle = colors.success;
-        ctx.font = 'bold 9px "Outfit"';
+        ctx.font = 'bold 9px "Raleway"';
         ctx.textAlign = 'left';
         ctx.fillText(`PROTECTION TARGET (RETIREMENT): $${(target / 1000000).toFixed(1)}M`, padding + 10, ty - 8);
 
@@ -297,7 +297,7 @@ const BalancedMonteCarloChart = ({
         ctx.beginPath(); ctx.moveTo(padding, tuy); ctx.lineTo(width - padding, tuy); ctx.stroke();
 
         ctx.fillStyle = colors.threshold;
-        ctx.font = 'bold 10px "Outfit"';
+        ctx.font = 'bold 10px "Raleway"';
         ctx.textAlign = 'right';
         ctx.fillText(`TOTAL THRESHOLD: $${(activeThreshold / 1000000).toFixed(2)}M ${useInflation ? '(ADJUSTED)' : ''}`, width - padding - 10, tuy - 8);
 
@@ -341,7 +341,7 @@ const BalancedMonteCarloChart = ({
             ctx.strokeStyle = colors.text; ctx.lineWidth = 2; ctx.stroke();
 
             ctx.fillStyle = colors.text;
-            ctx.font = 'bold 10px "Outfit"';
+            ctx.font = 'bold 10px "Raleway"';
             ctx.textAlign = s === 0 ? 'left' : 'right';
             ctx.fillText(label, x + (s === 0 ? 12 : -12), y + 4);
 
@@ -366,7 +366,7 @@ const BalancedMonteCarloChart = ({
 
         // 68% Label
         const label1 = `68% (-1SD) CONFIDENCE FLOOR: ${formatCompact(finalSd1)}`;
-        ctx.font = 'bold 9px "Outfit"';
+        ctx.font = 'bold 9px "Raleway"';
         const tw1 = ctx.measureText(label1).width;
         ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
         ctx.beginPath();
@@ -389,7 +389,7 @@ const BalancedMonteCarloChart = ({
         ctx.fillText(label2, fx - 12, fy2 + 4);
 
         ctx.beginPath(); ctx.arc(fx, fy2, 4, 0, Math.PI * 2);
-        ctx.fillStyle = '#C8D9ED'; ctx.fill();
+        ctx.fillStyle = '#D3D6DD'; ctx.fill();
     };
 
     useEffect(() => {
@@ -494,7 +494,7 @@ const BalancedMonteCarloChart = ({
             </div>
 
             <div className="glass-vibrant rounded-5 overflow-hidden border-white-10 shadow-2xl mc-chart-container position-relative"
-                style={{ background: '#050a18' }}>
+                style={{ background: '#0B1730' }}>
                 <canvas ref={canvasRef} style={{ display: 'block' }} />
 
                 <div className="position-absolute top-0 end-0 p-4 d-none">

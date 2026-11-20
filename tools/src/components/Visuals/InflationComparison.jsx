@@ -101,7 +101,7 @@ const InflationComparison = ({ theme, inputs, onUpdateInput }) => {
                             Did you know that your retirement goal of <span className="text-omega-orange">{formatCurrency(nominalTarget)}</span> at retirement age <span className="text-omega-blue">{retirement}</span> is only worth <span className="text-danger">{formatCurrency(todayValue)}</span> in today's value?
                         </h3>
                         <p className="lead text-white-50 mb-5" style={{ fontSize: '1.7rem', lineHeight: '1.5', fontWeight: '400', maxWidth: '90%' }}>
-                            To maintain your idea of retirement we suggest <span className="text-success fw-bold" style={{ textShadow: '0 0 25px rgba(40, 199, 111, 0.4)' }}>{formatCurrency(suggestedTarget)}</span>, which is your retirement goal today adjusted for inflation.
+                            To maintain your idea of retirement we suggest <span className="text-success fw-bold" style={{ textShadow: '0 0 25px rgba(111, 162, 135, 0.4)' }}>{formatCurrency(suggestedTarget)}</span>, which is your retirement goal today adjusted for inflation.
                         </p>
 
 
@@ -119,7 +119,7 @@ const InflationComparison = ({ theme, inputs, onUpdateInput }) => {
                         {/* Circle 1 */}
                         <div className="col-sm-6">
                             <div className="glass-premium p-4 rounded-5 border-white-5 text-center position-relative overflow-hidden h-100 d-flex flex-column justify-content-center"
-                                style={{ transition: 'all 0.5s ease', background: 'rgba(10, 25, 47, 0.4)' }}>
+                                style={{ transition: 'all 0.5s ease', background: 'rgba(15, 31, 53, 0.4)' }}>
                                 <div className="mb-3">
                                     <div className="tiny font-monospace text-white-30 uppercase tracking-widest mb-1" style={{ fontSize: '0.65rem' }}>POWER OF {formatCurrency(nominalTarget)}</div>
                                     <div className="h4 fw-900 text-white mb-0 font-monospace">{formatCurrency(currentNominalRealValue)}</div>
@@ -130,14 +130,14 @@ const InflationComparison = ({ theme, inputs, onUpdateInput }) => {
                                         style={{
                                             width: '120px',
                                             height: '120px',
-                                            border: '1px dashed rgba(169, 197, 230, 0.3)',
-                                            background: 'radial-gradient(circle, rgba(169, 197, 230, 0.05) 0%, transparent 70%)'
+                                            border: '1px dashed rgba(211, 214, 221, 0.3)',
+                                            background: 'radial-gradient(circle, rgba(211, 214, 221, 0.05) 0%, transparent 70%)'
                                         }}
                                         animate={{ rotate: 360 }}
                                         transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
                                     />
                                     <div className="rounded-circle bg-omega-blue-10 d-flex align-items-center justify-content-center shadow-lg"
-                                        style={{ width: '80px', height: '80px', border: '1px solid rgba(169, 197, 230, 0.2)', background: 'rgba(169, 197, 230, 0.1)' }}>
+                                        style={{ width: '80px', height: '80px', border: '1px solid rgba(211, 214, 221, 0.2)', background: 'rgba(211, 214, 221, 0.1)' }}>
                                         <span className="material-icons text-omega-blue" style={{ fontSize: '2.5rem' }}>account_balance</span>
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@ const InflationComparison = ({ theme, inputs, onUpdateInput }) => {
                             <div className="glass-premium p-4 rounded-5 border-white-5 text-center position-relative overflow-hidden h-100 d-flex flex-column justify-content-center"
                                 style={{
                                     border: isRunning || years === yearsToRetirement ? '1px solid rgba(244, 195, 102, 0.4)' : '1px solid rgba(255,255,255,0.05)',
-                                    background: isRunning ? 'rgba(244, 195, 102, 0.05)' : 'rgba(10, 25, 47, 0.4)',
+                                    background: isRunning ? 'rgba(244, 195, 102, 0.05)' : 'rgba(15, 31, 53, 0.4)',
                                     transition: 'all 0.5s ease'
                                 }}>
                                 <div className="mb-3">
@@ -186,17 +186,17 @@ const InflationComparison = ({ theme, inputs, onUpdateInput }) => {
                                             opacity: 0.1 + (progress * 0.2)
                                         }}
                                         style={{
-                                            background: 'rgba(40, 199, 111, 0.4)',
-                                            border: '1px solid #28c76f',
-                                            boxShadow: '0 0 40px rgba(40, 199, 111, 0.2)'
+                                            background: 'rgba(111, 162, 135, 0.4)',
+                                            border: '1px solid #6FA287',
+                                            boxShadow: '0 0 40px rgba(111, 162, 135, 0.2)'
                                         }}
                                     />
                                     <div className="rounded-circle d-flex align-items-center justify-content-center position-relative shadow-2xl"
                                         style={{
                                             width: '80px',
                                             height: '80px',
-                                            background: 'rgba(40, 199, 111, 0.2)',
-                                            border: '1px solid #28c76f',
+                                            background: 'rgba(111, 162, 135, 0.2)',
+                                            border: '1px solid #6FA287',
                                             zIndex: 2
                                         }}>
                                         <span className="material-icons text-success" style={{ fontSize: '2.5rem' }}>insights</span>
@@ -206,7 +206,7 @@ const InflationComparison = ({ theme, inputs, onUpdateInput }) => {
                                                 initial={{ scale: 1, opacity: 0.6 }}
                                                 animate={{ scale: 1.8, opacity: 0 }}
                                                 transition={{ duration: 2, repeat: Infinity }}
-                                                style={{ width: '100%', height: '100%', border: '2px solid #28c76f' }}
+                                                style={{ width: '100%', height: '100%', border: '2px solid #6FA287' }}
                                             />
                                         )}
                                     </div>
@@ -227,7 +227,7 @@ const InflationComparison = ({ theme, inputs, onUpdateInput }) => {
                                         <span className="material-icons text-omega-orange" style={{ fontSize: '1.4rem' }}>settings_suggest</span>
                                     </div>
                                     <div className="text-start">
-                                        <h6 className="text-white fw-900 mb-0 uppercase tracking-wider small">Strategic Calibration</h6>
+                                        <h6 className="text-white fw-900 mb-0 uppercase tracking-wider small">Your Setting</h6>
                                         <p className="text-white-30 mb-0" style={{ fontSize: '0.7rem', lineHeight: '1.3' }}>
                                             Use inflation adjusted numbers in the simulation?
                                         </p>
@@ -266,8 +266,8 @@ const InflationComparison = ({ theme, inputs, onUpdateInput }) => {
 
             <style jsx>{`
                 .text-omega-orange { color: #F4C366; }
-                .text-omega-blue { color: #C9D3EA; }
-                .bg-omega-blue-10 { background: rgba(169, 197, 230, 0.1); }
+                .text-omega-blue { color: #D3D6DD; }
+                .bg-omega-blue-10 { background: rgba(211, 214, 221, 0.1); }
                 .bg-omega-orange-10 { background: rgba(244, 195, 102, 0.1); }
                 .bg-black-20 { background: rgba(0, 0, 0, 0.2); }
                 .border-white-10 { border: 1px solid rgba(255,255,255,0.1); }

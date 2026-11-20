@@ -13,15 +13,28 @@ body.tool-page,
 body.tool-page.dark-mode {
     --omega-orange: #F4C366;
     --omega-light-orange: #F7D384;
-    --omega-blue: #7C8BB0;
-    --omega-light-blue: #C9D3EA;
+    --omega-blue: #8E94A8;
+    --omega-light-blue: #D3D6DD;
     --accent-gradient: linear-gradient(135deg, #F7D384 0%, #F4C366 45%, #C9962E 100%);
-    --primary-gradient: linear-gradient(135deg, #7C8BB0 0%, #515A79 100%);
-    --glow-primary: rgba(124, 139, 176, 0.18);
+    --primary-gradient: linear-gradient(135deg, #8E94A8 0%, #515A79 100%);
+    --glow-primary: rgba(142, 148, 168, 0.18);
     --glow-secondary: rgba(244, 195, 102, 0.12);
     --bg-color: #0F1F35;
     --cinematic-bg: #0B1730;
+    /* Bootstrap's state colors, softened to sit with the PETTITT WEALTH palette (meaning kept: gain / loss / caution). */
+    --bs-primary: #515A79;  --bs-primary-rgb: 81, 90, 121;
+    --bs-info: #8E94A8;     --bs-info-rgb: 142, 148, 168;
+    --bs-success: #6FA287;  --bs-success-rgb: 111, 162, 135;
+    --bs-danger: #C0504D;   --bs-danger-rgb: 192, 80, 77;
+    --bs-warning: #F4C366;  --bs-warning-rgb: 244, 195, 102;
 }
+
+/* Headings on the Clock / Compass pages use the site's regular-weight serif, not heavy bold. */
+body.tool-page #tool-root :is(h1, h2, h3, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6) {
+    font-weight: 400 !important;
+}
+/* Buttons in the tools use the site's button type (Raleway), like the rest of the site. */
+body.tool-page #tool-root .btn { font-family: 'Raleway', 'Segoe UI', Helvetica, Arial, sans-serif; }
 
 /* Gold buttons need dark text, not white. */
 body.tool-page .btn-premium,

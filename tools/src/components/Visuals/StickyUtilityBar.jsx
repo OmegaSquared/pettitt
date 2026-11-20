@@ -36,7 +36,7 @@ const StickyUtilityBar = ({ onAction }) => {
                     className="fixed-top d-none d-md-flex align-items-center py-2 px-4 shadow-2xl"
                     style={{
                         zIndex: 1045, // Slightly below Navbar (1050) just in case, but they shouldn't overlap
-                        background: 'rgba(0, 21, 41, 0.95)',
+                        background: 'rgba(15, 31, 53, 0.95)',
                         backdropFilter: 'blur(20px)',
                         height: '65px',
                         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',

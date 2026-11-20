@@ -25,14 +25,14 @@ const InflationSensor = ({ theme, inputs, externalRate, externalShock, setExtern
     const yearsToRetirement = retirement - age;
 
     const colors = {
-        purchasingPower: '#C9D3EA', // Light Blue
-        erosion: '#ff4444', // Red
+        purchasingPower: '#D3D6DD', // Light Blue
+        erosion: '#C0504D', // Red
         counterForce: '#F4C366', // PETTITT WEALTH Orange
         text: isDark ? '#f8f9fa' : '#0F1F35',
         white: '#ffffff',
-        muted: isDark ? '#94a3b8' : '#64748b',
+        muted: isDark ? '#AEB3C4' : '#8E94A8',
         border: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
-        shock: '#ff5000'
+        shock: '#C9962E'
     };
 
     const currentRate = isShock ? 7 : inflationRate;
@@ -110,21 +110,21 @@ const InflationSensor = ({ theme, inputs, externalRate, externalShock, setExtern
         ctx.restore();
 
         ctx.textAlign = 'center';
-        ctx.fillStyle = '#0a192f'; // Deep navy for high contrast
-        ctx.font = `bold ${isMobile ? '24px' : '36px'} "Outfit", sans-serif`;
+        ctx.fillStyle = '#0F1F35'; // Deep navy for high contrast
+        ctx.font = `bold ${isMobile ? '24px' : '36px'} "Raleway", sans-serif`;
 
         const displayVal = showNominal ? target : currentVal;
         const labelText = showNominal ? 'NOMINAL VALUE' : `${(power * 100).toFixed(1)}% PURCHASING POWER`;
 
         ctx.fillText(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(displayVal), centerX, centerY + (isMobile ? 8 : 12));
 
-        ctx.fillStyle = 'rgba(10, 25, 47, 0.7)'; // Slightly transparent deep navy
-        ctx.font = `bold ${isMobile ? '10px' : '12px'} "Outfit", sans-serif`;
+        ctx.fillStyle = 'rgba(15, 31, 53, 0.7)'; // Slightly transparent deep navy
+        ctx.font = `bold ${isMobile ? '10px' : '12px'} "Raleway", sans-serif`;
         ctx.fillText(labelText, centerX, centerY + (isMobile ? 30 : 40));
 
 
         ctx.fillStyle = colors.counterForce;
-        ctx.font = '800 12px "Outfit", sans-serif';
+        ctx.font = '800 12px "Raleway", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(`CURRENT AGE: ${Math.floor(age + years)}`, 20, 30);
     };
@@ -165,7 +165,7 @@ const InflationSensor = ({ theme, inputs, externalRate, externalShock, setExtern
                 className="position-relative overflow-hidden mb-4"
                 style={{
                     height: '400px',
-                    background: 'radial-gradient(circle at center, rgba(124, 139, 176,0.1) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle at center, rgba(142, 148, 168,0.1) 0%, transparent 70%)',
                     borderRadius: '40px',
                     border: '1px solid rgba(255,255,255,0.05)'
                 }}
@@ -191,7 +191,7 @@ const InflationSensor = ({ theme, inputs, externalRate, externalShock, setExtern
                     </div>
 
                     <div className="glass-premium p-3 rounded-4 border-white-5 text-end">
-                        <div className="small text-muted font-monospace mb-2 uppercase">SIM ENGINE</div>
+                        <div className="small text-muted font-monospace mb-2 uppercase">SIMULATION</div>
                         {phase === 'initial' ? (
                             <button onClick={handleStart} className="btn btn-premium btn-sm rounded-pill px-4 fw-bold">RUN</button>
                         ) : (
@@ -207,7 +207,7 @@ const InflationSensor = ({ theme, inputs, externalRate, externalShock, setExtern
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             className="position-absolute bottom-0 start-50 translate-middle-x mb-4 text-center glass-premium p-3 rounded-4 border-orange w-75"
-                            style={{ zIndex: 10, maxWidth: '400px', background: 'rgba(0,10,20,0.95)' }}
+                            style={{ zIndex: 10, maxWidth: '400px', background: 'rgba(11, 23, 48,0.95)' }}
                         >
                             <div className="d-flex align-items-center justify-content-center gap-4">
                                 <div className="text-start">
@@ -224,7 +224,7 @@ const InflationSensor = ({ theme, inputs, externalRate, externalShock, setExtern
             </div>
 
             <div className="text-center opacity-30 x-small font-monospace mb-2">
-                — STAGE 1 PROTOCOL: INFLATION IMPACT SENSOR —
+                — HOW INFLATION AFFECTS PURCHASING POWER —
             </div>
 
             <style jsx>{`

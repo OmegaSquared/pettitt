@@ -66,8 +66,8 @@ const FeedbackLoopCanvas = ({ theme }) => {
             };
 
             drawQuadrant(-Math.PI, -Math.PI / 2, 'rgba(160, 160, 160, 0.9)', 'Income');
-            drawQuadrant(-Math.PI / 2, 0, 'rgba(45, 95, 150, 0.95)', 'Consumption');
-            drawQuadrant(0, Math.PI / 2, 'rgba(215, 105, 50, 0.95)', 'Production');
+            drawQuadrant(-Math.PI / 2, 0, 'rgba(142, 148, 168, 0.95)', 'Consumption');
+            drawQuadrant(0, Math.PI / 2, 'rgba(244, 195, 102, 0.95)', 'Production');
             drawQuadrant(Math.PI / 2, Math.PI, 'rgba(100, 100, 100, 0.9)', 'Employment');
         };
 
@@ -85,7 +85,7 @@ const FeedbackLoopCanvas = ({ theme }) => {
             drawQuadrants(rightCenterX, centerY);
             ctx.beginPath();
             ctx.arc(rightCenterX, centerY, radius, 0, Math.PI * 2, false);
-            ctx.strokeStyle = 'rgba(215, 105, 50, 0.9)';
+            ctx.strokeStyle = 'rgba(244, 195, 102, 0.9)';
             ctx.lineWidth = 24;
             ctx.stroke();
 
@@ -93,7 +93,7 @@ const FeedbackLoopCanvas = ({ theme }) => {
             drawQuadrants(leftCenterX, centerY);
             ctx.beginPath();
             ctx.arc(leftCenterX, centerY, radius, 0, Math.PI * 2, false);
-            ctx.strokeStyle = 'rgba(45, 95, 150, 1.0)';
+            ctx.strokeStyle = 'rgba(142, 148, 168, 1.0)';
             ctx.lineWidth = 24;
             ctx.stroke();
 
@@ -124,12 +124,12 @@ const FeedbackLoopCanvas = ({ theme }) => {
             // Left Arrow
             const lx = leftCenterX + Math.cos(currentAngle) * radius;
             const ly = centerY + Math.sin(currentAngle) * radius;
-            drawArrow(lx, ly, currentAngle + Math.PI / 2, '#64b4ff');
+            drawArrow(lx, ly, currentAngle + Math.PI / 2, '#AEB3C4');
 
             // Right Arrow
             const rx = rightCenterX + Math.cos(currentAngle) * radius;
             const ry = centerY + Math.sin(currentAngle) * radius;
-            drawArrow(rx, ry, currentAngle + Math.PI / 2, '#ff9664');
+            drawArrow(rx, ry, currentAngle + Math.PI / 2, '#F7D384');
 
             requestRef.current = requestAnimationFrame(animate);
         };

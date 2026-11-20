@@ -125,7 +125,7 @@ const TreasureMapCanvas = ({ theme }) => {
 
                 ctx.beginPath();
                 ctx.arc(0, 0, 30, 0, Math.PI * 2);
-                ctx.fillStyle = isDark ? 'rgba(5, 8, 12, 0.98)' : 'rgba(255, 255, 255, 0.98)';
+                ctx.fillStyle = isDark ? 'rgba(11, 23, 48, 0.98)' : 'rgba(255, 255, 255, 0.98)';
                 ctx.fill();
                 ctx.strokeStyle = accentColor;
                 ctx.lineWidth = 2;

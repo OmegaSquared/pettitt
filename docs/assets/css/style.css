@@ -181,13 +181,16 @@ h1 .brand-name, h2 .brand-name, h3 .brand-name { letter-spacing: 0.08em; }
 /* Page hero (interior pages) */
 .page-hero { padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4.5rem); }
 .page-hero h1 { color: var(--white); }
-.page-hero .lead { max-width: 760px; }
+.page-hero .lead, .page-hero p { max-width: 760px; }
 
 /* ---------- Cards & grids ---------- */
 .grid { display: grid; gap: 1.6rem; }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
+/* Odd-count card rows (five services, five values, seven personal services): wrap and center the last row */
+.grid-center { display: flex; flex-wrap: wrap; justify-content: center; }
+.grid-center > * { flex: 1 1 300px; max-width: 370px; }
 
 .card {
   background: var(--white); border-radius: var(--radius);
@@ -199,6 +202,8 @@ h1 .brand-name, h2 .brand-name, h3 .brand-name { letter-spacing: 0.08em; }
 .card p:last-child { margin-bottom: 0; }
 .card-gold { border-top: 4px solid var(--gold); }
 .card-navy { border-top: 4px solid var(--navy); }
+.card ul, .bio ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+.card .note { margin-top: 1.1rem; padding-top: 0.9rem; border-top: 1px solid var(--line); font-size: 0.84rem; }
 .card.on-dark { background: rgba(255, 255, 255, 0.05); border-color: var(--line-light); }
 .card.bg-deep { background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 60%, #1B3559 100%); border-color: var(--line-light); }
 .card.bg-navy { background: var(--navy); border-color: var(--line-light); }
@@ -222,7 +227,7 @@ h1 .brand-name, h2 .brand-name, h3 .brand-name { letter-spacing: 0.08em; }
 }
 .frame img { width: 100%; }
 
-/* Live widgets (Clock / Compass / Seven-step wheel) */
+/* Live widgets (Clock / Compass / five-step planning wheel) */
 .gold { color: var(--gold); }
 .widget-split { align-items: center; }
 .widget-frame { max-width: 560px; margin-inline: auto; width: 100%; }
@@ -400,4 +405,5 @@ textarea { min-height: 130px; resize: vertical; }
   .hero-values { gap: 0.6rem; flex-direction: column; }
   .hero-values span::after { content: none; }
   .member img { width: 150px; height: 150px; }
+  .grid-center > * { max-width: none; }
 }

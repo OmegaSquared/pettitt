@@ -29,7 +29,7 @@
   var y = document.getElementById('year');
   if (y) { y.textContent = new Date().getFullYear(); }
 
-  // Appointment request form -> opens the visitor's email client (no back end)
+  // Conversation request form -> opens the visitor's email client (no back end; nothing is sent from this site)
   var form = document.getElementById('appointment-form');
   if (form) {
     form.addEventListener('submit', function (ev) {
@@ -38,11 +38,11 @@
       var name = v('f-name'), email = v('f-email'), phone = v('f-phone'),
           topic = v('f-topic'), when = v('f-when'), msg = v('f-message');
 
-      var subject = 'Appointment Request' + (topic ? ' — ' + topic : '') + (name ? ' (' + name + ')' : '');
+      var subject = 'PETTITT WEALTH Conversation Request' + (topic ? ' — ' + topic : '') + (name ? ' (' + name + ')' : '');
       var lines = [
         'Hello Eric,',
         '',
-        'I would like to schedule an appointment with PETTITT WEALTH.',
+        'I would like to start a conversation with PETTITT WEALTH.',
         '',
         'Name: ' + name,
         'Email: ' + email,
@@ -61,7 +61,7 @@
         '&body=' + encodeURIComponent(body);
 
       var note = document.getElementById('form-status');
-      if (note) { note.textContent = 'Your email app should open with the request pre-filled. If it does not, email ' + to + ' directly.'; }
+      if (note) { note.textContent = 'Your email app should now open with your request. Review it and press Send in your email app to deliver it. If your email app does not open, email ' + to + ' or call (480) 933-5277.'; }
     });
   }
 })();

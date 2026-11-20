@@ -63,7 +63,7 @@ const AssetManagement = ({ theme, userProfile, onOpenScheduling, onOpenAuth, onO
                             <button
                                 className="btn btn-premium px-5 py-3 fs-5 shadow-lg transition-all"
                                 onClick={onOpenScheduling}>
-                                INITIATE STRATEGY SESSION
+                                Start a Conversation
                             </button>
                         </div>
 
@@ -151,7 +151,7 @@ const AssetManagement = ({ theme, userProfile, onOpenScheduling, onOpenAuth, onO
                             <button
                                 className="btn btn-premium px-5 py-2 shadow-sm mb-4"
                                 onClick={() => onOpenAuth('register')}>
-                                Schedule an Appointment
+                                Start a Conversation
                             </button>
 
 
@@ -430,7 +430,7 @@ const AssetManagement = ({ theme, userProfile, onOpenScheduling, onOpenAuth, onO
                                         <button
                                             className="btn btn-premium px-5 py-3 shadow-lg"
                                             onClick={onOpenScheduling}>
-                                            Schedule an Appointment
+                                            Start a Conversation
                                         </button>
                                         <button className="btn btn-outline-light px-5 py-3 shadow-sm" onClick={onOpenMessage}>Email Eric</button>
                                     </div>
@@ -488,15 +488,15 @@ const AssetManagement = ({ theme, userProfile, onOpenScheduling, onOpenAuth, onO
                                             className="btn btn-outline-light px-5 py-3 rounded-pill fw-bold uppercase tracking-wider"
                                             style={{ borderColor: 'rgba(255,255,255,0.2)' }}
                                         >
-                                            Schedule an Appointment
+                                            Start a Conversation
                                         </button>
-                                        <button
-                                            onClick={onOpenScheduling}
+                                        <a
+                                            href="tel:+14809335277"
                                             className="btn btn-link text-omega-light-blue fw-bold text-decoration-none d-flex align-items-center justify-content-center gap-2"
                                             style={{ fontSize: '0.9rem' }}
                                         >
-                                            Schedule an Appointment →
-                                        </button>
+                                            Call (480) 933-5277 →
+                                        </a>
                                     </div>
                                 </div>
                             </div>

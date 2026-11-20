@@ -13,8 +13,8 @@ A fully static site (no back end, no build tooling required) for GitHub Pages.
 - `docs/assets/js/main.js` — mobile nav, scroll reveal, and the appointment form.
 - `docs/assets/img/` — logos (gold / navy / white), favicons, headshots, FINRA badge.
 - `docs/tools/app.js` — the compiled interactive Clock and Compass pages (React, CSS inlined).
-- `docs/tools/widgets.js` — smaller bundle that powers the live Clock, Compass and seven-step
-  wheel on the home page (`<div data-widget="clock|compass|planning-wheel|six-stages" data-theme="dark|light">`).
+- `docs/tools/widgets.js` — smaller bundle that powers the live Clock, Compass and five-step
+  planning wheel on the home page (`<div data-widget="clock|compass|planning-wheel|six-stages" data-theme="dark|light">`).
   `docs/clock.html` and `docs/compass.html` are thin wrappers that mount them.
 - `tools/` — source for that bundle (React + Vite). Only needed if you want to change the
   Clock / Compass pages themselves:
@@ -30,11 +30,12 @@ A fully static site (no back end, no build tooling required) for GitHub Pages.
   update it there and rebuild when the reading changes.
 - The old lead-capture form and stock ticker were removed (they needed a back end / live data).
 
-## Scheduling
+## Contact
 
-"Schedule an Appointment" opens the visitor's email client with a pre-filled message to
-`eric@pettittwealth.com`. Change the address in `SITE["email"]` in `build.py` (or search /
-replace in the HTML + `main.js`).
+Every "Start a Conversation" button links to `contact.html`. The form there ("Open Email Request")
+opens the visitor's email client with a pre-filled message to `eric@pettittwealth.com`; nothing is
+sent from the site. Change the address in `SITE["email"]` in `build.py` (or search / replace in the
+HTML + `main.js`).
 
 ## Before going live
 

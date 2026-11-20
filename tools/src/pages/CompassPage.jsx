@@ -226,7 +226,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                     fontSize: '0.9rem'
                                 }}
                             >
-                                REQUEST YOUR STRATEGIC ROADMAP
+                                Start a Conversation
                             </button>
                         </div>
                     </div>
@@ -350,17 +350,21 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                         </h2>
                         <div className="d-flex flex-column flex-lg-row align-items-lg-center gap-4">
                             <p className="lead text-white-70 mb-0" style={{ maxWidth: '800px', fontSize: '1.25rem', lineHeight: '1.6' }}>
-                                The first step in planning is the Discovery Phase, where we define your goals and understand your current situation. <span className="text-white fw-bold">Select the blueprint parameters below</span> to architect your roadmap.
+                                The first step in planning is the Discovery Phase, where we define your goals and understand your current situation.
                             </p>
                             <div className="vr d-none d-lg-block opacity-20" style={{ height: '60px' }}></div>
                             <div className="d-flex align-items-center gap-2">
-                                <span className="material-icons text-omega-orange" style={{ fontSize: '1.5rem' }}>Architecture</span>
+                                <span className="material-icons text-omega-orange" style={{ fontSize: '1.5rem' }}>architecture</span>
                                 <span className="tiny font-monospace text-white-30 uppercase tracking-widest">PHASE_01 // DISCOVERY</span>
                             </div>
                         </div>
                     </div>
 
                     <div className="px-lg-0" data-aos="fade-up">
+                        <p className="blueprint-instruction text-white fw-bold mb-2" style={{ fontSize: '1.15rem' }}>
+                            <span className="material-icons text-omega-orange align-middle me-2" style={{ fontSize: '1.3rem' }}>touch_app</span>
+                            Select the blueprint parameters to architect your roadmap.
+                        </p>
                         <GoalStrategicBlueprint
                             theme={theme}
                             selectedGoals={inputs.goals || {}}
@@ -695,7 +699,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                     <div className="glass-card p-5 rounded-5 text-start shadow-2xl overflow-hidden position-relative" style={{ background: 'linear-gradient(135deg, rgba(244, 195, 102, 0.1) 0%, rgba(124, 139, 176, 0.1) 100%)', border: '1px solid rgba(255,255,255,0.1)' }}>
                         <h2 className="display-2 fw-bold mb-4">Ready to Architect Your Legacy?</h2>
                         <p className="lead text-white-50 mb-5 ms-0" style={{ maxWidth: '700px' }}>
-                            Schedule a high-delta strategic review with an PETTITT WEALTH advisor to finalize your Roadmap.
+                            Schedule a high-delta strategic review with a PETTITT WEALTH advisor to finalize your Roadmap.
                         </p>
                         <div className="d-flex flex-wrap justify-content-start align-items-center gap-4">
                             <button 
@@ -706,7 +710,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                                 className="btn btn-premium px-5 py-3 rounded-pill fw-bold uppercase tracking-widest shadow-lg" 
                                 style={{ background: '#F4C366', color: 'white', border: 'none' }}
                             >
-                                SCHEDULE A CONSULTATION
+                                Start a Conversation
                             </button>
                             <a 
                                 href="clock.html" 
@@ -930,7 +934,7 @@ const CompassPage = ({ theme, onOpenScheduling, onOpenControlCenter, isControlCe
                         </p>
                         <div className="d-flex align-items-center gap-4 flex-wrap">
                             <button onClick={onOpenScheduling} className="btn btn-premium px-5 py-3 rounded-pill fw-bold uppercase tracking-widest shadow-lg" style={{ background: '#F4C366', color: 'white', border: 'none' }}>
-                                GET STARTED
+                                Start a Conversation
                             </button>
                             <a href="clock.html" className="text-white-50 text-decoration-none hover-white transition-all d-flex align-items-center gap-2" style={{ fontSize: '1rem' }}>
                                 <span className="border-bottom border-white-30 pb-1">Learn more about our Asset Management & our difference</span>

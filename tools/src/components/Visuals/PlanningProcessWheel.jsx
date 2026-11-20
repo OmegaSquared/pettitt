@@ -1,91 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Karin's five-step PETTITT WEALTH planning process (Nov 20 handoff). The wheel divides itself by STEPS.length.
 const STEPS = [
     {
         id: 1,
-        title: "Understanding",
-        fullTitle: "Understanding Your Circumstances",
-        description: "Gathering quantitative and qualitative data to build a diagnostic foundation.",
-        insight: "Beyond the numbers, we must understand health, values, and life expectancy to architect a plan that survives reality.",
-        details: {
-            qualitative: ["Values & Attitudes", "Family Dynamics", "Risk Tolerance", "Expectations"],
-            quantitative: ["Cash Flow Analysis", "Asset Inventory", "Liability Structure", "Tax Landscape"]
-        },
-        icon: "person_search",
+        title: "Understand",
+        fullTitle: "Understand Your Situation",
+        description: "Start with a conversation about your financial circumstances, goals, priorities, concerns, and the timing of important decisions.",
         color: "#F4C366"
     },
     {
         id: 2,
-        title: "Goals",
-        fullTitle: "Identifying and Selecting Goals",
-        description: "Defining and prioritizing objectives while acknowledging necessary trade-offs.",
-        insight: "Goals are often competing. We must weigh the 'Lake Cabin' against 'Legacy' to find the optimal mathematical balance.",
-        details: {
-            process: ["Potential Goal Identification", "Selection & Prioritization", "Impact Analysis", "Feasibility Testing"]
-        },
-        icon: "track_changes",
+        title: "Examine",
+        fullTitle: "Examine the Details",
+        description: "Review relevant financial information, identify planning considerations, and evaluate different scenarios and assumptions.",
         color: "#F4C366"
     },
     {
         id: 3,
-        title: "Analyzing",
-        fullTitle: "Analyzing Current & Alternative Paths",
-        description: "Evaluating your current course against calculated probabilities of success.",
-        insight: "We identify the 'Advantages' and 'Fatal Flaws' in your current trajectory before architecting alternatives.",
-        details: {
-            analysis: ["Current Path Evaluation", "Alternative Course Modeling", "Efficiency Audits", "Constraint Identification"]
-        },
-        icon: "analytics",
+        title: "Develop",
+        fullTitle: "Develop a Personalized Strategy",
+        description: "Build recommendations around your individual situation, objectives, time horizon, and risk considerations.",
         color: "#F4C366"
     },
     {
         id: 4,
-        title: "Developing",
-        fullTitle: "Developing Recommendations",
-        description: "Architecting specific strategies to maximize your probability of success.",
-        insight: "Every recommendation must be independent yet synchronized, measured by its contribution to lifestyle goals.",
-        details: {
-            criteria: ["Assumptions & Estimates", "Timing & Priority", "Basis for Recommendation", "Inter-dependency Check"]
-        },
-        icon: "architecture",
+        title: "Coordinate",
+        fullTitle: "Coordinate the Moving Pieces",
+        description: "When appropriate, work with your accountant, estate-planning attorney, or other professional advisors to coordinate related financial decisions.",
         color: "#F4C366"
     },
     {
         id: 5,
-        title: "Presenting",
-        fullTitle: "Presenting the Roadmap",
-        description: "A granular, technical review of your proposed strategic financial roadmap.",
-        insight: "Interactive presentation is key. We move from abstract numbers to a visual roadmap of your financial future.",
-        details: {
-            delivery: ["Granular Technical Reports", "Probability Graphs", "Assumption Modeling", "Interactive Q&A"]
-        },
-        icon: "present_to_all",
+        title: "Review",
+        fullTitle: "Review as Life Changes",
+        description: "Financial plans need to account for changing circumstances, goals, and market conditions. Ongoing reviews help determine whether adjustments may be appropriate.",
         color: "#F4C366"
-    },
-    {
-        id: 6,
-        title: "Implementing",
-        fullTitle: "Implementing the Recommendations",
-        description: "Executing the strategy through shared responsibility and professional coordination.",
-        insight: "Planning is only as good as its execution. We coordinate with specialists to ensure every brick is laid correctly.",
-        details: {
-            action: ["Responsibility Assignment", "Product & Service Selection", "Brokerage Coordination", "Legal/Tax Integration"]
-        },
-        icon: "construction",
-        color: "#FFCC00"
-    },
-    {
-        id: 7,
-        title: "Monitoring",
-        fullTitle: "Monitoring Progress & Updating",
-        description: "The perpetual feedback loop—adjusting for life events and market dynamics.",
-        insight: "Life is dynamic. We conduct periodic reviews to ensure the 'engine' is still performing according to the blueprint.",
-        details: {
-            oversight: ["Periodic Performance Review", "Goal Re-calibration", "Life Event Monitoring", "Decision Updating"]
-        },
-        icon: "sync_alt",
-        color: "#FFD700"
     }
 ];
 
@@ -117,10 +68,12 @@ const PlanningProcessWheel = ({ theme }) => {
                                 </linearGradient>
 
                                 {STEPS.map((step, i) => {
-                                    const angleStep = (Math.PI * 2) / 7;
+                                    const angleStep = (Math.PI * 2) / STEPS.length;
                                     const startAngle = i * angleStep - Math.PI / 2 - 0.05;
                                     const endAngle = (i + 1) * angleStep - Math.PI / 2 + 0.05;
-                                    const rPath = 265;
+                                    // Labels on the bottom of the wheel run right-to-left along the arc so they read upright.
+                                    const flip = Math.sin(midAngle(startAngle, endAngle)) > 0.5;
+                                    const rPath = flip ? 277 : 265;
 
                                     const xS = 300 + rPath * Math.cos(startAngle);
                                     const yS = 300 + rPath * Math.sin(startAngle);
@@ -131,7 +84,9 @@ const PlanningProcessWheel = ({ theme }) => {
                                         <path
                                             key={`path-${step.id}`}
                                             id={`textPath-${step.id}`}
-                                            d={`M ${xS} ${yS} A ${rPath} ${rPath} 0 0 1 ${xE} ${yE}`}
+                                            d={flip
+                                                ? `M ${xE} ${yE} A ${rPath} ${rPath} 0 0 0 ${xS} ${yS}`
+                                                : `M ${xS} ${yS} A ${rPath} ${rPath} 0 0 1 ${xE} ${yE}`}
                                             fill="none"
                                         />
                                     );
@@ -143,7 +98,7 @@ const PlanningProcessWheel = ({ theme }) => {
                             <circle cx="300" cy="300" r="210" fill="transparent" stroke={isDark ? "rgba(244, 195, 102,0.2)" : "rgba(244, 195, 102,0.1)"} strokeWidth="1" strokeDasharray="5 15" />
 
                             {STEPS.map((step, i) => {
-                                const angleStep = (Math.PI * 2) / 7;
+                                const angleStep = (Math.PI * 2) / STEPS.length;
                                 const startAngle = i * angleStep - Math.PI / 2;
                                 const endAngle = (i + 1) * angleStep - Math.PI / 2;
                                 const mid = midAngle(startAngle, endAngle);
@@ -232,44 +187,14 @@ const PlanningProcessWheel = ({ theme }) => {
                                                 padding: '10px',
                                                 fontFamily: 'Raleway, sans-serif'
                                             }}>
-                                                <div style={{ color: '#F4C366', fontSize: '14px', fontWeight: '900', letterSpacing: '5px', marginBottom: '8px', textShadow: '0 0 10px rgba(244, 195, 102,0.3)' }}>
-                                                    PHASE 0{currentStep.id}
+                                                <div style={{ color: '#F4C366', fontSize: '14px', fontWeight: '900', letterSpacing: '5px', marginBottom: '10px', textShadow: '0 0 10px rgba(244, 195, 102,0.3)' }}>
+                                                    STEP 0{currentStep.id}
                                                 </div>
-                                                <div style={{ fontSize: '22px', fontWeight: '900', marginBottom: '12px', textTransform: 'uppercase', lineHeight: '1.1', color: isDark ? '#fff' : '#000' }}>
+                                                <div style={{ fontSize: '24px', fontWeight: '900', marginBottom: '16px', textTransform: 'uppercase', lineHeight: '1.15', color: isDark ? '#fff' : '#000' }}>
                                                     {currentStep.fullTitle}
                                                 </div>
-                                                <div style={{ fontSize: '15px', color: isDark ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.7)', lineHeight: '1.45', fontWeight: '400', marginBottom: '15px' }}>
+                                                <div style={{ fontSize: '17px', color: isDark ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.75)', lineHeight: '1.5', fontWeight: '500', maxWidth: '290px' }}>
                                                     {currentStep.description}
-                                                </div>
-                                                <div style={{
-                                                    padding: '12px',
-                                                    background: isDark ? 'rgba(244, 195, 102,0.08)' : 'rgba(244, 195, 102,0.04)',
-                                                    borderRadius: '12px',
-                                                    borderLeft: '4px solid #F4C366',
-                                                    fontSize: '13.5px',
-                                                    fontStyle: 'italic',
-                                                    textAlign: 'left',
-                                                    maxWidth: '280px',
-                                                    marginBottom: '15px',
-                                                    color: isDark ? 'rgba(255,255,255,0.95)' : 'rgba(0,0,0,0.85)',
-                                                    lineHeight: '1.4'
-                                                }}>
-                                                    "{currentStep.insight}"
-                                                </div>
-                                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center' }}>
-                                                    {Object.values(currentStep.details).flat().slice(0, 4).map((item, i) => (
-                                                        <span key={i} style={{
-                                                            fontSize: '10px',
-                                                            padding: '3px 10px',
-                                                            background: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)',
-                                                            borderRadius: '20px',
-                                                            border: isDark ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(0,0,0,0.1)',
-                                                            color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.6)',
-                                                            fontWeight: '600'
-                                                        }}>
-                                                            {item.toUpperCase()}
-                                                        </span>
-                                                    ))}
                                                 </div>
                                             </div>
                                         </foreignObject>

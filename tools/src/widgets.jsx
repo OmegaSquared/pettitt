@@ -1,5 +1,5 @@
 // Lightweight bundle for the marketing pages: mounts the Clock, Compass and
-// Seven-Step wheel into any <div data-widget="..."> without pulling in
+// five-step planning wheel into any <div data-widget="..."> without pulling in
 // Bootstrap or the full tool stylesheet.
 import React from 'react';
 import { createRoot } from 'react-dom/client';

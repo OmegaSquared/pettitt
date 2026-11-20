@@ -28,8 +28,8 @@ SITE = {
 }
 
 MAILTO = (
-    "mailto:{email}?subject=Appointment%20Request%20%E2%80%94%20Pettitt%20Wealth"
-    "&body=Hello%20Eric%2C%0A%0AI%20would%20like%20to%20schedule%20an%20appointment%20with%20Pettitt%20Wealth.%0A%0A"
+    "mailto:{email}?subject=PETTITT%20WEALTH%20Conversation%20Request"
+    "&body=Hello%20Eric%2C%0A%0AI%20would%20like%20to%20start%20a%20conversation%20with%20PETTITT%20WEALTH.%0A%0A"
     "Name%3A%20%0APhone%3A%20%0APreferred%20dates%20%2F%20times%3A%20%0AWhat%20I%27d%20like%20to%20discuss%3A%20%0A%0AThank%20you."
 ).format(email=SITE["email"])
 
@@ -50,6 +50,7 @@ ICONS = {
     "calendar": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
     "users": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 20a5 5 0 0 1 5-4.5"/></svg>',
     "balance": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4 7h16M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/><path d="M8 21h8"/></svg>',
+    "school": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c0 1.4 2.7 3 6 3s6-1.6 6-3v-5"/><path d="M22 9v6"/></svg>',
     "refresh": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg>',
 }
 def icon(name, cls="icon"):
@@ -107,7 +108,7 @@ def layout(page, title, description, body, active, extra_head="", body_class="")
     "postalCode": "85206",
     "addressCountry": "US"
   }},
-  "founder": {{ "@type": "Person", "name": "Eric Pettitt, CPFA", "jobTitle": "Financial Advisor" }}
+  "founder": {{ "@type": "Person", "name": "Eric Pettitt, CPFA", "jobTitle": "Founder & Wealth Manager" }}
 }}
 </script>
 </head>
@@ -120,7 +121,7 @@ def layout(page, title, description, body, active, extra_head="", body_class="")
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <ul class="nav-links">
       {nav_items}
-      <li class="nav-cta"><a class="btn btn-gold btn-sm" href="{MAILTO}">Schedule an Appointment</a></li>
+      <li class="nav-cta"><a class="btn btn-gold btn-sm" href="contact.html">Start a Conversation</a></li>
     </ul>
   </div>
 </header>
@@ -146,7 +147,7 @@ def layout(page, title, description, body, active, extra_head="", body_class="")
           <li><a href="approach.html">Our Approach</a></li>
           <li><a href="about.html">About Pettitt Wealth</a></li>
           <li><a href="team.html">Our Team</a></li>
-          <li><a href="contact.html">Contact &amp; Scheduling</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
@@ -167,26 +168,31 @@ def layout(page, title, description, body, active, extra_head="", body_class="")
 </html>
 """
 
-def page_hero(eyebrow, title, lead=""):
+def page_hero(eyebrow, title, lead="", extra=""):
     return f"""
 <section class="page-hero bg-deep on-dark">
   <div class="container">
     <div class="eyebrow">{eyebrow}</div>
     <h1>{title}</h1>
     {f'<p class="lead">{lead}</p>' if lead else ''}
+    {extra}
   </div>
 </section>"""
 
-def cta_band(title="Ready to start the conversation?", text="A first meeting is simply a conversation about where you are, where you want to go, and whether we are the right fit to help you get there.", button="Schedule an Appointment"):
+def cta_band(title="Let&rsquo;s Talk About What You&rsquo;re Building.",
+             text=("Whether you&rsquo;re building wealth, preparing for retirement, navigating a business transition, or thinking about your family&rsquo;s future, the first step is getting to know your situation.",
+                   "Let&rsquo;s talk about where you are, where you want to go, and whether PETTITT WEALTH is the right fit for you."),
+             button="Start a Conversation"):
+    paras = "".join(f'<p class="lead narrow">{t}</p>' for t in ((text,) if isinstance(text, str) else text))
     return f"""
 <section class="cta-band">
   <div class="container">
     <div class="inner on-dark reveal">
       <div class="eyebrow">Let&rsquo;s Talk</div>
       <h2>{title}</h2>
-      <p class="lead narrow">{text}</p>
+      {paras}
       <div class="btn-group" style="justify-content:center;margin-top:1.4rem">
-        <a class="btn btn-gold" href="{MAILTO}">{button}</a>
+        <a class="btn btn-gold" href="contact.html">{button}</a>
         <a class="btn btn-outline" href="tel:{SITE['phone_tel']}">Call {SITE['phone']}</a>
       </div>
     </div>
@@ -195,21 +201,18 @@ def cta_band(title="Ready to start the conversation?", text="A first meeting is 
 
 # ----------------------------------------------------------------- HOME
 PILLARS = [
-    ("home", "Estate Planning", "Coordinate wealth-transfer strategies so that what you have built survives for generations, not just years."),
-    ("table", "Tax Strategy", "Identify proactive tax opportunities to help maximize your net-spendable wealth at every stage of the cycle."),
-    ("shield", "Risk Protection", "Insurance and protection structures that help defend your core assets from market and liability hazards."),
-    ("chart", "Retirement Analysis", "Quantitative modeling to help your lifestyle endure regardless of longevity or market volatility."),
-    ("heart", "Legacy &amp; Giving", "Put your family values and charitable impact into a structured, values-based plan."),
-    ("diamond", "Special Situations", "Tailored strategies for liquidity events, concentrated stock positions, and non-traditional assets."),
+    ("chart", "Wealth Management &amp; Investment Management", "Develop a personalized approach to building and managing wealth, taking into account your goals, financial circumstances, time horizon, and risk considerations."),
+    ("calendar", "Retirement Planning &amp; Distribution", "Prepare for retirement with a strategy that considers your desired timeline, income needs, financial resources, and plans for the years ahead."),
+    ("shield", "Risk Management &amp; Insurance Review", "Evaluate financial risks and review existing insurance and annuity arrangements in the context of your broader financial picture."),
+    ("tree", "Estate &amp; Legacy Planning", "Consider how your wealth fits into your long-term goals and coordinate with estate-planning professionals when appropriate."),
+    ("table", "Business Retirement Plans &amp; Cash Management", "Explore retirement plan options for your business and consider how business cash reserves can be managed while accounting for operating expenses and liquidity needs."),
 ]
 STEPS = [
-    ("Understanding Your Circumstances", "We gather the quantitative and qualitative facts — cash flow, assets, liabilities, taxes, and just as importantly your values, family dynamics and expectations."),
-    ("Identifying &amp; Selecting Goals", "Goals often compete. We define and prioritize them together, and weigh the trade-offs between them."),
-    ("Analyzing Your Current Path", "We evaluate the course you are on against the alternatives, looking for both the advantages and the fatal flaws."),
-    ("Developing Recommendations", "Specific, coordinated strategies designed to raise your probability of success — each measured by its contribution to your goals."),
-    ("Presenting the Roadmap", "A clear, visual review of the proposed plan, the assumptions behind it, and the probabilities it implies."),
-    ("Implementing", "Execution through shared responsibility, coordinating with your accountant, attorney and other specialists."),
-    ("Monitoring &amp; Updating", "Life changes and so do markets. Periodic reviews keep the plan calibrated to both."),
+    ("Understand Your Situation", "Start with a conversation about your financial circumstances, goals, priorities, concerns, and the timing of important decisions."),
+    ("Examine the Details", "Review relevant financial information, identify planning considerations, and evaluate different scenarios and assumptions."),
+    ("Develop a Personalized Strategy", "Build recommendations around your individual situation, objectives, time horizon, and risk considerations."),
+    ("Coordinate the Moving Pieces", "When appropriate, work with your accountant, estate-planning attorney, or other professional advisors to coordinate related financial decisions."),
+    ("Review as Life Changes", "Financial plans need to account for changing circumstances, goals, and market conditions. Ongoing reviews help determine whether adjustments may be appropriate."),
 ]
 
 def home():
@@ -228,11 +231,12 @@ def home():
   </video>
   <div class="container hero-grid">
     <div class="hero-copy">
-      <div class="eyebrow">Independent Financial Planning &middot; Mesa, Arizona</div>
-      <h1>Wealth planning built around <em>your</em> life, not a product.</h1>
-      <p class="lead">Pettitt Wealth offers impartial, objective guidance and a completely integrated approach to building, protecting and passing on your wealth — from a true fiduciary who listens first.</p>
+      <div class="eyebrow">Financial Planning &amp; Wealth Management in Mesa and Gilbert, Arizona</div>
+      <h1>Go Beyond the Portfolio. Build Around <em>Your Life.</em></h1>
+      <p class="lead">Your financial life is about more than investments. It includes your business, your family, your retirement, your goals, and the legacy you want to create.</p>
+      <p>At PETTITT WEALTH, we work with entrepreneurs, business leaders, high-net-worth individuals, and people navigating important life transitions. Through personalized financial planning, investment management, and a thoughtful, data-driven approach, we help clients work through financial decisions with a clearer understanding of their options.</p>
       <div class="btn-group">
-        <a class="btn btn-gold" href="{MAILTO}">Schedule an Appointment</a>
+        <a class="btn btn-gold" href="contact.html">Start a Conversation</a>
         <a class="btn btn-outline" href="approach.html">Our Approach</a>
       </div>
       <div class="hero-values"><span>Dependable</span><span>Affluent</span><span>Strong</span></div>
@@ -244,13 +248,15 @@ def home():
   <div class="container split">
     <div class="reveal">
       <div class="eyebrow">At Pettitt Wealth</div>
-      <h2>We grasp the intricacies of financial markets — and guide you through them with assurance.</h2>
+      <h2>Financial Planning for Entrepreneurs, Business Leaders &amp; Families</h2>
       <div class="rule left"></div>
-      <p class="lead">We offer impartial, objective guidance alongside a variety of investment and insurance products customized to your needs and aspirations. Through thorough financial planning, we help you define your objectives, devise strategies, and make well-informed choices for your financial well-being.</p>
-      <p>Our investment strategy merges macroeconomic scrutiny with strategic asset allocation, leveraging data-driven insights to enhance portfolios and manage risk. Emphasizing risk management, we help safeguard your investments during market declines while aiming to position you for growth during recoveries. Whether you are an individual or an institution, we deliver tailored solutions that resonate with your specific aims and risk tolerance — because every client is unique.</p>
-      <a class="btn btn-navy" href="about.html">About Pettitt Wealth</a>
+      <p class="lead">Financial decisions often become more complex as your life and responsibilities evolve.</p>
+      <p>You might be growing a business, accumulating wealth, preparing for retirement, navigating a business transition, funding education, or thinking about what you want to leave behind.</p>
+      <p>PETTITT WEALTH works with entrepreneurs, business leaders, high-net-worth individuals, and people navigating significant life transitions to help them evaluate these decisions within the context of their broader financial goals.</p>
+      <p>When appropriate, Eric collaborates with accountants and estate-planning attorneys to help coordinate the different professionals involved in your financial life.</p>
+      <a class="btn btn-navy" href="about.html">About PETTITT WEALTH</a>
     </div>
-    <div class="frame reveal"><img src="assets/img/eric.jpg" alt="Eric Pettitt, Financial Advisor" width="700" height="700"></div>
+    <div class="frame reveal"><img src="assets/img/eric.jpg" alt="Eric Pettitt, Founder &amp; Wealth Manager at PETTITT WEALTH" width="700" height="700"></div>
   </div>
 </section>
 
@@ -291,11 +297,12 @@ def home():
   <div class="container">
     <div class="center narrow reveal">
       <div class="eyebrow">Beyond the Portfolio</div>
-      <h2>Comprehensive wealth planning.</h2>
+      <h2>A Comprehensive Approach to Building and Managing Wealth</h2>
       <div class="rule"></div>
-      <p class="lead">Wealth management at this level means applying the same care to every facet of your financial life. We secure the foundation so you can build the legacy.</p>
+      <p class="lead">Building wealth involves more than selecting investments. It means understanding how the different parts of your financial life work together.</p>
     </div>
-    <div class="grid grid-3" style="margin-top:2.5rem">{pillars}</div>
+    <div class="grid grid-center" style="margin-top:2.5rem">{pillars}</div>
+    <div class="center" style="margin-top:2.4rem"><a class="btn btn-navy" href="approach.html#services">Explore Services &amp; Approach</a></div>
   </div>
 </section>
 
@@ -303,9 +310,8 @@ def home():
   <div class="container">
     <div class="center narrow reveal">
       <div class="eyebrow">Our Planning Process</div>
-      <h2>Seven steps, repeated for life.</h2>
+      <h2>How the PETTITT WEALTH Planning Process Works</h2>
       <div class="rule"></div>
-      <p class="lead">True financial planning is not a one-time event but a continuous cycle of discovery, analysis and execution. We follow a rigorous protocol so your plan is resilient to real-world complexity.</p>
     </div>
     <div class="wheel-wrap reveal" style="margin-top:1.5rem"><div data-widget="planning-wheel" data-theme="light"></div></div>
     <p class="small muted center">Hover or tap a segment to explore each step.</p>
@@ -324,14 +330,13 @@ def home():
   <div class="container split">
     <div class="reveal">
       <div class="eyebrow">The Fiduciary Standard</div>
-      <h2>Your interests come first. Always.</h2>
+      <h2>A Fiduciary Approach. A Personal Relationship.</h2>
       <div class="rule left"></div>
-      <blockquote class="pull-quote">
-        <p>&ldquo;When you do the right things in the right way, you have nothing to lose because you have nothing to fear.&rdquo;</p>
-        <cite>Zig Ziglar</cite>
-      </blockquote>
-      <p class="lead">Eric has the knowledge and background to be a true fiduciary, and prides himself on looking out for his clients&rsquo; best interests. You will always know who is building your strategy — because the person who designs it is the person you talk to.</p>
-      <a class="btn btn-outline" href="team.html">Meet the Team</a>
+      <p class="lead">Eric believes financial planning should be built on integrity, transparency, and a genuine understanding of each client&rsquo;s circumstances.</p>
+      <p>PETTITT WEALTH is intentional about the client relationships it takes on so Eric can dedicate meaningful time and attention to the people he serves.</p>
+      <p>That means asking questions, explaining recommendations, and taking the time to understand what matters to you.</p>
+      <p>You&rsquo;re not just an account number. You&rsquo;re a person with goals, responsibilities, and plans for the future.</p>
+      <a class="btn btn-outline" href="about.html#eric">Meet Eric</a>
     </div>
     <div class="reveal">
       <div class="card">
@@ -357,6 +362,65 @@ STAGES = [
     ("Approaching Recession", "Indicators peak and begin to roll over. Transitioning to defensive positioning becomes critical.", (30, 40, 30)),
     ("Recession", "A period of contraction and peak uncertainty. Focus shifts to capital preservation and liquidity.", (20, 40, 40)),
 ]
+# Our Approach service cards: (icon, title, blocks). A block is ("p", text), ("ul", [items]) or ("note", text);
+# notes hold the service-specific qualifications from Karin's copy and must stay with their service.
+PERSONAL_SERVICES = [
+    ("chart", "Wealth Accumulation &amp; Investment Management", [
+        ("p", "Building wealth requires a strategy that reflects your financial circumstances, objectives, time horizon, and tolerance for risk."),
+        ("p", "Eric evaluates investment decisions within the context of the broader financial plan, incorporating detailed analysis and consideration of market and macroeconomic conditions."),
+        ("p", "The aim is to develop an investment strategy aligned with your goals and circumstances, with ongoing attention to changing conditions and priorities.")]),
+    ("calendar", "Retirement Planning", [
+        ("p", "Retirement brings a different set of financial questions."),
+        ("p", "When do you want to retire? What income might you need? How do your investments and other financial resources fit into your plans?"),
+        ("p", "Eric works with clients to evaluate retirement scenarios, examine assumptions, and consider how their financial resources may support their retirement goals.")]),
+    ("refresh", "Retirement Distribution", [
+        ("p", "Moving from accumulating wealth to using it requires careful consideration."),
+        ("p", "Retirement distribution planning examines income needs, withdrawal decisions, time horizons, and how assets may be used throughout retirement.")]),
+    ("shield", "Risk Management", [
+        ("p", "Financial risks can affect your ability to meet long-term goals."),
+        ("p", "PETTITT WEALTH considers potential vulnerabilities within the broader financial plan and evaluates strategies for addressing them based on each client&rsquo;s situation.")]),
+    ("balance", "Insurance &amp; Annuity Review", [
+        ("p", "Insurance and annuities can play different roles in a financial strategy."),
+        ("p", "Eric reviews existing arrangements and considers how coverage, costs, features, and potential limitations fit within the client&rsquo;s broader financial picture."),
+        ("note", "Recommendations depend on individual circumstances and the services available through applicable providers.")]),
+    ("school", "Educational Planning", [
+        ("p", "Education funding can be an important family goal."),
+        ("p", "Planning considers education costs alongside other priorities, including retirement, current cash flow, and long-term financial objectives.")]),
+    ("tree", "Estate &amp; Legacy Planning Coordination", [
+        ("p", "Estate and legacy considerations can influence how wealth is managed and transferred."),
+        ("p", "Eric works with clients to incorporate their legacy objectives into the broader financial planning process and, when appropriate, coordinates with estate-planning attorneys and other professionals."),
+        ("note", "PETTITT WEALTH does not provide legal advice or tax services on behalf of Cambridge.")]),
+]
+BUSINESS_SERVICES = [
+    ("users", "Business Retirement Plans", [
+        ("p", "A business retirement plan can affect employee benefits, business finances, and long-term planning for owners."),
+        ("p", "PETTITT WEALTH can help business owners evaluate retirement plan options, including:"),
+        ("ul", ["401(k) plans", "SEP IRAs", "SIMPLE IRAs"]),
+        ("p", "The appropriate plan depends on the business structure, workforce, owner objectives, costs, and administrative requirements."),
+        ("note", "Plan recommendations and implementation are subject to the firm&rsquo;s actual service capabilities and applicable provider arrangements.")]),
+    ("table", "Business Cash Management", [
+        ("p", "Business cash has a job to do. Some funds are needed for daily operations, while others may be set aside for future expenses or opportunities."),
+        ("p", "PETTITT WEALTH helps business owners evaluate cash needs, liquidity requirements, time horizons, and financial objectives when considering options for business reserves."),
+        ("p", "The goal is to understand how available cash can be managed while maintaining appropriate access to funds when the business needs them."),
+        ("note", "Any cash-management strategy depends on the business&rsquo;s circumstances, the products or services selected, and the associated risks, costs, and liquidity terms.")]),
+    ("diamond", "Business Transitions &amp; Wealth Planning", [
+        ("p", "Business decisions and personal financial decisions are often closely connected."),
+        ("p", "Growing a company, selling a business, changing ownership, or preparing for a transition can affect retirement planning, investment strategy, cash flow, and long-term wealth goals."),
+        ("p", "Eric works with clients to examine these considerations together and coordinate with other professional advisors when appropriate.")]),
+]
+
+def service_cards(items):
+    out = ""
+    for ic, title, blocks in items:
+        body = ""
+        for kind, val in blocks:
+            if kind == "p": body += f"<p>{val}</p>"
+            elif kind == "ul": body += "<ul>" + "".join(f"<li>{v}</li>" for v in val) + "</ul>"
+            elif kind == "note": body += f'<p class="note small muted">{val}</p>'
+        out += f"""
+      <div class="card card-gold service reveal">{icon(ic)}<h3>{title}</h3>{body}</div>"""
+    return out
+
 LOSSES = [(10, 11), (20, 25), (30, 43), (40, 67), (50, 100), (60, 150), (70, 233)]
 
 def approach():
@@ -366,26 +430,62 @@ def approach():
         <div class="alloc" aria-hidden="true"><i class="eq" style="width:{a[0]}%"></i><i class="bd" style="width:{a[1]}%"></i><i class="cs" style="width:{a[2]}%"></i></div>
       </div>""" for i, (t, d, a) in enumerate(STAGES))
     rows = "".join(f"<tr><td>A {l}% loss</td><td>requires a {g}% gain</td></tr>" for l, g in LOSSES)
-    return page_hero("Our Approach", "Planning for true north. Managing for the hour.",
-        "Two instruments working together: the Compass, which is our planning discipline, and the Clock, which is our cycle-aware approach to managing your assets.") + f"""
+    return page_hero("Our Approach", "A Financial Strategy Built Around Your Bigger Picture.",
+        "Financial planning involves more than managing investments. It requires understanding your goals, evaluating your options, and considering how decisions in one area may affect another.",
+        extra="""<p>At PETTITT WEALTH, Eric Pettitt combines personalized financial planning, investment management, scenario analysis, and a data-driven perspective to help clients work through complex financial decisions.</p>
+    <p>The process begins with understanding your situation and what you want your wealth to accomplish.</p>
+    <div class="btn-group"><a class="btn btn-gold" href="contact.html">Start a Conversation</a></div>""") + f"""
 
 <section class="section">
-  <div class="container split">
-    <div class="reveal">
-      <div class="eyebrow">The Compass &middot; Financial Planning</div>
-      <h2>A strategy based on now, then, and later.</h2>
-      <div class="rule left"></div>
-      <p class="lead">There is no one-size-fits-all approach to investing. We build plans for accumulation and for distribution, so we can serve clients from all walks of life.</p>
-      <p>The Compass is the human side of the work: understanding your circumstances, selecting and prioritizing goals, analyzing the path you are on, and developing coordinated recommendations across retirement income, taxes, estate architecture, protection and legacy. We partner with your accountant and estate attorney so every aspect of your financial legacy is covered — with today&rsquo;s portfolio management strategies and asset-protection structures that let you keep more of your money where it belongs: in your hands.</p>
-      <div class="btn-group"><a class="btn btn-gold" href="compass.html">Open the Compass Simulator</a><a class="btn btn-outline" href="index.html#planning">The seven-step process</a></div>
+  <div class="container">
+    <div class="center narrow reveal">
+      <div class="eyebrow">Our Approach</div>
+      <h2>Two Ways to Work With PETTITT WEALTH</h2>
+      <div class="rule"></div>
     </div>
-    <div class="reveal">
-      <div class="grid" style="gap:1rem">
-        <div class="card card-navy" style="padding:1.4rem 1.6rem">{icon("home","icon navy")}<h4 style="margin-top:.6rem">Estate Architecture</h4><p class="small muted">Generational wealth transfer</p></div>
-        <div class="card card-navy" style="padding:1.4rem 1.6rem">{icon("balance","icon navy")}<h4 style="margin-top:.6rem">Tax Strategy</h4><p class="small muted">Efficiency at every cycle stage</p></div>
-        <div class="card card-navy" style="padding:1.4rem 1.6rem">{icon("chart","icon navy")}<h4 style="margin-top:.6rem">Retirement Analysis</h4><p class="small muted">Accumulation through distribution</p></div>
+    <div class="grid grid-2" style="margin-top:2.5rem">
+      <div class="card card-gold reveal">{icon("compass")}<h3>Clock and Compass</h3>
+        <p>The Compass helps us plan around your goals. The Clock uses market and business cycles to inform investment decisions. Together, they offer one way to connect financial planning and investment management.</p>
+        <div class="btn-group"><a class="btn btn-navy btn-sm" href="compass.html">Explore the Compass</a><a class="btn btn-outline btn-sm" href="clock.html">Explore the Clock</a></div>
+      </div>
+      <div class="card card-gold reveal">{icon("map")}<h3>A Strategy Shaped by Your Investment Philosophy</h3>
+        <p>If you prefer a different way to invest, we can start with your goals, how you prefer to invest, and the risks you&rsquo;re comfortable taking. From there, we can explore a strategy suited to your circumstances.</p>
+        <div class="btn-group"><a class="btn btn-outline btn-sm" href="contact.html">Start a Conversation</a></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section bg-white">
+  <div class="container narrow reveal">
+    <div class="eyebrow">The Compass &middot; Financial Planning</div>
+    <h2>A strategy based on now, then, and later.</h2>
+    <div class="rule left"></div>
+    <p class="lead">There is no one-size-fits-all approach to investing. We build plans for accumulation and for distribution, so we can serve clients from all walks of life.</p>
+    <p>The Compass is the human side of the work: understanding your circumstances, selecting and prioritizing goals, analyzing the path you are on, and developing coordinated recommendations across retirement income, taxes, estate architecture, protection and legacy. We partner with your accountant and estate attorney so every aspect of your financial legacy is covered — with today&rsquo;s portfolio management strategies and asset-protection structures that let you keep more of your money where it belongs: in your hands.</p>
+    <div class="btn-group"><a class="btn btn-gold" href="compass.html">Explore the Compass</a><a class="btn btn-outline" href="index.html#planning">Our planning process</a></div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="center narrow reveal">
+      <div class="eyebrow">Services</div>
+      <h2>Personal Wealth Management</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid grid-center" style="margin-top:2.5rem">{service_cards(PERSONAL_SERVICES)}</div>
+  </div>
+</section>
+
+<section class="section bg-white">
+  <div class="container">
+    <div class="center narrow reveal">
+      <div class="eyebrow">Business Services</div>
+      <h2>Business &amp; Executive Solutions</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid grid-3" style="margin-top:2.5rem">{service_cards(BUSINESS_SERVICES)}</div>
   </div>
 </section>
 
@@ -447,29 +547,27 @@ def approach():
   </div>
 </section>
 
-{cta_band("Want to know where you stand?", "Bring your current statements and we will walk through how your portfolio and plan line up with the cycle — no obligation.")}
+{cta_band("Let&rsquo;s Discuss Your Financial Goals.", "Whether you&rsquo;re managing personal wealth, preparing for retirement, evaluating a business retirement plan, or considering how to manage business cash reserves, the first step is understanding your situation.")}
 """
 
 # ----------------------------------------------------------------- ABOUT
 def about():
     return page_hero("Independent Branch", "About Pettitt Wealth",
-        "An independent financial planning practice in Mesa, Arizona, built on listening, math, and doing right by the people we serve.") + f"""
+        "Personal Financial Planning. Thoughtful Analysis. Genuine Relationships.") + f"""
 
 <section class="section">
   <div class="container split">
     <div class="reveal">
       <div class="eyebrow">At Pettitt Wealth</div>
-      <h2>Guidance you can rely on, at every step of the journey.</h2>
+      <h2>Financial Planning Built Around You</h2>
       <div class="rule left"></div>
-      <p class="lead">We grasp the intricacies of financial markets and are committed to guiding clients through their financial journey with assurance. We offer impartial, objective guidance alongside a variety of investment and insurance products customized to individual client needs and aspirations.</p>
-      <p>Through our thorough financial planning services, we assist clients in defining their objectives, devising strategies, and making well-informed choices for their financial well-being. Our investment strategy merges macroeconomic scrutiny with strategic asset allocation, leveraging data-driven insights to enhance portfolios and manage risks effectively.</p>
-      <p>Emphasizing risk management, we help safeguard your investments during market declines while aiming to position you for growth during market recoveries. Whether you&rsquo;re an individual or an institution, our seasoned professionals are dedicated to delivering tailored investment solutions that resonate with your specific aims and risk tolerance. We acknowledge the uniqueness of each client and advocate for a personalized approach.</p>
+      <p class="lead">At PETTITT WEALTH, financial planning starts with understanding the person behind the numbers.</p>
+      <p>We work with entrepreneurs, business leaders, high-net-worth individuals, and people navigating important life transitions. Our approach combines detailed financial analysis with personal attention, helping clients evaluate their options in the context of their individual goals and circumstances.</p>
+      <p>The philosophy is straightforward: take the time to understand the situation, dig into the details, and build a strategy around what matters most.</p>
     </div>
     <div class="reveal">
       <div class="card on-dark bg-deep" style="padding:2.5rem">
-        <img src="assets/img/logo_gold_stacked.png" alt="Pettitt Wealth" style="width:180px;margin:0 auto 1.6rem" width="180" height="236">
-        <p class="quote" style="font-size:1.35rem">&ldquo;{SITE['tagline']}&rdquo;</p>
-        <div class="quote-by">Alan Lakein</div>
+        <img src="assets/img/logo_gold_stacked.png" alt="PETTITT WEALTH" style="width:180px;margin:0 auto" width="180" height="236">
       </div>
     </div>
   </div>
@@ -478,40 +576,59 @@ def about():
 <section class="section bg-white">
   <div class="container">
     <div class="center narrow reveal">
-      <div class="eyebrow">How We Work Together</div>
-      <h2>A collaborative wealth management process.</h2>
+      <div class="eyebrow">Our Values</div>
+      <h2>The Values Behind the Relationship</h2>
       <div class="rule"></div>
-      <p class="lead">Our collaborative process empowers you to achieve your financial goals through personalized strategies, ongoing monitoring, and a commitment to your financial well-being.</p>
     </div>
-    <div class="grid grid-4" style="margin-top:2.5rem">
-      <div class="card card-gold reveal">{icon("users")}<h3>Listen</h3><p>We start by truly understanding you — your circumstances, values, family and goals.</p></div>
-      <div class="card card-gold reveal">{icon("compass")}<h3>Plan</h3><p>We design a unique plan and portfolio, with strategies for accumulation and for distribution.</p></div>
-      <div class="card card-gold reveal">{icon("balance")}<h3>Coordinate</h3><p>We work alongside your accountant and estate attorney so nothing falls between the cracks.</p></div>
-      <div class="card card-gold reveal">{icon("refresh")}<h3>Monitor</h3><p>Life and markets change. We review, recalibrate and keep you informed along the way.</p></div>
+    <div class="grid grid-center" style="margin-top:2.5rem">
+      <div class="card card-gold reveal">{icon("shield")}<h3>Fiduciary Integrity</h3><p>Approach financial advice with integrity, transparency, and attention to each client&rsquo;s circumstances and objectives.</p></div>
+      <div class="card card-gold reveal">{icon("users")}<h3>Intentional Focus</h3><p>Work with a select group of clients to support meaningful personal attention and direct communication.</p></div>
+      <div class="card card-gold reveal">{icon("diamond")}<h3>Transparency &amp; Clarity</h3><p>Make financial conversations approachable and recommendations understandable, so clients can ask questions and participate in decisions.</p></div>
+      <div class="card card-gold reveal">{icon("compass")}<h3>Comprehensive Planning</h3><p>Consider how investments, retirement, business finances, insurance, and estate considerations fit together rather than viewing each decision in isolation.</p></div>
+      <div class="card card-gold reveal">{icon("heart")}<h3>Personal Relationships</h3><p>Build long-term relationships through listening, honest conversations, and an understanding of what matters to each client.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="section bg-navy on-dark">
+  <div class="container narrow center reveal">
+    <h2>A Financial Planning Relationship Built Around You</h2>
+    <div class="rule"></div>
+    <p class="lead">PETTITT WEALTH is built on the belief that clients deserve to be understood as individuals.</p>
+    <p>That means taking the time to ask questions, examine the details, discuss options, and consider how financial decisions connect to the bigger picture.</p>
+    <p>When appropriate, Eric collaborates with accountants and estate-planning attorneys to help coordinate the professionals involved in a client&rsquo;s financial life.</p>
+    <p><strong>Every client is different. Every financial plan should be personal.</strong></p>
   </div>
 </section>
 
 <section class="section" id="eric">
   <div class="container">
     <div class="eyebrow center">About Eric Pettitt</div>
-    <h2 class="center">A little about Eric.</h2>
+    <h2 class="center">Meet Eric Pettitt</h2>
     <div class="rule"></div>
     <div class="bio" style="margin-top:2.5rem">
       <div class="reveal">
-        <img src="assets/img/eric.jpg" alt="Eric Pettitt" width="700" height="700">
+        <img src="assets/img/eric.jpg" alt="Eric Pettitt, Founder &amp; Wealth Manager at PETTITT WEALTH" width="700" height="700">
         <div class="card" style="margin-top:1.2rem;padding:1.4rem 1.6rem">
           <div class="eyebrow" style="margin-bottom:.4rem">Eric Pettitt, CPFA&reg;</div>
-          <p class="small muted" style="margin:0">Financial Advisor &middot; Wealth Manager &middot; Financial Life Planner</p>
+          <p class="small muted" style="margin:0">Founder &amp; Wealth Manager</p>
           <p class="small" style="margin:.8rem 0 0"><a href="mailto:{SITE['email']}">{SITE['email']}</a><br><a href="tel:{SITE['phone_tel']}">{SITE['phone']}</a></p>
         </div>
       </div>
       <div class="reveal">
-        <p class="lead">Just as oak trees grow from acorns, it is possible to grow small things into something much larger.</p>
-        <p>As a Financial Planner, it&rsquo;s my job to help you grow that tree. I have a deep passion for the intricacies of a financial situation, diving into the math and evaluating variables for a multitude of scenarios. By truly listening to my clients and understanding their needs, I can build a unique plan to set them on the path to success. I have the knowledge and background to be a true fiduciary, and I pride myself on looking out for my clients&rsquo; best interests. There is no one-size-fits-all approach to investing. With a strategy based on now, then, and later, as well as plans for accumulation and distribution, I can serve clients from all walks of life. I approach my work in an organic way, with the knowledge that by doing right by others, success and blessings will materialize for all parties involved. Moreover, we&rsquo;ll have fun in the process, and you become part of the family. My passion for what I do runs deeper than what is typically expected of our industry &mdash; and it shows in the deep relationships we build with our clients.</p>
-        <p>My clients know I have their backs and that I&rsquo;m not here simply to sell a product. Pettitt Wealth partners with clients looking for a true financial planner, well versed in developing plans as unique as they are. I have 10 years of experience advising high-net-worth individuals, as well as partnering with accountants and estate attorneys to cover all aspects of creating a financial legacy. I have created a company that provides a completely integrated approach to building your wealth, including utilizing today&rsquo;s most creative portfolio management strategies and asset protection structures enabling you to keep more of your money where it belongs &mdash; in your hands. After all, you&rsquo;ve earned it!</p>
-        <h3>Community</h3>
-        <p>I believe that being involved in the community and giving back is important and is part of who I am. I am very involved in Gilbert&rsquo;s Chamber of Commerce and serve on their public policy committee. I serve on the government affairs committee for West and Southeast REALTORS&reg; of the Valley and am a part of their business affiliate group. I am a member of Above Par Networking and serve on the membership committee for Elite Business Alliance.</p>
+        <p class="lead">Eric Pettitt helps individuals, families, entrepreneurs, and business leaders evaluate financial decisions in the context of their goals, responsibilities, and plans.</p>
+        <p>He starts by asking about your business, family, values, and concerns. Then he models scenarios, tests assumptions, and considers the broader economic environment to help you understand your options.</p>
+        <p>Eric has more than a decade of experience advising clients on financial decisions. He combines detailed analysis with personal attention so recommendations reflect what matters to you.</p>
+        <h3>Connected to the Arizona Business Community</h3>
+        <p>Eric believes relationships and service extend beyond financial planning.</p>
+        <p>He is actively involved with organizations including:</p>
+        <ul>
+          <li>Gilbert Chamber of Commerce, including its Public Policy Committee</li>
+          <li>West and Southeast REALTORS&reg; of the Valley (WeSERV)</li>
+          <li>Above Par Networking</li>
+          <li>Elite Business Alliance</li>
+        </ul>
+        <p>Through these organizations, Eric connects with local professionals and business leaders across Arizona. His commitment to relationship-building and community involvement carries into his work with clients.</p>
         <div class="compliance" style="justify-content:flex-start;margin-top:1.6rem">
           <a href="{SITE['brokercheck']}" target="_blank" rel="noopener noreferrer"><img src="assets/img/finra_brokercheck.png" alt="FINRA BrokerCheck" width="160" height="59"></a>
           <span class="small muted">Check Eric&rsquo;s background on FINRA&rsquo;s BrokerCheck.</span>
@@ -521,18 +638,18 @@ def about():
   </div>
 </section>
 
-{cta_band("Let&rsquo;s grow your tree.", "Schedule a conversation with Eric — we will talk about where you are today and what you want your wealth to do for you and your family.")}
+{cta_band("Let&rsquo;s Get to Know Each Other.", "If you&rsquo;re looking for a financial planning relationship that combines personal attention, detailed analysis, and an understanding of your goals, let&rsquo;s start with a conversation.", button="Contact Eric")}
 """
 
 # ----------------------------------------------------------------- TEAM
 TEAM = [
-    ("eric.jpg", "Eric Pettitt, CPFA&reg;", "Financial Advisor &middot; Wealth Manager, Financial Life Planner",
-     "Fusing advanced market analysis with financial life planning to build resilient portfolios that support your aspirations. A true fiduciary who listens first.",
+    ("eric.jpg", "Eric Pettitt, CPFA&reg;", "Founder &amp; Wealth Manager",
+     "Eric Pettitt is a fiduciary Financial Planner and Certified Plan Fiduciary Advisor (CPFA) with more than a decade of experience advising individuals, families, entrepreneurs, and business leaders.",
      [("mailto:" + SITE["email"], SITE["email"]), ("tel:" + SITE["phone_tel"], SITE["phone"])], "Mesa, AZ", "about.html#eric"),
     ("aaron.jpg", "Aaron Soderstrom", "Chief Investment Strategist &middot; Advisory Partner",
      "Architect of the cycle-aware investment framework behind the Clock, blending quantitative rigor with behavioral insight to navigate market cycles.",
      [], "Keller, TX", None),
-    ("danielle.jpg", "Danielle Noonan, FPQP&trade;", "Client Experience Director",
+    ("danielle.jpg", "Danielle Noonan, FPQP&trade;", "Chief Operations Officer",
      "Orchestrating the Pettitt Wealth client experience &mdash; committed to white-glove service and fostering deep, lasting client relationships.",
      [("mailto:dn@pettittwealth.com", "dn@pettittwealth.com"), ("tel:+14809335277", "(480) 933-5277")], "Mesa, AZ", None),
     ("chet.jpg", "Chet Teichman, CFP&reg;, ChFC&reg;, AIF&reg;", "Trader &middot; Advisory Partner",
@@ -560,13 +677,14 @@ def team():
     <p class="small muted center" style="margin-top:2rem">To reach any member of the team, contact Pettitt Wealth at <a href="mailto:{SITE['email']}">{SITE['email']}</a> or <a href="tel:{SITE['phone_tel']}">{SITE['phone']}</a>.</p>
   </div>
 </section>
-{cta_band("Ready to collaborate?", "Whether you are planning for retirement, a liquidity event, or the next generation, the conversation starts with a simple appointment.")}
+{cta_band("Let&rsquo;s Start a Conversation.", "Whether you are building wealth, preparing for retirement, or planning for your family&rsquo;s future, the first step is getting to know your situation.")}
 """
 
 # ----------------------------------------------------------------- CONTACT
 def contact():
-    return page_hero("Contact &amp; Scheduling", "Let&rsquo;s schedule a conversation.",
-        "Request an appointment below and your email app will open with the details pre-filled — or simply call or email us directly.") + f"""
+    return page_hero("Contact PETTITT WEALTH", "Let&rsquo;s Talk About Your Financial Goals.",
+        "Whether you&rsquo;re building wealth, preparing for retirement, navigating a business transition, or thinking about your family&rsquo;s future, the first step is getting to know your situation.",
+        extra="<p>Call or email Eric directly, or use the form below to prepare an email request.</p>") + f"""
 <section class="section-tight">
   <div class="container contact-cards">
     <div class="contact-card reveal">{icon("map")}<div><div class="label">Primary Office</div><a href="{SITE['map_link']}" target="_blank" rel="noopener noreferrer">{SITE['address_1']}<br>{SITE['address_2']}</a></div></div>
@@ -578,10 +696,10 @@ def contact():
 <section class="section">
   <div class="container split" style="align-items:start">
     <div class="reveal">
-      <div class="eyebrow">Schedule an Appointment</div>
-      <h2>Request a time that works for you.</h2>
+      <div class="eyebrow">Start a Conversation</div>
+      <h2>Tell Us What You&rsquo;d Like to Discuss.</h2>
       <div class="rule left"></div>
-      <p class="muted">Fill in what you can. When you press the button, your email program will open a message to Eric with your request — nothing is stored on this website.</p>
+      <p class="muted">Complete the details below, then select &ldquo;Open Email Request.&rdquo; Your email app will open a message to Eric. Review it and press Send in your email app to deliver your request.</p>
       <form id="appointment-form" class="form" data-to="{SITE['email']}" novalidate>
         <div class="form-row">
           <div><label for="f-name">Full name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
@@ -602,15 +720,16 @@ def contact():
         </div>
         <div><label for="f-when">Preferred dates / times</label><input id="f-when" name="when" type="text" placeholder="e.g. Tuesday or Thursday afternoons"></div>
         <div><label for="f-message">Anything else we should know?</label><textarea id="f-message" name="message"></textarea></div>
-        <div><button class="btn btn-gold" type="submit">{ICONS['calendar'].replace('<svg','<svg width="18" height="18"')} Send Appointment Request</button></div>
-        <p id="form-status" class="form-note" aria-live="polite">Prefer to write your own message? Email <a href="{MAILTO}">{SITE['email']}</a>.</p>
+        <div><button class="btn btn-gold" type="submit">{ICONS['mail'].replace('<svg','<svg width="18" height="18"')} Open Email Request</button></div>
+        <p id="form-status" class="form-note" aria-live="polite">If your email app does not open, email <a href="mailto:{SITE['email']}">{SITE['email']}</a> or call <a href="tel:{SITE['phone_tel']}">{SITE['phone']}</a>.</p>
       </form>
     </div>
     <div class="reveal">
       <div class="map"><iframe title="Map to Pettitt Wealth office" src="{SITE['map_embed']}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
       <div class="card" style="margin-top:1.4rem">
         <h4>What to expect</h4>
-        <p class="small muted" style="margin:0">A first meeting is a no-obligation conversation, typically 45&ndash;60 minutes, in person at our Mesa office or by video. Bring any current statements you would like reviewed. We serve clients residing in {SITE['states']}.</p>
+        <p class="small muted">The first step is a conversation about where you are, where you want to go, and whether PETTITT WEALTH is the right fit for you.</p>
+        <p class="small muted" style="margin:0">We serve clients residing in {SITE['states']}.</p>
       </div>
     </div>
   </div>
@@ -695,14 +814,14 @@ def notfound():
 
 # ----------------------------------------------------------------- build
 PAGES = [
-    ("index.html", "Pettitt Wealth | Independent Financial Planning & Wealth Management, Mesa AZ",
-     "Pettitt Wealth is an independent financial planning and wealth management practice in Mesa, Arizona. Fiduciary advice, cycle-aware investing, and plans built around your life.", home),
-    ("approach.html", "Our Approach", "How Pettitt Wealth plans (the Compass) and manages assets through the business cycle (the Clock).", approach),
+    ("index.html", "Pettitt Wealth | Financial Planning & Wealth Management, Mesa & Gilbert AZ",
+     "PETTITT WEALTH provides financial planning and wealth management in Mesa and Gilbert, Arizona for entrepreneurs, business leaders, high-net-worth individuals and families.", home),
+    ("approach.html", "Our Approach", "How PETTITT WEALTH approaches financial planning and investment management, with personal wealth management and business services for owners and executives.", approach),
     ("clock.html", "The Clock: Cycle-Aware Asset Management", "The Clock is how Pettitt Wealth reads the business cycle: six economic stages, the asymmetry of losses, and the feedback loops that drive markets.", clock),
     ("compass.html", "The Compass: Retirement Planning Simulator", "The Compass is Pettitt Wealth's interactive planning simulator: design your blueprint, run Monte Carlo projections, and see the probability of meeting your goals.", compass),
-    ("about.html", "About Pettitt Wealth & Eric Pettitt", "Learn about Pettitt Wealth, our collaborative process, and financial advisor Eric Pettitt of Mesa, Arizona.", about),
+    ("about.html", "About Pettitt Wealth & Eric Pettitt", "Learn about PETTITT WEALTH, the values behind our client relationships, and founder and wealth manager Eric Pettitt of Mesa, Arizona.", about),
     ("team.html", "Our Team", "Meet Eric Pettitt, Danielle Noonan and the advisory partners behind Pettitt Wealth.", team),
-    ("contact.html", "Contact & Schedule an Appointment", "Schedule an appointment with Pettitt Wealth in Mesa, AZ. Call (480) 933-5277 or email eric@pettittwealth.com.", contact),
+    ("contact.html", "Contact", "Start a conversation with PETTITT WEALTH in Mesa, AZ. Call (480) 933-5277 or email eric@pettittwealth.com.", contact),
     ("privacy.html", "Privacy Policy", "How Pettitt Wealth collects, uses and protects client information.", privacy),
     ("404.html", "Page Not Found", "The page you requested could not be found.", notfound),
 ]

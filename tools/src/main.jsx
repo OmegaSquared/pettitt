@@ -13,11 +13,12 @@ import ControlCenter from './components/ControlCenter';
 // ---------------------------------------------------------------------------
 // Static-site glue. The original app kept simulator inputs in Firestore for
 // logged-in users; here they live in localStorage so a visitor's scenario
-// survives a reload without any back end. "Schedule" / "Message" actions open
-// the visitor's email client.
+// survives a reload without any back end. "Start a Conversation" buttons go to
+// contact.html; "Email Eric" opens the visitor's email client with a prefilled message.
 // ---------------------------------------------------------------------------
 const MAILTO = document.getElementById('tool-root')?.dataset.mailto || 'mailto:eric@pettittwealth.com';
 const openMail = () => { window.location.href = MAILTO; };
+const openContact = () => { window.location.href = 'contact.html'; };
 
 const DEFAULT_INPUTS = {
     age: 35, retirement: 65, capital: 400000, monthlyContribution: 500, riskLevel: 66.7,
@@ -54,7 +55,7 @@ function CompassApp({ theme }) {
             <ControlCenter isOpen={open} onClose={() => setOpen(false)} inputs={inputs} onUpdate={onUpdate} theme={theme} />
             <CompassPage
                 theme={theme}
-                onOpenScheduling={openMail}
+                onOpenScheduling={openContact}
                 onOpenControlCenter={openCC}
                 isControlCenterOpen={open}
                 inputs={inputs}
@@ -69,8 +70,8 @@ function ClockApp({ theme }) {
         <AssetManagement
             theme={theme}
             userProfile={null}
-            onOpenScheduling={openMail}
-            onOpenAuth={openMail}
+            onOpenScheduling={openContact}
+            onOpenAuth={openContact}
             onOpenMessage={openMail}
         />
     );
